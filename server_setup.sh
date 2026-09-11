@@ -26,7 +26,7 @@ echo "pip install -i $PIP_MIRROR numpy timm pycocotools opencv-python-headless h
 echo "pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121"
 
 echo "=== DINOv2 weight ==="
-CKPT="${DINOV2_CKPT:-/root/models/dinov2_small/model.safetensors}"
+CKPT="${DINOV2_CKPT:-/root/autodl-tmp/models/dinov2_small/model.safetensors}"
 if [ -f "$CKPT" ]; then
   echo "  found: $CKPT"
 else

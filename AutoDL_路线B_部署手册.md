@@ -3,34 +3,35 @@
 > 目标：在 **RTX 4090 24G** 实例上，从零环境到**跑通训练**并得到干净数字。
 > 仓库：`git@github.com:Hera714/oc-causal-wm.git`（仓库根 = 原 `exp/`）。
 > 4090 是 Ada（sm_89），用标准 `torch cu121` 即可（**不需要** cu128）。
+>
+> **所有内容都放 `/root/autodl-tmp/`（50G 数据盘）下**：代码、数据、权重。
 
 ---
 
-## 0. 实例与磁盘
+## 0. 目录约定与磁盘
 
-- **GPU**：RTX 4090 24G（本手册按此配置）。
-- **镜像**：PyTorch 2.x + CUDA 12.1 的官方镜像即可。
-- **磁盘预算**（务必先 `df -h`）：
+```bash
+/root/autodl-tmp/
+├─ oc-causal-wm/          # 代码
+├─ clevrer/               # 数据 {train,validation,video_train,video_validation,derender,questions}
+└─ models/dinov2_small/model.safetensors   # DINOv2 权重
+```
+
+- **GPU**：RTX 4090 24G。
+- **镜像**：PyTorch 2.x + CUDA 12.1 官方镜像即可。
+- **磁盘（autodl-tmp 50G）**：
   - 数据解压后约：视频 18.5G + derender 2.9G + 标注 ~2G + 问题 0.13G ≈ **24G**
-  - 特征 npz：train 约 1.2–1.5G + val 约 0.2G
-  - **总计 ~26G**；下载的 zip 解压后**立即删除**，峰值就不会翻倍。
-  - 若 `autodl-tmp` 太小，租实例时**加大数据盘**（建议 ≥50G）。
-
-目录约定：
-```
-/root/oc-causal-wm                                  # 代码
-/root/autodl-tmp/clevrer/{train,validation,video_train,video_validation,derender,questions}
-/root/models/dinov2_small/model.safetensors
-```
+  - 特征 npz：train ~1.2–1.5G + val ~0.2G；代码与权重 <1G
+  - 合计约 **26–27G → 50G 充足**；下载的 zip **解压后立即删除**，避免峰值翻倍。
 
 ---
 
 ## 1. 环境配置
 
 ```bash
-# 1.1 拉代码
-cd /root
-git clone git@github.com:Hera714/oc-causal-wm.git      # 或 https://github.com/Hera714/oc-causal-wm.git
+# 1.1 拉代码（放在数据盘）
+mkdir -p /root/autodl-tmp && cd /root/autodl-tmp
+git clone git@github.com:Hera714/oc-causal-wm.git      # 或 https 地址
 cd oc-causal-wm
 
 # 1.2 conda 环境（Python 3.11）
@@ -90,7 +91,8 @@ find $CR/derender -name "proposal_*.json" | wc -l  # 期望 20000
 ## 3. DINOv2 权重（~85MB）
 
 ```bash
-mkdir -p /root/models/dinov2_small && cd /root/models/dinov2_small
+mkdir -p /root/autodl-tmp/models/dinov2_small
+cd /root/autodl-tmp/models/dinov2_small
 export HF_ENDPOINT=https://hf-mirror.com
 python - <<'PY'
 from huggingface_hub import hf_hub_download
@@ -104,7 +106,7 @@ PY
 ## 4. 环境变量（每次新 shell）
 
 ```bash
-export DINOV2_CKPT=/root/models/dinov2_small/model.safetensors
+export DINOV2_CKPT=/root/autodl-tmp/models/dinov2_small/model.safetensors
 export HF_HUB_OFFLINE=1
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export CLEVRER_ROOT=/root/autodl-tmp/clevrer
@@ -115,7 +117,7 @@ export CLEVRER_ROOT=/root/autodl-tmp/clevrer
 ## 5. 一键跑通（推荐）
 
 ```bash
-cd /root/oc-causal-wm
+cd /root/autodl-tmp/oc-causal-wm
 bash server_setup.sh     # 检查依赖/权重/数据
 bash run_routeB.sh       # 预计算 train+val 特征 → 训练（按 video id 切分）
 ```
@@ -140,7 +142,7 @@ PRE_BATCH=128 TRAIN_BATCH=512 NTRAIN=120000 bash run_routeB.sh
 ## 6. 单步命令（自行控制）
 
 ```bash
-cd /root/oc-causal-wm
+cd /root/autodl-tmp/oc-causal-wm
 
 # 6.1 训练集特征（10000 视频）
 python precompute_clevrer_feats.py --root $CLEVRER_ROOT --split train \
@@ -186,5 +188,5 @@ python run_clevrer_dino.py \
 | 训练一开始很慢 | 确认用了本仓库 `run_clevrer_dino.py`（已一次性载入内存，避免 npz 反复解压） |
 | 显存不足 | 降 `PRE_BATCH`/`TRAIN_BATCH`（4090 一般不会） |
 | `cv2` 读视频失败 | 用 `opencv-python-headless`；确认 mp4 完整解压 |
-| 磁盘不足 | 按 §2 边下边解删 zip；或租更大数据盘 |
+| 磁盘不足 | 按 §2 边下边解删 zip；50G 一般够；不够再租更大数据盘 |
 | 想用 GPU 更省时 | 无解——解码在 CPU；可增大 `--stride` 或减小 `--n` 来少抽窗口 |

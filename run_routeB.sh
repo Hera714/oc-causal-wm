@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # 路线 B 一键跑通：预计算 DINOv2 特征（train + val）→ 训练（按 video id 切分）。
 # 用法：
-#   export DINOV2_CKPT=/root/models/dinov2_small/model.safetensors
+#   export DINOV2_CKPT=/root/autodl-tmp/models/dinov2_small/model.safetensors
 #   export HF_HUB_OFFLINE=1
 #   export CLEVRER_ROOT=/root/autodl-tmp/clevrer
 #   bash run_routeB.sh
 set -e
 
 CLEVRER_ROOT="${CLEVRER_ROOT:-/root/autodl-tmp/clevrer}"
-DINOV2_CKPT="${DINOV2_CKPT:-/root/models/dinov2_small/model.safetensors}"
+DINOV2_CKPT="${DINOV2_CKPT:-/root/autodl-tmp/models/dinov2_small/model.safetensors}"
 NTRAIN="${NTRAIN:-80000}"
 NVAL="${NVAL:-10000}"
 PRE_BATCH="${PRE_BATCH:-64}"      # 预计算 DINOv2 的 batch（4090 可到 128）
