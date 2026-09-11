@@ -63,11 +63,12 @@ def prop_index(root):
 
 
 def compute_pos_stats(ann_files, n_sample=120, seed=0):
+    files = sorted(ann_files)             # 固定顺序，保证 train/val 两次运行统计量完全一致
     rng = np.random.default_rng(seed)
-    sel = rng.choice(len(ann_files), size=min(n_sample, len(ann_files)), replace=False)
+    sel = rng.choice(len(files), size=min(n_sample, len(files)), replace=False)
     pos = []
     for i in sel:
-        a = load_ann(ann_files[int(i)])
+        a = load_ann(files[int(i)])
         for fr in a["motion_trajectory"]:
             for o in fr["objects"]:
                 pos.append(o["location"][:2])
@@ -119,7 +120,7 @@ def main():
     if not items:
         raise SystemExit("no usable videos found; did you unzip video_validation.zip?")
 
-    mean, std = compute_pos_stats([it[1] for it in items])
+    mean, std = compute_pos_stats(list(anns.values()))   # 用全部标注，train/val 一致
     print("pos mean", mean, "std", std)
 
     T = args.obs + args.pred
