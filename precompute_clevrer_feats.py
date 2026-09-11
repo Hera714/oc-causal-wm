@@ -141,6 +141,7 @@ def main():
 
     feats, trajs, colors, targets = [], [], [], []
     lyes, lno = [], []
+    videos = []                      # 每个窗口的来源 video_index（用于按视频切分）
     buf_crops, buf_meta = [], []
     t_start = time.time()
     done = 0
@@ -153,13 +154,14 @@ def main():
         crops = torch.from_numpy(np.stack(buf_crops)).float().to(device)  # (B,M,obs,3,S,S)
         with torch.no_grad():
             f = extractor.backbone_features(crops).cpu().numpy().astype(np.float16)
-        for k, (tr, ci, tg, ly, ln) in enumerate(buf_meta):
+        for k, (vi_, tr, ci, tg, ly, ln) in enumerate(buf_meta):
             feats.append(f[k])
             trajs.append(tr)
             colors.append(ci)
             targets.append(tg)
             lyes.append(ly)
             lno.append(ln)
+            videos.append(vi_)
         buf_crops.clear()
         buf_meta.clear()
 
@@ -193,7 +195,7 @@ def main():
                     first_err = f"{type(e).__name__}: {e}"
                 continue
             buf_crops.append(s["crops"])          # (M, obs, 3, S, S)
-            buf_meta.append((s["traj_yes"], s["color_idx"], s["target_idx"],
+            buf_meta.append((vi, s["traj_yes"], s["color_idx"], s["target_idx"],
                              s["label_yes"], s["label_no"]))
             if len(buf_crops) >= args.batch:
                 flush()
@@ -212,10 +214,11 @@ def main():
     targets = np.asarray(targets)     # (N,)
     lyes = np.asarray(lyes)
     lno = np.asarray(lno)
+    videos = np.asarray(videos, dtype=np.int64)   # (N,) 来源 video_index
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     np.savez_compressed(args.out, feats=feats, traj=trajs, color=colors,
                         target=targets, label_yes=lyes, label_no=lno,
-                        pos_mean=mean, pos_std=std)
+                        video=videos, pos_mean=mean, pos_std=std)
     print(f"saved {len(feats)} windows -> {args.out}  ({time.time()-t_start:.0f}s)")
 
 

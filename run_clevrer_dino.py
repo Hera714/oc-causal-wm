@@ -72,7 +72,11 @@ def run_one(cfg, seed, args, device, train_ds, dev_ds, test_ds, M):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--feats", default="out/clevrer_feats.npz")
+    ap.add_argument("--train_feats", default="out/clevrer_feats_train.npz")
+    ap.add_argument("--val_feats", default="out/clevrer_feats_val.npz",
+                    help="validation npz; dev/test split BY video id")
+    ap.add_argument("--feats", default="",
+                    help="(backward compat) single npz, window-level split")
     ap.add_argument("--obs", type=int, default=4)
     ap.add_argument("--pred", type=int, default=8)
     ap.add_argument("--epochs", type=int, default=40)
@@ -92,21 +96,57 @@ def main():
     if device == "auto":
         device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    z = np.load(args.feats, allow_pickle=False)
-    data = {k: z[k] for k in z.files}   # 一次性读入内存，避免每次采样重复解压
-    z.close()
-    N = len(data["target"])
-    M = data["feats"].shape[2]
+    def load_npz(path):
+        z = np.load(path, allow_pickle=False)
+        d = {k: z[k] for k in z.files}   # 一次性读入内存，避免每次采样重复解压
+        z.close()
+        return d
+
+    # ---- training set ----
+    train_path = args.train_feats if args.train_feats else args.feats
+    train_data = load_npz(train_path)
+    M = train_data["feats"].shape[2]
+    tr_idx = np.arange(len(train_data["target"]))
+    train_ds = FeatDataset(train_data, tr_idx)
     rng = np.random.default_rng(0)
-    perm = rng.permutation(N)
-    fr = [float(x) for x in args.split.split(",")]
-    a = int(fr[0] * N)
-    b = int((fr[0] + fr[1]) * N)
-    tr_idx, dv_idx, te_idx = perm[:a], perm[a:b], perm[b:]
-    train_ds = FeatDataset(data, tr_idx)
-    dev_ds = FeatDataset(data, dv_idx)
-    test_ds = FeatDataset(data, te_idx)
-    print(f"device={device} N={N} M={M} split train/dev/test={len(tr_idx)}/{len(dv_idx)}/{len(te_idx)}")
+
+    # ---- dev/test: prefer a separate validation npz, split BY VIDEO id ----
+    if args.val_feats:
+        val_data = load_npz(args.val_feats)
+        assert val_data["feats"].shape[2] == M, "M mismatch between train/val npz"
+        if "video" in val_data:
+            vids = np.asarray(val_data["video"])
+            uniq = np.unique(vids)
+            rng.shuffle(uniq)
+            half = len(uniq) // 2
+            dev_ids = set(uniq[:half].tolist())
+            test_ids = set(uniq[half:].tolist())
+            dv_idx = np.array([i for i, v in enumerate(vids) if int(v) in dev_ids])
+            te_idx = np.array([i for i, v in enumerate(vids) if int(v) in test_ids])
+            split_note = f"by video ({len(uniq)} videos)"
+        else:
+            N = len(val_data["target"]); perm = rng.permutation(N)
+            fr = [float(x) for x in args.split.split(",")]
+            a = int(fr[0] * N); b = int((fr[0] + fr[1]) * N)
+            dv_idx, te_idx = perm[:a], perm[a:b]
+            split_note = "by window (val npz has no video id)"
+        dev_ds = FeatDataset(val_data, dv_idx)
+        test_ds = FeatDataset(val_data, te_idx)
+        N = len(tr_idx) + len(dv_idx) + len(te_idx)
+    else:
+        # backward compat: single npz, window-level split
+        data = train_data
+        N = len(data["target"]); perm = rng.permutation(N)
+        fr = [float(x) for x in args.split.split(",")]
+        a = int(fr[0] * N); b = int((fr[0] + fr[1]) * N)
+        tr_idx, dv_idx, te_idx = perm[:a], perm[a:b], perm[b:]
+        train_ds = FeatDataset(data, tr_idx)
+        dev_ds = FeatDataset(data, dv_idx)
+        test_ds = FeatDataset(data, te_idx)
+        split_note = "window-level (single npz)"
+
+    print(f"device={device} M={M} train/dev/test={len(tr_idx)}/{len(dv_idx)}/{len(te_idx)}"
+          f"  [{split_note}]  train_npz={train_path}")
 
     rows = []
     t_all = time.time()
