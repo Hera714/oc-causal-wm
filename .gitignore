@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# large artifacts / datasets (do not commit)
+*.npz
+*.zip
+*.avi
+*.mp4
+out/vqa_frames/
+out/vqa_frames_test/
+*.pt
+*.pth
+*.ckpt
+
+# OS
+.DS_Store
+Thumbs.db

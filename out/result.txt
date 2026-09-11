@@ -1,0 +1,13 @@
+JOINT {'acc': 0.0, 'flip_acc': 0.0, 'pos_mse': 0.0} | SEP {'acc': 0.0, 'flip_acc': 0.0, 'pos_mse': 0.0} | gap_flip=+0.000
+JOINT {'acc': 0.0, 'flip_acc': 0.0, 'pos_mse': 0.0} | SEP {'acc': 0.0, 'flip_acc': 0.0, 'pos_mse': 0.0} | gap_flip=+0.000
+JOINT {'acc': 0.0, 'flip_acc': 0.0, 'pos_mse': 0.0} | SEP {'acc': 0.0, 'flip_acc': 0.0, 'pos_mse': 0.0} | gap_flip=+0.000
+JOINT {'acc': 0.625, 'flip_acc': 0.0625, 'pos_mse': 0.05846773833036423} | SEP {'acc': 0.625, 'flip_acc': 0.0625, 'pos_mse': 0.05848650448024273} | gap_flip=+0.000
+JOINT {'acc': 0.85, 'flip_acc': 0.0, 'pos_mse': 0.05715100206434727} | SEP {'acc': 0.85, 'flip_acc': 0.0, 'pos_mse': 0.057224690169095996} | gap_flip=+0.000
+JOINT {'acc': 0.69, 'flip_acc': 0.0, 'pos_mse': 0.05479858011007309} | SEP {'acc': 0.69, 'flip_acc': 0.0, 'pos_mse': 0.05508438192307949} | gap_flip=+0.000
+JOINT {'acc': 0.69, 'flip_acc': 0.0, 'future_mse': 0.05307343170046806, 'target_mse': 0.03722524248063564} | SEP {'acc': 0.69, 'flip_acc': 0.0, 'future_mse': 0.0547445597499609, 'target_mse': 0.042474306523799896} | gap=-0.0017 rel=-3.1%
+JOINT {'acc': 0.6909090909090909, 'flip_acc': 0.0, 'future_mse': 0.05287184268236161, 'target_mse': 0.03304331977710579} | SEP {'acc': 0.6909090909090909, 'flip_acc': 0.0, 'future_mse': 0.05479114446224589, 'target_mse': 0.0421337573817282} | gap=-0.0019 rel=-3.5%
+JOINT {'acc': 0.7, 'flip_acc': 0.0, 'future_mse': 0.05830748751759529, 'target_mse': 0.036496199667453766} | SEP {'acc': 0.7, 'flip_acc': 0.0, 'future_mse': 0.05833546072244644, 'target_mse': 0.03657357394695282} | gap=-0.0000 rel=-0.0%
+JOINT {'acc': 0.7, 'flip_acc': 0.0, 'future_mse': 0.05646133795380592, 'target_mse': 0.04152987524867058} | SEP {'acc': 0.7, 'flip_acc': 0.0, 'future_mse': 0.05643966421484947, 'target_mse': 0.041490938514471054} | gap=+0.0000 rel=+0.0%
+JOINT {'acc': 0.65625, 'flip_acc': 0.0, 'future_mse': 0.05684375762939453, 'target_mse': 0.03991466388106346} | SEP {'acc': 0.65625, 'flip_acc': 0.0, 'future_mse': 0.056827791035175323, 'target_mse': 0.039741113781929016} | gap=+0.0000 rel=+0.0%
+JOINT {'acc': 0.5, 'flip_acc': 0.0, 'future_mse': 0.07880085706710815, 'target_mse': 0.03470245748758316} | SEP {'acc': 0.5, 'flip_acc': 0.0, 'future_mse': 0.07883044332265854, 'target_mse': 0.03464857116341591} | gap=-0.0000 rel=-0.0%
+JOINT {'acc': 0.5, 'flip_acc': 0.0, 'future_mse': 0.3393247127532959, 'target_mse': 0.4226403534412384} | SEP {'acc': 0.5, 'flip_acc': 0.0, 'future_mse': 0.35017216205596924, 'target_mse': 0.43349531292915344} | gap=-0.0108 rel=-3.1%

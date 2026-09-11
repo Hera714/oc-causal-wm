@@ -1,0 +1,149 @@
+/mnt/c/Users/Administrator/Desktop/Paper2/Paper2/exp/models.py:151: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.predictor = nn.TransformerEncoder(layer, num_layers=nlayers)
+device=cuda m=4 pred=6 d=128 nlayers=4 n=4000 seeds=3
+encoders=['cnn', 'dinov2'] configs=['absolute', 'delta_fixed', 'delta_rec']
+  ep 01 loss 2.2176 dev_acc 0.663 flip_acc 0.040 future_mse 0.0577 dmag 0.0000 cons 0.000
+  ep 12 loss 0.7314 dev_acc 0.733 flip_acc 0.250 future_mse 0.0396 dmag 0.0000 cons 0.747
+  ep 24 loss 0.7037 dev_acc 0.733 flip_acc 0.250 future_mse 0.0369 dmag 0.0000 cons 1.000
+  ep 36 loss 0.6748 dev_acc 0.733 flip_acc 0.250 future_mse 0.0375 dmag 0.0000 cons 1.000
+  ep 48 loss 0.6437 dev_acc 0.773 flip_acc 0.380 future_mse 0.0371 dmag 0.0000 cons 1.000
+  ep 60 loss 0.6396 dev_acc 0.773 flip_acc 0.420 future_mse 0.0373 dmag 0.0000 cons 1.000
+[cnn/absolute seed0] test future_mse 0.03836 target_mse 0.00849 dmag 0.00000 cons 1.000 align 0.956/0.677 acc 0.796 (87.2s)
+/mnt/c/Users/Administrator/Desktop/Paper2/Paper2/exp/models.py:151: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.predictor = nn.TransformerEncoder(layer, num_layers=nlayers)
+  ep 01 loss 2.2837 dev_acc 0.663 flip_acc 0.040 future_mse 0.0581 dmag 0.0000 cons 0.203
+  ep 12 loss 0.7386 dev_acc 0.733 flip_acc 0.250 future_mse 0.0396 dmag 0.0000 cons 1.000
+  ep 24 loss 0.7053 dev_acc 0.733 flip_acc 0.250 future_mse 0.0373 dmag 0.0000 cons 1.000
+  ep 36 loss 0.6936 dev_acc 0.733 flip_acc 0.250 future_mse 0.0364 dmag 0.0000 cons 1.000
+  ep 48 loss 0.6862 dev_acc 0.733 flip_acc 0.250 future_mse 0.0361 dmag 0.0000 cons 1.000
+  ep 60 loss 0.6838 dev_acc 0.733 flip_acc 0.250 future_mse 0.0361 dmag 0.0000 cons 1.000
+[cnn/absolute seed1] test future_mse 0.03719 target_mse 0.00675 dmag 0.00000 cons 1.000 align 0.975/0.738 acc 0.784 (62.5s)
+  ep 01 loss 2.3267 dev_acc 0.663 flip_acc 0.040 future_mse 0.0695 dmag 0.0000 cons 0.000
+  ep 12 loss 0.6996 dev_acc 0.733 flip_acc 0.250 future_mse 0.0310 dmag 0.0000 cons 0.010
+  ep 24 loss 0.6656 dev_acc 0.733 flip_acc 0.250 future_mse 0.0298 dmag 0.0000 cons 0.347
+  ep 36 loss 0.6479 dev_acc 0.733 flip_acc 0.250 future_mse 0.0287 dmag 0.0000 cons 0.090
+  ep 48 loss 0.6401 dev_acc 0.733 flip_acc 0.250 future_mse 0.0280 dmag 0.0000 cons 0.300
+  ep 60 loss 0.6353 dev_acc 0.733 flip_acc 0.250 future_mse 0.0279 dmag 0.0000 cons 0.227
+[cnn/absolute seed2] test future_mse 0.02815 target_mse 0.05993 dmag 0.00000 cons 0.212 align 0.196/0.355 acc 0.784 (65.4s)
+  ep 01 loss 8.9108 dev_acc 0.663 flip_acc 0.040 future_mse 0.0557 dmag 0.0026 cons 0.003
+  ep 12 loss 0.7279 dev_acc 0.727 flip_acc 0.230 future_mse 0.0358 dmag 0.0210 cons 0.423
+  ep 24 loss 0.6090 dev_acc 0.733 flip_acc 0.250 future_mse 0.0097 dmag 0.0183 cons 0.457
+  ep 36 loss 0.5303 dev_acc 0.733 flip_acc 0.250 future_mse 0.0075 dmag 0.0189 cons 0.643
+  ep 48 loss 0.5023 dev_acc 0.737 flip_acc 0.250 future_mse 0.0056 dmag 0.0188 cons 0.780
+  ep 60 loss 0.4854 dev_acc 0.753 flip_acc 0.290 future_mse 0.0056 dmag 0.0196 cons 0.740
+[cnn/delta_fixed seed0] test future_mse 0.00544 target_mse 0.00878 dmag 0.01898 cons 0.754 align 0.959/0.487 acc 0.794 (64.2s)
+  ep 01 loss 13.5582 dev_acc 0.663 flip_acc 0.040 future_mse 0.3096 dmag 0.0044 cons 0.000
+  ep 12 loss 0.7269 dev_acc 0.663 flip_acc 0.040 future_mse 0.0180 dmag 0.0183 cons 0.310
+  ep 24 loss 0.5861 dev_acc 0.733 flip_acc 0.250 future_mse 0.0114 dmag 0.0181 cons 0.557
+  ep 36 loss 0.5172 dev_acc 0.763 flip_acc 0.330 future_mse 0.0068 dmag 0.0200 cons 0.733
+  ep 48 loss 0.4508 dev_acc 0.793 flip_acc 0.420 future_mse 0.0072 dmag 0.0208 cons 0.783
+  ep 60 loss 0.4272 dev_acc 0.830 flip_acc 0.540 future_mse 0.0076 dmag 0.0220 cons 0.783
+[cnn/delta_fixed seed1] test future_mse 0.00757 target_mse 0.01030 dmag 0.02141 cons 0.780 align 0.912/0.546 acc 0.828 (63.0s)
+  ep 01 loss 75.4473 dev_acc 0.663 flip_acc 0.040 future_mse 0.1046 dmag 0.0101 cons 0.000
+  ep 12 loss 0.8054 dev_acc 0.727 flip_acc 0.230 future_mse 0.0542 dmag 0.0157 cons 0.000
+  ep 24 loss 0.5579 dev_acc 0.733 flip_acc 0.250 future_mse 0.0089 dmag 0.0164 cons 0.330
+  ep 36 loss 0.5097 dev_acc 0.803 flip_acc 0.440 future_mse 0.0080 dmag 0.0201 cons 0.593
+  ep 48 loss 0.4534 dev_acc 0.810 flip_acc 0.470 future_mse 0.0064 dmag 0.0211 cons 0.773
+  ep 60 loss 0.4425 dev_acc 0.813 flip_acc 0.480 future_mse 0.0050 dmag 0.0211 cons 0.960
+[cnn/delta_fixed seed2] test future_mse 0.00455 target_mse 0.00899 dmag 0.02108 cons 0.936 align 0.944/0.656 acc 0.816 (63.3s)
+  ep 01 loss 9.3558 dev_acc 0.663 flip_acc 0.040 future_mse 0.0413 dmag 0.0038 cons 0.013
+  ep 12 loss 0.7132 dev_acc 0.663 flip_acc 0.040 future_mse 0.0240 dmag 0.0075 cons 0.743
+  ep 24 loss 0.6079 dev_acc 0.733 flip_acc 0.250 future_mse 0.0140 dmag 0.0082 cons 0.463
+  ep 36 loss 0.5421 dev_acc 0.733 flip_acc 0.250 future_mse 0.0065 dmag 0.0068 cons 0.503
+  ep 48 loss 0.5183 dev_acc 0.733 flip_acc 0.250 future_mse 0.0059 dmag 0.0077 cons 0.483
+  ep 60 loss 0.5027 dev_acc 0.750 flip_acc 0.280 future_mse 0.0057 dmag 0.0079 cons 0.513
+[cnn/delta_rec seed0] test future_mse 0.00560 target_mse 0.01064 dmag 0.00769 cons 0.560 align 0.954/0.289 acc 0.794 (65.1s)
+  ep 01 loss 14.4487 dev_acc 0.663 flip_acc 0.040 future_mse 0.3123 dmag 0.0018 cons 0.000
+  ep 12 loss 0.7248 dev_acc 0.733 flip_acc 0.250 future_mse 0.0527 dmag 0.0071 cons 0.043
+  ep 24 loss 0.5966 dev_acc 0.733 flip_acc 0.250 future_mse 0.0189 dmag 0.0081 cons 0.010
+  ep 36 loss 0.5420 dev_acc 0.733 flip_acc 0.250 future_mse 0.0094 dmag 0.0087 cons 0.533
+  ep 48 loss 0.4836 dev_acc 0.773 flip_acc 0.350 future_mse 0.0071 dmag 0.0091 cons 0.547
+  ep 60 loss 0.4672 dev_acc 0.787 flip_acc 0.400 future_mse 0.0072 dmag 0.0091 cons 0.573
+[cnn/delta_rec seed1] test future_mse 0.00698 target_mse 0.01100 dmag 0.00892 cons 0.628 align 0.906/0.282 acc 0.814 (62.4s)
+  ep 01 loss 74.6901 dev_acc 0.337 flip_acc 0.960 future_mse 0.5939 dmag 0.0170 cons 0.000
+  ep 12 loss 0.7331 dev_acc 0.680 flip_acc 0.090 future_mse 0.0193 dmag 0.0061 cons 0.000
+  ep 24 loss 0.5716 dev_acc 0.733 flip_acc 0.250 future_mse 0.0118 dmag 0.0075 cons 0.000
+  ep 36 loss 0.5082 dev_acc 0.753 flip_acc 0.290 future_mse 0.0088 dmag 0.0075 cons 0.227
+  ep 48 loss 0.4569 dev_acc 0.783 flip_acc 0.380 future_mse 0.0067 dmag 0.0081 cons 0.263
+  ep 60 loss 0.4508 dev_acc 0.810 flip_acc 0.460 future_mse 0.0060 dmag 0.0080 cons 0.240
+[cnn/delta_rec seed2] test future_mse 0.00540 target_mse 0.01200 dmag 0.00782 cons 0.230 align 0.878/-0.338 acc 0.812 (62.2s)
+precomputing DINOv2 features ...
+  precomputed 4000 feats in 33.9s
+  precomputed 300 feats in 2.8s
+  precomputed 500 feats in 4.6s
+/mnt/c/Users/Administrator/Desktop/Paper2/Paper2/exp/models.py:151: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.predictor = nn.TransformerEncoder(layer, num_layers=nlayers)
+  ep 01 loss 2.7276 dev_acc 0.663 flip_acc 0.040 future_mse 0.0617 dmag 0.0000 cons 0.073
+  ep 12 loss 0.6308 dev_acc 0.733 flip_acc 0.250 future_mse 0.0153 dmag 0.0000 cons 0.573
+  ep 24 loss 0.5575 dev_acc 0.770 flip_acc 0.340 future_mse 0.0109 dmag 0.0000 cons 0.803
+  ep 36 loss 0.4959 dev_acc 0.823 flip_acc 0.500 future_mse 0.0084 dmag 0.0000 cons 1.000
+  ep 48 loss 0.4178 dev_acc 0.840 flip_acc 0.640 future_mse 0.0100 dmag 0.0000 cons 1.000
+  ep 60 loss 0.4043 dev_acc 0.840 flip_acc 0.590 future_mse 0.0096 dmag 0.0000 cons 1.000
+[dinov2/absolute seed0] test future_mse 0.00911 target_mse 0.00885 dmag 0.00000 cons 1.000 align 0.953/0.965 acc 0.826 (32.9s)
+  ep 01 loss 2.7486 dev_acc 0.663 flip_acc 0.040 future_mse 0.0522 dmag 0.0000 cons 0.257
+  ep 12 loss 0.5999 dev_acc 0.733 flip_acc 0.250 future_mse 0.0085 dmag 0.0000 cons 0.690
+  ep 24 loss 0.5687 dev_acc 0.733 flip_acc 0.250 future_mse 0.0118 dmag 0.0000 cons 0.967
+  ep 36 loss 0.4861 dev_acc 0.803 flip_acc 0.490 future_mse 0.0058 dmag 0.0000 cons 0.980
+  ep 48 loss 0.4399 dev_acc 0.810 flip_acc 0.550 future_mse 0.0073 dmag 0.0000 cons 0.993
+  ep 60 loss 0.4201 dev_acc 0.823 flip_acc 0.540 future_mse 0.0082 dmag 0.0000 cons 0.990
+[dinov2/absolute seed1] test future_mse 0.00808 target_mse 0.01270 dmag 0.00000 cons 0.988 align 0.906/0.734 acc 0.818 (32.9s)
+  ep 01 loss 2.5892 dev_acc 0.663 flip_acc 0.040 future_mse 0.0643 dmag 0.0000 cons 0.000
+  ep 12 loss 0.5876 dev_acc 0.733 flip_acc 0.250 future_mse 0.0111 dmag 0.0000 cons 1.000
+  ep 24 loss 0.5504 dev_acc 0.760 flip_acc 0.320 future_mse 0.0078 dmag 0.0000 cons 1.000
+  ep 36 loss 0.4864 dev_acc 0.753 flip_acc 0.290 future_mse 0.0086 dmag 0.0000 cons 1.000
+  ep 48 loss 0.4331 dev_acc 0.823 flip_acc 0.510 future_mse 0.0087 dmag 0.0000 cons 1.000
+  ep 60 loss 0.4182 dev_acc 0.827 flip_acc 0.530 future_mse 0.0078 dmag 0.0000 cons 1.000
+[dinov2/absolute seed2] test future_mse 0.00770 target_mse 0.00837 dmag 0.00000 cons 1.000 align 0.975/0.976 acc 0.834 (33.4s)
+  ep 01 loss 3.2204 dev_acc 0.663 flip_acc 0.040 future_mse 0.0314 dmag 0.0040 cons 0.103
+  ep 12 loss 0.6039 dev_acc 0.733 flip_acc 0.250 future_mse 0.0098 dmag 0.0289 cons 1.000
+  ep 24 loss 0.5527 dev_acc 0.733 flip_acc 0.250 future_mse 0.0126 dmag 0.0246 cons 1.000
+  ep 36 loss 0.4864 dev_acc 0.807 flip_acc 0.650 future_mse 0.0079 dmag 0.0225 cons 0.997
+  ep 48 loss 0.4127 dev_acc 0.817 flip_acc 0.560 future_mse 0.0088 dmag 0.0237 cons 0.997
+  ep 60 loss 0.3825 dev_acc 0.830 flip_acc 0.580 future_mse 0.0090 dmag 0.0250 cons 0.997
+[dinov2/delta_fixed seed0] test future_mse 0.00820 target_mse 0.01457 dmag 0.02470 cons 0.996 align 0.909/0.804 acc 0.840 (34.3s)
+  ep 01 loss 2.5309 dev_acc 0.663 flip_acc 0.040 future_mse 0.0304 dmag 0.0037 cons 0.067
+  ep 12 loss 0.5958 dev_acc 0.733 flip_acc 0.250 future_mse 0.0114 dmag 0.0292 cons 1.000
+  ep 24 loss 0.5320 dev_acc 0.787 flip_acc 0.380 future_mse 0.0162 dmag 0.0268 cons 1.000
+  ep 36 loss 0.4733 dev_acc 0.813 flip_acc 0.530 future_mse 0.0079 dmag 0.0246 cons 1.000
+  ep 48 loss 0.3926 dev_acc 0.833 flip_acc 0.600 future_mse 0.0091 dmag 0.0264 cons 1.000
+  ep 60 loss 0.3745 dev_acc 0.823 flip_acc 0.550 future_mse 0.0095 dmag 0.0272 cons 0.997
+[dinov2/delta_fixed seed1] test future_mse 0.00875 target_mse 0.01454 dmag 0.02652 cons 1.000 align 0.922/0.832 acc 0.856 (32.5s)
+  ep 01 loss 2.1736 dev_acc 0.663 flip_acc 0.040 future_mse 0.0303 dmag 0.0049 cons 0.000
+  ep 12 loss 0.6127 dev_acc 0.727 flip_acc 0.230 future_mse 0.0097 dmag 0.0255 cons 0.737
+  ep 24 loss 0.5844 dev_acc 0.740 flip_acc 0.260 future_mse 0.0107 dmag 0.0246 cons 0.917
+  ep 36 loss 0.4672 dev_acc 0.783 flip_acc 0.370 future_mse 0.0122 dmag 0.0298 cons 0.900
+  ep 48 loss 0.3998 dev_acc 0.827 flip_acc 0.550 future_mse 0.0106 dmag 0.0278 cons 0.983
+  ep 60 loss 0.3811 dev_acc 0.833 flip_acc 0.580 future_mse 0.0090 dmag 0.0269 cons 0.983
+[dinov2/delta_fixed seed2] test future_mse 0.00854 target_mse 0.01039 dmag 0.02621 cons 0.980 align 0.954/0.701 acc 0.858 (33.0s)
+  ep 01 loss 3.2381 dev_acc 0.663 flip_acc 0.040 future_mse 0.0246 dmag 0.0026 cons 0.023
+  ep 12 loss 0.6220 dev_acc 0.727 flip_acc 0.230 future_mse 0.0102 dmag 0.0091 cons 0.487
+  ep 24 loss 0.5229 dev_acc 0.767 flip_acc 0.330 future_mse 0.0082 dmag 0.0089 cons 0.540
+  ep 36 loss 0.5054 dev_acc 0.800 flip_acc 0.670 future_mse 0.0083 dmag 0.0089 cons 0.777
+  ep 48 loss 0.4109 dev_acc 0.823 flip_acc 0.510 future_mse 0.0087 dmag 0.0095 cons 0.690
+  ep 60 loss 0.3919 dev_acc 0.827 flip_acc 0.530 future_mse 0.0089 dmag 0.0098 cons 0.727
+[dinov2/delta_rec seed0] test future_mse 0.00817 target_mse 0.01173 dmag 0.00964 cons 0.762 align 0.976/0.465 acc 0.854 (33.7s)
+  ep 01 loss 2.7051 dev_acc 0.663 flip_acc 0.040 future_mse 0.0381 dmag 0.0038 cons 0.037
+  ep 12 loss 0.6124 dev_acc 0.733 flip_acc 0.250 future_mse 0.0182 dmag 0.0089 cons 0.457
+  ep 24 loss 0.5384 dev_acc 0.733 flip_acc 0.250 future_mse 0.0233 dmag 0.0110 cons 0.457
+  ep 36 loss 0.4427 dev_acc 0.800 flip_acc 0.650 future_mse 0.0118 dmag 0.0111 cons 0.457
+  ep 48 loss 0.3754 dev_acc 0.830 flip_acc 0.540 future_mse 0.0100 dmag 0.0114 cons 0.457
+  ep 60 loss 0.3655 dev_acc 0.833 flip_acc 0.560 future_mse 0.0094 dmag 0.0114 cons 0.457
+[dinov2/delta_rec seed1] test future_mse 0.00869 target_mse 0.01152 dmag 0.01092 cons 0.486 align 0.968/0.221 acc 0.866 (31.4s)
+  ep 01 loss 2.2420 dev_acc 0.663 flip_acc 0.040 future_mse 0.0355 dmag 0.0032 cons 0.000
+  ep 12 loss 0.6107 dev_acc 0.727 flip_acc 0.230 future_mse 0.0089 dmag 0.0081 cons 0.303
+  ep 24 loss 0.5502 dev_acc 0.733 flip_acc 0.250 future_mse 0.0075 dmag 0.0079 cons 0.473
+  ep 36 loss 0.4723 dev_acc 0.750 flip_acc 0.280 future_mse 0.0101 dmag 0.0094 cons 0.490
+  ep 48 loss 0.4065 dev_acc 0.823 flip_acc 0.520 future_mse 0.0094 dmag 0.0097 cons 0.467
+  ep 60 loss 0.3815 dev_acc 0.840 flip_acc 0.570 future_mse 0.0088 dmag 0.0099 cons 0.460
+[dinov2/delta_rec seed2] test future_mse 0.00808 target_mse 0.00765 dmag 0.00961 cons 0.486 align 0.978/0.034 acc 0.858 (33.3s)
+
+=== SUMMARY (test, mean over seeds) ===
+encoder  config        future_mse  target_mse     dMAG   align  alignF   cons    acc
+cnn      absolute         0.03457     0.02506   0.0000   0.709   0.590  0.737  0.788
+cnn      delta_fixed      0.00585     0.00936   0.0205   0.938   0.563  0.823  0.813
+cnn      delta_rec        0.00599     0.01121   0.0081   0.913   0.078  0.473  0.807
+dinov2   absolute         0.00830     0.00997   0.0000   0.945   0.891  0.996  0.826
+dinov2   delta_fixed      0.00850     0.01317   0.0258   0.928   0.779  0.992  0.851
+dinov2   delta_rec        0.00831     0.01030   0.0101   0.974   0.240  0.578  0.859
+
+saved -> out/delta_results.json (total 945.8s)
