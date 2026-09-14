@@ -170,18 +170,18 @@ http://data.csail.mit.edu/clevrer/videos/validation/video_validation.zip   # 6.2
 ```
 > 已用**合成视频 + 真实 proposal/annotation** 冒烟通过（`out/fakeb_feats.npz`、`out/fakeb_dino.json`）。
 
-**真实 CLEVRER 结果（路线 B，val 5000 视频，20000 窗口，3 seed 均值）**
+**真实 CLEVRER 结果（路线 B，干净重训：train 10000 视频训练、dev/test 按 video id 切分，3 seed 均值）**
 
 | config | future_mse | target_mse | dMAG | acc |
 |---|---|---|---|---|
-| absolute | 0.33136 | 0.75045 | 0 | 0.841 |
-| **delta_fixed** | **0.00667** | **0.00970** | 0.0075 | 0.834 |
-| delta_rec | 0.00730 | 0.01023 | 0.0027 | 0.830 |
+| absolute | 0.30955 | 0.68941 | 0 | 0.871 |
+| **delta_fixed** | **0.00559** | **0.00871** | 0.0127 | 0.859 |
+| delta_rec | 0.00626 | 0.00944 | 0.0042 | 0.857 |
 
-→ **delta_fixed 的 future_mse 比 absolute 好 ~50×、target_mse 好 ~77×**。图像级世界里 absolute（直接回归未来 latent）几乎学不动，
+→ **delta_fixed 的 future_mse 比 absolute 好 ~55×、target_mse 好 ~79×**。图像级世界里 absolute（直接回归未来 latent）几乎学不动，
 而 Δ 极其有效。`delta_rec` 略差 + |Δ| 仅固定版的 ~1/3（同样的衰减现象）。
-逐 step：delta 的 target MSE 从 k0 0.004 升到 k7 0.024（长时程/碰撞变难），absolute 全程 ~0.7。
-产物：`out/clevrer_feats.npz`、`out/clevrer_dino.json`、`out/recursion_curves_dinov2.png`。
+（此结果取代初版"用 validation 训练 + window 切分"的泄漏结果 `out/clevrer_dino.json`。）
+产物：`out/clevrer_feats_train.npz` / `clevrer_feats_val.npz`、`out/clevrer_dino_clean.json`、`out/recursion_curves_dinov2.png`。
 
 ---
 
