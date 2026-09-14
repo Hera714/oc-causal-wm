@@ -142,17 +142,15 @@ delta_rec 同样 k2–k3 最优但**后段上升更快**（k7 0.0156）。
 **结论**：真实碰撞动力学上复现 toy 结论——Δ(fixed) 大幅胜出（future_mse ×7、target_mse ×8、acc +5.4pt）；
 `delta_rec` 略差且 Δ 被压缩（累积误差 + 衰减），与 toy 一致。→ **Δ 门禁在真实数据通过**；下一步接图像（路线 B）。
 
-## v7 更新（2026-09-10）：路线 B —— 图像级 Δ（CLEVRER 视频 → 物体 crop → DINOv2
+## v7 更新（2026-09-10）：路线 B —— 图像级 Δ（CLEVRER 视频 → 物体 crop → DINOv2）
 
+**目的**：在真实视频上验证“像素→物体 token→Δ”，接口与 toy/路线 A 一致，只把编码器换成 DINOv2 特征。
 
-
-
-
+**本次记录（标准格式见 `../技术框架记录.md` §11）**
 - 数据：CLEVRER（train 训 / validation 评）
 - 输入：de-render 的 COCO mask 取 bbox 中心 → 抠 64×64 物体 crop → **冻结 DINOv2-small**（384 维）
-- 配置：`obs=4（看 4 帧）, pred=8（预测未来 8 帧）, M=6, d=128, nlayers=4, nhead=4, pos_w=5, epochs=40, batch=384, seeds=3`
-- 损失：`CrossEntropy(答案) + 5.0 × MSE(未来位置)**目
-- 的**：在真实视频上验证"像素→物体 token→Δ"，接口与 toy/路线 A 一致，只把编码器换成 DINOv2 特征。
+- 配置：`obs=4, pred=8, M=6, d=128, nlayers=4, nhead=4, pos_w=5, epochs=40, batch=384, seeds=3`
+- 损失：`CrossEntropy(答案) + 5.0 × MSE(未来位置)`
 
 **新增文件**
 - `clevrer_video.py`：用 de-render 的 COCO mask 定位物体、抠 crop（按 color/material/shape 匹配到 annotation object_id），
