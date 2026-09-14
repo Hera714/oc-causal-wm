@@ -196,6 +196,18 @@ PRE_BATCH=128 TRAIN_BATCH=512 bash run_routeB.sh
 （此结果取代初版"用 validation 训练 + window 切分"的泄漏结果 `out/clevrer_dino.json`。）
 产物：`out/clevrer_feats_train.npz` / `clevrer_feats_val.npz`、`out/clevrer_dino_clean.json`、`out/recursion_curves_dinov2.png`。
 
+### 逐 step future_mse 曲线（clean Route B）
+
+由 `out/v7_routeB_image/clevrer_dino_clean.json` 的逐 step 数组在服务器绘制（无需重训）：
+
+| config | k0 | k7 | 趋势 |
+|---|---|---|---|
+| absolute | 0.330 | 0.291 | 高且平（几乎学不动） |
+| **delta_fixed** | **0.0055** | **0.0159** | 低，随 k 缓慢上升 |
+| delta_rec | 0.0059 | 0.0208 | 略高、升得更快 |
+
+**结论**：Δ(fixed) 在**每一个未来步**都远优于 absolute（约 50–60×）；`delta_rec` 略差且长时程发散更快 → **固定基准 + Δ**。图：`out/v7_routeB_image/future_mse_curve.png`。
+
 ## predictor 在预测什么
 
 - 预测**所有 M=6 个物体**的未来 8 步位置（`pred_pos` 形状 `(B, 8, 6, 2)`）；`target_mse` 只是额外挑出"最后观测帧速度最大的物体(mover)"单独统计。
@@ -203,6 +215,13 @@ PRE_BATCH=128 TRAIN_BATCH=512 bash run_routeB.sh
 - 未来位置**监督来自 annotation `motion_trajectory`**（GT），图像只提供外观（DINOv2 特征）+ 位置嵌入。
 - 本质：**object-centric、无动作、图像条件的多物体多步未来轨迹预测器**（Δ 动力学建在它之上）。
 
----
+
+## 一些细节
+
+- 如何选中目标物体：
+target = argmax(speed)，其中 speed 是最后观测帧的物体速度（读取自 annotation velocity，即"看 4 帧"里最后一帧的速度）。 即：挑出当前动得最快的那个物体作为 target，纯属"我想重点看运动物体预测得准不准"的度量选择，和动作无关。
+- predictor 本身预测所有 M=6 个物体的未来位置；
+- future_mse：所有M=6个物体*预测步的平均
+- target_mse：仅一个目标物体*预测步的平均
 
 > 早期 toy（合成 2D）实验的定位与局限（为何不能与 C-JEPA 直接对比）：见 `../技术框架记录.md` §6。
