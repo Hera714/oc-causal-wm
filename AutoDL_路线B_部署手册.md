@@ -42,13 +42,16 @@ source activate ocwm
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \
   torch torchvision --index-url https://download.pytorch.org/whl/cu121
 
-# 1.4 其余依赖
+# 1.4 其余依赖（含 matplotlib，否则不出曲线图）
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \
-  numpy timm pycocotools opencv-python-headless huggingface_hub tqdm
+  numpy timm pycocotools opencv-python-headless huggingface_hub tqdm matplotlib
 
-# 1.5 验证
-python -c "import torch,timm,cv2,pycocotools; print('torch',torch.__version__,'cuda',torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+# 1.5 验证：务必确认在 ocwm 环境里（python 路径应含 envs/ocwm）
+python -c "import sys,torch,timm,cv2,pycocotools,matplotlib; print(sys.executable); print('torch',torch.__version__,'cuda',torch.cuda.is_available())"
 ```
+
+> ⚠️ **一定要在 `ocwm` 环境里跑**：非交互 shell 里 `conda activate` 可能不生效，导致落到 base（缺依赖）。
+> 保险写法：`conda run -n ocwm python ...`，或每次先 `source /root/miniconda3/etc/profile.d/conda.sh && conda activate ocwm`。
 
 ---
 

@@ -22,7 +22,7 @@ sys.exit(0)
 PY
 
 echo "=== install missing (若上一步有 MISSING，手动执行) ==="
-echo "pip install -i $PIP_MIRROR numpy timm pycocotools opencv-python-headless huggingface_hub tqdm"
+echo "pip install -i $PIP_MIRROR numpy timm pycocotools opencv-python-headless huggingface_hub tqdm matplotlib"
 echo "pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121"
 
 echo "=== DINOv2 weight ==="
