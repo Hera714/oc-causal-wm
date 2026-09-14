@@ -1,5 +1,8 @@
 # 实验 1：动作条件注入 predictor 的"联合式 vs 分离式"验证
 
+> **分工约定**：本 README 记录**细节/代码级更新**（模块实现、命令、逐 step、冒烟等）；
+> **标准格式的实验记录**（可跨版本比对）见 `../技术框架记录.md` §11。
+
 > ⚠️ 重要定位修正（v2，2026-09-04）：该 toy 实验只是**机制性 sanity check**（验证 pipeline
 > 跑通 + A/B 开关正确），**不能**推广为"显式动作条件 > C-JEPA 式隐式干预"的结论。
 > 原因与重定位见 `../技术框架记录.md` §6。
@@ -139,9 +142,17 @@ delta_rec 同样 k2–k3 最优但**后段上升更快**（k7 0.0156）。
 **结论**：真实碰撞动力学上复现 toy 结论——Δ(fixed) 大幅胜出（future_mse ×7、target_mse ×8、acc +5.4pt）；
 `delta_rec` 略差且 Δ 被压缩（累积误差 + 衰减），与 toy 一致。→ **Δ 门禁在真实数据通过**；下一步接图像（路线 B）。
 
-## v7 更新（2026-09-10）：路线 B —— 图像级 Δ（CLEVRER 视频 → 物体 crop → DINOv2）
+## v7 更新（2026-09-10）：路线 B —— 图像级 Δ（CLEVRER 视频 → 物体 crop → DINOv2
 
-**目的**：在真实视频上验证"像素→物体 token→Δ"，接口与 toy/路线 A 一致，只把编码器换成 DINOv2 特征。
+
+
+
+
+- 数据：CLEVRER（train 训 / validation 评）
+- 输入：de-render 的 COCO mask 取 bbox 中心 → 抠 64×64 物体 crop → **冻结 DINOv2-small**（384 维）
+- 配置：`obs=4（看 4 帧）, pred=8（预测未来 8 帧）, M=6, d=128, nlayers=4, nhead=4, pos_w=5, epochs=40, batch=384, seeds=3`
+- 损失：`CrossEntropy(答案) + 5.0 × MSE(未来位置)**目
+- 的**：在真实视频上验证"像素→物体 token→Δ"，接口与 toy/路线 A 一致，只把编码器换成 DINOv2 特征。
 
 **新增文件**
 - `clevrer_video.py`：用 de-render 的 COCO mask 定位物体、抠 crop（按 color/material/shape 匹配到 annotation object_id），
@@ -170,6 +181,18 @@ http://data.csail.mit.edu/clevrer/videos/validation/video_validation.zip   # 6.2
 ```
 > 已用**合成视频 + 真实 proposal/annotation** 冒烟通过（`out/fakeb_feats.npz`、`out/fakeb_dino.json`）。
 
+## 数据集规模（读自 clevrer_feats_{train,val}.npz）
+
+| 集 | 窗口数 | 视频数 | 切分方式 |
+|---|---|---|---|
+| train | 79,998 | 10,000 | CLEVRER train |
+| val（总） | 10,000 | 4,426 | CLEVRER validation |
+| ├ dev | 4,993 | 2,213 | 按 video id 切 |
+| └ test | 5,007 | 2,213 | 按 video id 切 |
+
+说明：train/val 位置归一化**统一**（统计量取自全部标注）；dev/test **按 video id 切分**，无同视频窗口泄漏。
+
+
 **真实 CLEVRER 结果（路线 B，干净重训：train 10000 视频训练、dev/test 按 video id 切分，3 seed 均值）**
 
 | config | future_mse | target_mse | dMAG | acc |
@@ -182,6 +205,13 @@ http://data.csail.mit.edu/clevrer/videos/validation/video_validation.zip   # 6.2
 而 Δ 极其有效。`delta_rec` 略差 + |Δ| 仅固定版的 ~1/3（同样的衰减现象）。
 （此结果取代初版"用 validation 训练 + window 切分"的泄漏结果 `out/clevrer_dino.json`。）
 产物：`out/clevrer_feats_train.npz` / `clevrer_feats_val.npz`、`out/clevrer_dino_clean.json`、`out/recursion_curves_dinov2.png`。
+
+## predictor 在预测什么
+
+- 预测**所有 M=6 个物体**的未来 8 步位置（`pred_pos` 形状 `(B, 8, 6, 2)`）；`target_mse` 只是额外挑出"最后观测帧速度最大的物体(mover)"单独统计。
+- **mask 用于定位抠框**；跨帧物体身份按 `(color, material, shape)` 匹配到 annotation 的 `object_id`（**无跟踪网络**）。
+- 未来位置**监督来自 annotation `motion_trajectory`**（GT），图像只提供外观（DINOv2 特征）+ 位置嵌入。
+- 本质：**object-centric、无动作、图像条件的多物体多步未来轨迹预测器**（Δ 动力学建在它之上）。
 
 ---
 
