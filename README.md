@@ -1,8 +1,8 @@
 # 实验 1：动作条件注入 predictor 的"联合式 vs 分离式"验证
 
-> ⚠️ 重要定位修正（v2，2026-09-04）：本实验只是**机制性 sanity check**（验证 pipeline
+> ⚠️ 重要定位修正（v2，2026-09-04）：该 toy 实验只是**机制性 sanity check**（验证 pipeline
 > 跑通 + A/B 开关正确），**不能**推广为"显式动作条件 > C-JEPA 式隐式干预"的结论。
-> 原因与重定位见"局限与研究方向"章。
+> 原因与重定位见 `../技术框架记录.md` §6。
 
 ---
 
@@ -185,75 +185,4 @@ http://data.csail.mit.edu/clevrer/videos/validation/video_validation.zip   # 6.2
 
 ---
 
-运行：
-```bash
-# WSL
-export DINOV2_CKPT=$HOME/models/dinov2_small/model.safetensors HF_HUB_OFFLINE=1
-~/anaconda3/envs/tdv/bin/python run_delta.py --encoders cnn,dinov2 --device cuda
-```
-
----
-
-验证论文框架里的一个设计取舍：
-
-> **把"假设动作"（language action）注入到 object-centric JEPA predictor 里
-> （联合式，model B），是否能让 predictor 对未来物体状态的预测（尤其是被
-> 干预的 target 物体）更准？** 对比：动作只在答案头融合、predictor 对动作
-> 无感知（分离式，model A）。
-
-## 观测结果（3 seed 平均，合成物理数据）
-
-| 指标（越低越好） | SEPARATE (A) | JOINT (B) | 相对改善 |
-|---|---|---|---|
-| 全物体未来位置 MSE | 0.0548 | 0.0529 | **-3.5%** |
-| 被干预物体 (target) 未来位置 MSE | 0.0421 | 0.0330 | **-21.6%** |
-
-在该简化世界里，动作注入 predictor 改善被干预物体未来轨迹预测；分类 acc 被"总是 no"
-捷径饱和（0.69），不作主指标。
-
-## 局限与研究方向（must read）
-
-### 为什么不能推广成"显式 > 隐式干预"
-1. **目标错位**：C-JEPA 的目标是学"物体间相互作用**关系**"，把形状/接触点/质量等
-   **语言无法穷尽描述**的因素作为**隐变量**。本实验为了跑通把场景简化成"圆形、无形状差、
-   动作仅 4 方向"——**恰好删掉了语言之外的所有因素**，所以"显式语言条件"才能完美刻画
-   干预。两者探讨的**不是同一目标**。
-2. 在真实 3D/机器人场景，"推某物"的结果由**接触点、形状受力、质量、摩擦**等决定，
-   **无法用自然语言穷尽描述**。因此"语言可描述 ≠ 干预有效"。
-
-### 真正的研究方向：CausalSpatial / COW 那条线
-- **CausalSpatial**（bencSmark，arXiv:2601.13304）：物体级、真实 3D（Blender）因果空间推理，
-  4 类任务 Collision / Compatibility / Occlusion / Trajectory。核心发现：**MLLM 纯文本 CoT
-  推理会空间漂移幻觉**（human 84% vs GPT-5 54%）。
-- **COW**：把"假设动作"外部化为**轨迹条件化的仿真视频**，用显式视觉证据锚定 MLLM
-  （3 帧就有 2.4%/2.2% 提升）。
-
-**我们可定位的差异化**：不用**外部视频生成**（COW 依赖 ATI 扩散、贵且物体级一致性仍开放），
-而是用**内部、可学习、物体级因果世界模型**在 latent 域做干预 + VLM 融合——更紧凑、可学习、
-对象级一致，且抑制文本 CoT 空间幻觉。
-
-## 怎么跑（已在本机 GPU 2GB 验证通过）
-
-```bash
-cd exp
-python run.py --n 320 --ne 110 --epochs 40 --batch 48 --seeds 3 --lr 2e-4 --d 96 --pos_w 5 --device auto
-```
-
-`--device auto` 会自动用 cuda。远程强 GPU 可加大：
-```bash
-python run.py --n 5000 --ne 600 --epochs 80 --batch 256 --seeds 5 --d 256 --pos_w 5 --device cuda
-```
-
-## 文件说明
-- `data.py`：合成物理视频生成器。确定性因果场景：m 个物体 + 每次随机布局，动作
-  "push the <color> object to the <direction>" 给 target 一个定向速度增量；输出真值框、
-  颜色、动作、未来位置、碰撞标签（保证"动作确实改变结果"=真反事实）。
-- `models.py`：物体编码器（CNN on crops + 位置嵌入）→ block-causal Transformer
-  predictor（物体间 self-attention，跨帧因果 mask）→ 位置头 + 答案头。
-  `joint=True` 时动作经 bind 注入 predictor；`joint=False` 时不注入（A/B 开关）。
-- `run.py`：训练 + 评估（比较未来位置 MSE / 被干预物体 MSE / 分类）。
-
-## 局限（如实交代）
-- toy：物体少(3)、运动简单、合成渲染，主要用于**验证机制**，不代表真实数据集性能。
-- 后续应转向真实 3D（CausalSpatial/Blender）、真实物体表征(DINOv2/V-JEPA2)、VLM 融合后
-  的 causal spatial 问答，并与 COW 的外部视频基线对比。
+> 早期 toy（合成 2D）实验的定位与局限（为何不能与 C-JEPA 直接对比）：见 `../技术框架记录.md` §6。
