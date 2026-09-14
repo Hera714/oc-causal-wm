@@ -142,7 +142,7 @@ delta_rec 同样 k2–k3 最优但**后段上升更快**（k7 0.0156）。
 **结论**：真实碰撞动力学上复现 toy 结论——Δ(fixed) 大幅胜出（future_mse ×7、target_mse ×8、acc +5.4pt）；
 `delta_rec` 略差且 Δ 被压缩（累积误差 + 衰减），与 toy 一致。→ **Δ 门禁在真实数据通过**；下一步接图像（路线 B）。
 
-## v7 更新（2026-09-10）：路线 B —— 图像级 Δ（CLEVRER 视频 → 物体 crop → DINOv2）
+## v7 更新：路线 B —— 图像级 Δ（CLEVRER 视频 → 物体 crop → DINOv2） ｜ 2026-09-10 建立 · 09-12 干净重训
 
 **目的**：在真实视频上验证“像素→物体 token→Δ”，接口与 toy/路线 A 一致，只把编码器换成 DINOv2 特征。
 
@@ -160,24 +160,15 @@ delta_rec 同样 k2–k3 最优但**后段上升更快**（k7 0.0156）。
 - 依赖：`pycocotools`（已装到 tdv 环境）。
 
 **数据（需视频；mask/标注已在）**
-```
-http://data.csail.mit.edu/clevrer/videos/validation/video_validation.zip   # 6.2GB
-# 解压到 ~/datasets/clevrer/video_validation
-```
-> 先用 val 5000 视频切 train/dev/test 即可；训练集视频（12GB）需要时再下。
+- CLEVRER **train + validation 视频**（train 12.35GB / val 6.21GB）；下载与解压见 `AutoDL_路线B_部署手册.md` §2。
+- 服务器目录约定：`/root/autodl-tmp/clevrer/{train,validation,video_train,video_validation,derender,questions}`。
 
-**运行（WSL）**
+**运行（服务器 4090，一键 = 预计算 train+val 特征 → 训练，dev/test 按 video id 切分）**
 ```bash
-# 1) 预计算 DINOv2 特征（一次，CPU 解码是瓶颈）
-~/anaconda3/envs/tdv/bin/python precompute_clevrer_feats.py \
-  --root ~/datasets/clevrer --split validation --n 20000 \
-  --obs 4 --pred 8 --M 6 --stride 8 --crop 64 --batch 32 --device cuda \
-  --out out/clevrer_feats.npz
-# 2) 训练/对照
-~/anaconda3/envs/tdv/bin/python run_clevrer_dino.py \
-  --feats out/clevrer_feats.npz --epochs 40 --batch 256 --d 128 --seeds 3 --device cuda
+bash server_setup.sh                        # 检查依赖/权重/数据
+PRE_BATCH=128 TRAIN_BATCH=512 bash run_routeB.sh
 ```
-> 已用**合成视频 + 真实 proposal/annotation** 冒烟通过（`out/fakeb_feats.npz`、`out/fakeb_dino.json`）。
+> 冒烟：合成视频 + 真实 proposal/annotation（`out/fakeb_feats.npz`）通过。
 
 ## 数据集规模（读自 clevrer_feats_{train,val}.npz）
 
