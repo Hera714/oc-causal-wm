@@ -1,0 +1,39 @@
+{
+  "split": "test",
+  "num_videos": 30,
+  "protocol": "GT mask-center diagnostic; copy-last repeats the final visible observed center; constant_velocity_lsq fits velocity from all visible observed centers.",
+  "copy_last": {
+    "center_mse_norm": 0.04629265247849819,
+    "center_mae_norm": 0.15470343824176672,
+    "center_rmse_px": 27.32497377538901,
+    "center_mae_px": 19.647336656704372,
+    "per_horizon_mse_norm": [
+      0.009665111355829023,
+      0.02003205374859393,
+      0.030249129093828656,
+      0.043440540004125304,
+      0.054418898561102824,
+      0.06493648073157748,
+      0.07200566819194931,
+      0.07814156540324178
+    ],
+    "valid_scalar_count": 2962
+  },
+  "constant_velocity_lsq": {
+    "center_mse_norm": 0.03726723894305844,
+    "center_mae_norm": 0.12327632929810312,
+    "center_rmse_px": 24.51700016136945,
+    "center_mae_px": 15.656093820859097,
+    "per_horizon_mse_norm": [
+      0.008428927013082229,
+      0.015791913457115225,
+      0.02197644357672996,
+      0.032323994817450005,
+      0.04142266116478545,
+      0.050636557358744984,
+      0.060790288205469514,
+      0.06923939049076498
+    ],
+    "valid_scalar_count": 2962
+  }
+}

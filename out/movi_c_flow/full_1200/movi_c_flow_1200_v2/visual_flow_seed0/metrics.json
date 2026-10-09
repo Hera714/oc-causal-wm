@@ -1,0 +1,75 @@
+{
+  "kind": "trained",
+  "config": {
+    "mode": "visual_flow",
+    "seed": 0,
+    "epochs": 40,
+    "batch_size": 32,
+    "lr": 0.0003,
+    "patience": 10,
+    "aux_weight": 0.25,
+    "consistency_weight": 0.1,
+    "flow_order": "xy",
+    "data_root": "/autodl-fs/data/movi_c_flow_v2_1200",
+    "split_counts": {
+      "train": 1200,
+      "validation": 300,
+      "test": 300
+    },
+    "nonfinite_data": {
+      "train": {
+        "invisible_positions": 0,
+        "flow_pixels_ignored": 54
+      },
+      "validation": {
+        "invisible_positions": 0,
+        "flow_pixels_ignored": 6
+      },
+      "test": {
+        "invisible_positions": 0,
+        "flow_pixels_ignored": 0
+      }
+    },
+    "data_sha256": "d35304220e0f957935d103bc405d032aed3d394450110e5dd82a0f861329115e",
+    "source_sha256": "316520b87045bab29d5243358492ba70a68eea756e3e680e5f9596840a1e3cb6",
+    "torch": "2.5.1+cu121",
+    "python": "3.11.16",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "trainable_parameters": 469152
+  },
+  "best_epoch": 32,
+  "validation": {
+    "position_mse": 0.016787574438899378,
+    "mae_px": 10.916227912404876,
+    "rmse_px": 16.454992802338385,
+    "per_horizon_mse": [
+      0.005727157990137736,
+      0.010580102806766283,
+      0.013523481429845163,
+      0.015765254944562913,
+      0.018536337750434333,
+      0.021081180770162473,
+      0.02346797360406889,
+      0.02581862674155654
+    ],
+    "valid_scalar_count": 27770,
+    "future_flow_epe_px": null
+  },
+  "test": {
+    "position_mse": 0.01802560979283734,
+    "mae_px": 11.3180335470681,
+    "rmse_px": 17.05095482219906,
+    "per_horizon_mse": [
+      0.007621752866126479,
+      0.010777995663713357,
+      0.013209318024699962,
+      0.015778804178217753,
+      0.019757067163785298,
+      0.02277457164467234,
+      0.025952482402869157,
+      0.02851527561456502
+    ],
+    "valid_scalar_count": 29984,
+    "future_flow_epe_px": null
+  }
+}

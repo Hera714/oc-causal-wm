@@ -1,0 +1,121 @@
+flow order auto-check: xy_error=0.00923352, row_col_error=0.00130408; chosen=row_col
+train: masked 6152 non-finite invisible positions; ignored 0 non-finite flow pixels
+validation: masked 1903 non-finite invisible positions; ignored 0 non-finite flow pixels
+test: masked 1476 non-finite invisible positions; ignored 0 non-finite flow pixels
+/root/miniconda3/envs/ocwm/lib/python3.11/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+epoch=001 train_loss=0.188531 val_mse=0.079900 val_mae_px=28.325
+epoch=002 train_loss=0.074226 val_mse=0.067299 val_mae_px=26.996
+epoch=003 train_loss=0.063874 val_mse=0.058366 val_mae_px=25.127
+epoch=004 train_loss=0.059136 val_mse=0.058883 val_mae_px=24.687
+epoch=005 train_loss=0.056814 val_mse=0.053767 val_mae_px=23.407
+epoch=006 train_loss=0.052268 val_mse=0.052532 val_mae_px=23.518
+epoch=007 train_loss=0.051237 val_mse=0.050105 val_mae_px=22.783
+epoch=008 train_loss=0.048697 val_mse=0.049387 val_mae_px=22.484
+epoch=009 train_loss=0.046372 val_mse=0.048430 val_mae_px=22.264
+epoch=010 train_loss=0.044279 val_mse=0.047117 val_mae_px=21.831
+epoch=011 train_loss=0.042172 val_mse=0.045420 val_mae_px=21.429
+epoch=012 train_loss=0.040549 val_mse=0.044974 val_mae_px=21.243
+epoch=013 train_loss=0.039191 val_mse=0.044079 val_mae_px=20.788
+epoch=014 train_loss=0.037264 val_mse=0.043136 val_mae_px=20.621
+epoch=015 train_loss=0.035196 val_mse=0.042302 val_mae_px=20.276
+epoch=016 train_loss=0.034418 val_mse=0.041799 val_mae_px=20.142
+epoch=017 train_loss=0.032402 val_mse=0.040348 val_mae_px=19.764
+epoch=018 train_loss=0.032062 val_mse=0.041086 val_mae_px=19.993
+epoch=019 train_loss=0.030705 val_mse=0.039717 val_mae_px=19.561
+epoch=020 train_loss=0.029807 val_mse=0.039998 val_mae_px=19.694
+epoch=021 train_loss=0.029253 val_mse=0.038141 val_mae_px=19.002
+epoch=022 train_loss=0.027737 val_mse=0.038818 val_mae_px=19.287
+epoch=023 train_loss=0.027183 val_mse=0.040475 val_mae_px=19.662
+epoch=024 train_loss=0.026327 val_mse=0.036221 val_mae_px=18.486
+epoch=025 train_loss=0.025611 val_mse=0.037657 val_mae_px=18.869
+epoch=026 train_loss=0.025078 val_mse=0.037480 val_mae_px=18.806
+epoch=027 train_loss=0.023786 val_mse=0.034521 val_mae_px=18.045
+epoch=028 train_loss=0.023295 val_mse=0.036001 val_mae_px=18.371
+epoch=029 train_loss=0.022234 val_mse=0.035501 val_mae_px=18.170
+epoch=030 train_loss=0.022195 val_mse=0.033547 val_mae_px=17.727
+epoch=031 train_loss=0.021548 val_mse=0.035024 val_mae_px=18.046
+epoch=032 train_loss=0.021356 val_mse=0.035382 val_mae_px=18.200
+epoch=033 train_loss=0.020375 val_mse=0.034454 val_mae_px=17.777
+epoch=034 train_loss=0.019965 val_mse=0.034346 val_mae_px=17.833
+epoch=035 train_loss=0.019927 val_mse=0.033706 val_mae_px=17.499
+epoch=036 train_loss=0.019506 val_mse=0.033039 val_mae_px=17.379
+epoch=037 train_loss=0.019032 val_mse=0.033790 val_mae_px=17.532
+epoch=038 train_loss=0.018110 val_mse=0.033889 val_mae_px=17.583
+epoch=039 train_loss=0.017569 val_mse=0.037017 val_mae_px=18.354
+epoch=040 train_loss=0.017697 val_mse=0.034716 val_mae_px=17.641
+{
+  "kind": "trained",
+  "config": {
+    "mode": "visual_flow",
+    "seed": 1,
+    "epochs": 40,
+    "batch_size": 32,
+    "lr": 0.0003,
+    "patience": 10,
+    "aux_weight": 0.25,
+    "consistency_weight": 0.1,
+    "flow_order": "row_col",
+    "data_root": "/autodl-fs/data/movi_c_flow_v1",
+    "split_counts": {
+      "train": 120,
+      "validation": 30,
+      "test": 30
+    },
+    "nonfinite_data": {
+      "train": {
+        "invisible_positions": 6152,
+        "flow_pixels_ignored": 0
+      },
+      "validation": {
+        "invisible_positions": 1903,
+        "flow_pixels_ignored": 0
+      },
+      "test": {
+        "invisible_positions": 1476,
+        "flow_pixels_ignored": 0
+      }
+    },
+    "data_sha256": "fbe2ae72a0d7eb5707940ec1769acd98338623a4d6c2eb08f18ded3e2d1f6809",
+    "source_sha256": "316520b87045bab29d5243358492ba70a68eea756e3e680e5f9596840a1e3cb6",
+    "torch": "2.5.1+cu121",
+    "python": "3.11.16",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "trainable_parameters": 469152
+  },
+  "best_epoch": 36,
+  "validation": {
+    "position_mse": 0.03303905701873326,
+    "mae_px": 17.37856952742775,
+    "rmse_px": 23.08434427604884,
+    "per_horizon_mse": [
+      0.015526845421589596,
+      0.02162112147602814,
+      0.026337733635535605,
+      0.03226306635862703,
+      0.03558273804493439,
+      0.03988398757635379,
+      0.04450676772768134,
+      0.048123758133143596
+    ],
+    "valid_scalar_count": 2424,
+    "future_flow_epe_px": null
+  },
+  "test": {
+    "position_mse": 0.026844373995351438,
+    "mae_px": 15.657925863349703,
+    "rmse_px": 20.80800106139519,
+    "per_horizon_mse": [
+      0.012899382140046807,
+      0.015875417280962124,
+      0.01931103196724382,
+      0.025045658679718665,
+      0.028557412764605355,
+      0.03314232181858372,
+      0.038802787085264426,
+      0.04233309392178996
+    ],
+    "valid_scalar_count": 2962,
+    "future_flow_epe_px": null
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "data_root": "/autodl-fs/data/movi_c_flow_v1",
+  "output_dir": "/root/autodl-tmp/oc-causal-wm/out/movi_c_flow_mini_seed1",
+  "variant": "baseline",
+  "seed": 1,
+  "epochs": 120,
+  "patience": 25,
+  "batch_size": 32,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "d_model": 128,
+  "layers": 2,
+  "heads": 4,
+  "dropout": 0.1,
+  "device": "cuda",
+  "parameter_count": 417794,
+  "torch_version": "2.5.1+cu121",
+  "device_name": "NVIDIA GeForce RTX 4090"
+}

@@ -1,0 +1,40 @@
+{
+  "variant": "flow_control",
+  "flow_mode": "zero",
+  "seed": 0,
+  "best_epoch": 15,
+  "best_validation": {
+    "center_mse_norm": 0.032335174359110715,
+    "center_mae_norm": 0.1361108156714109,
+    "center_rmse_px": 22.837119503958828,
+    "center_mae_px": 17.286073590269183,
+    "per_horizon_mse_norm": [
+      0.016380627390364527,
+      0.021792964430044817,
+      0.02480556873174814,
+      0.029698997546153464,
+      0.0350263332709288,
+      0.038885347204270705,
+      0.04457606069299559,
+      0.04723617475326747
+    ]
+  },
+  "test": {
+    "center_mse_norm": 0.02851369009075899,
+    "center_mae_norm": 0.12478874665027853,
+    "center_rmse_px": 21.445216424038524,
+    "center_mae_px": 15.848170824585374,
+    "per_horizon_mse_norm": [
+      0.013271142077702348,
+      0.01792365854436701,
+      0.020154819286689555,
+      0.025288858312241574,
+      0.03164660866885262,
+      0.03638745900746938,
+      0.04022864083558815,
+      0.0444610949312703
+    ]
+  },
+  "control_definition": "zero: flow vectors zeroed while flow-valid masks remain; shuffled: flow vectors and flow-valid masks are moved across videos using a deterministic derangement.",
+  "protocol": "GT mask-center / GT pooled-flow diagnostic; not an RGB-only experiment."
+}
