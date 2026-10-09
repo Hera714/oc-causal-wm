@@ -1,0 +1,66 @@
+nohup: ignoring input
+device=cuda
+loaded train: 1200 scenes
+loaded validation: 300 scenes
+loaded test: 300 scenes
+motion thresholds={'speed_px_per_frame': [3.977578341960907, 5.974017381668091, 8.614603281021118], 'acceleration_px_per_frame2': [1.2502350211143494, 2.121480941772461, 3.8322800993919373]}
+model mode=no_flow seed=0
+/root/miniconda3/envs/ocwm/lib/python3.11/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+  collected train
+  collected validation
+  collected test
+model mode=no_flow seed=1
+  collected train
+  collected validation
+  collected test
+model mode=no_flow seed=2
+  collected train
+  collected validation
+  collected test
+model mode=aligned_flow seed=0
+  collected train
+  collected validation
+  collected test
+  scale=-1.0 mse=0.044243
+  scale=-0.5 mse=0.034016
+  scale=+0.0 mse=0.024063
+  scale=+0.5 mse=0.017308
+  scale=+1.0 mse=0.014919
+  scale=+1.5 mse=0.016632
+  scale=+2.0 mse=0.021286
+model mode=aligned_flow seed=1
+  collected train
+  collected validation
+  collected test
+  scale=-1.0 mse=0.046384
+  scale=-0.5 mse=0.036050
+  scale=+0.0 mse=0.025491
+  scale=+0.5 mse=0.017314
+  scale=+1.0 mse=0.014924
+  scale=+1.5 mse=0.017104
+  scale=+2.0 mse=0.022151
+model mode=aligned_flow seed=2
+  collected train
+  collected validation
+  collected test
+  scale=-1.0 mse=0.047632
+  scale=-0.5 mse=0.036838
+  scale=+0.0 mse=0.025735
+  scale=+0.5 mse=0.017914
+  scale=+1.0 mse=0.014992
+  scale=+1.5 mse=0.016410
+  scale=+2.0 mse=0.020730
+model mode=input_aux seed=0
+  collected train
+  collected validation
+  collected test
+model mode=input_aux seed=1
+  collected train
+  collected validation
+  collected test
+model mode=input_aux seed=2
+  collected train
+  collected validation
+  collected test
+COMPLETE: /root/autodl-tmp/oc-causal-wm/out/movi_c_flow/interpretability/wm_flow_004

@@ -1,0 +1,24 @@
+{
+  "data_root": "/autodl-fs/data/movi_c_flow_v2_1200",
+  "checkpoint_root": "/root/autodl-tmp/oc-causal-wm/models/movi_c_flow/full_1200",
+  "output_dir": "/root/autodl-tmp/oc-causal-wm/out/movi_c_flow/interpretability/wm_flow_004",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "modes": [
+    "no_flow",
+    "aligned_flow",
+    "input_aux"
+  ],
+  "batch_size": 128,
+  "device": "cuda",
+  "max_scenes": 0,
+  "case_count": 6,
+  "flow_order": "xy",
+  "device_resolved": "cuda",
+  "torch": "2.5.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "pixel_scale": 127.0
+}

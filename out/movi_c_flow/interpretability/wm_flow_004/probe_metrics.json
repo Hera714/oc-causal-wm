@@ -1,0 +1,2392 @@
+{
+  "protocol": "Frozen predictor; train-only ridge probe; lambda chosen on validation; test once.",
+  "per_seed_layer_target": [
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "ridge_lambda": 0.0,
+      "test": {
+        "r2": 0.9999993626541207,
+        "coordinate_mae_px": 0.0008208684426565452,
+        "epe_px": 0.0013172052221451362,
+        "direction_cosine": 0.9999992273718037,
+        "direction_8bin_accuracy": 0.9993887530562348,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "ridge_lambda": 0.001,
+      "test": {
+        "r2": 0.5444582730970586,
+        "coordinate_mae_px": 2.0912075804911834,
+        "epe_px": 3.3184898188952565,
+        "direction_cosine": 0.8679668218434845,
+        "direction_8bin_accuracy": 0.6449567723342939,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.516178757439971,
+        "coordinate_mae_px": 1.8091514847988155,
+        "epe_px": 2.868660017920928,
+        "direction_cosine": 0.827632772917208,
+        "direction_8bin_accuracy": 0.522360248447205,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "ridge_lambda": 0.0001,
+      "test": {
+        "r2": 0.16570611575482352,
+        "coordinate_mae_px": 1.9419316027160396,
+        "epe_px": 3.066004289913204,
+        "direction_cosine": 0.5076063730724522,
+        "direction_8bin_accuracy": 0.31769856160100063,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 0.01,
+      "test": {
+        "r2": 0.6510496992178,
+        "coordinate_mae_px": 13.858920422047374,
+        "epe_px": 21.932023994794424,
+        "direction_cosine": 0.6420728196534582,
+        "direction_8bin_accuracy": 0.4086666666666667,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.762525149667313,
+        "coordinate_mae_px": 1.588546316683025,
+        "epe_px": 2.50795625666539,
+        "direction_cosine": 0.8958796463875609,
+        "direction_8bin_accuracy": 0.6742053789731052,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.48896199336614177,
+        "coordinate_mae_px": 2.4350685408432606,
+        "epe_px": 3.855067057418575,
+        "direction_cosine": 0.8369050001491193,
+        "direction_8bin_accuracy": 0.5930835734870317,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.4890547068069434,
+        "coordinate_mae_px": 1.8450126636607778,
+        "epe_px": 2.922648462473368,
+        "direction_cosine": 0.8166442304260151,
+        "direction_8bin_accuracy": 0.5198757763975155,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.06948880396485113,
+        "coordinate_mae_px": 1.9140287887232788,
+        "epe_px": 3.023800180920703,
+        "direction_cosine": 0.5531112322222113,
+        "direction_8bin_accuracy": 0.3333333333333333,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.4031041200845217,
+        "coordinate_mae_px": 16.68945682807012,
+        "epe_px": 26.35064630676573,
+        "direction_cosine": 0.5654340308102728,
+        "direction_8bin_accuracy": 0.36333333333333334,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7100152269031803,
+        "coordinate_mae_px": 1.7445677724510358,
+        "epe_px": 2.7641488817794215,
+        "direction_cosine": 0.8770008852424479,
+        "direction_8bin_accuracy": 0.6491442542787286,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.4875200624465743,
+        "coordinate_mae_px": 2.452427512062193,
+        "epe_px": 3.8920086045670286,
+        "direction_cosine": 0.8362416293555479,
+        "direction_8bin_accuracy": 0.5809798270893372,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.49117934121333673,
+        "coordinate_mae_px": 1.8497089586176576,
+        "epe_px": 2.9280276390997164,
+        "direction_cosine": 0.8151710331108878,
+        "direction_8bin_accuracy": 0.5273291925465838,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.041269634314401005,
+        "coordinate_mae_px": 1.8941106869931925,
+        "epe_px": 2.987762093246677,
+        "direction_cosine": 0.5650224405036826,
+        "direction_8bin_accuracy": 0.32645403377110693,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.3282791233502671,
+        "coordinate_mae_px": 17.264821130502188,
+        "epe_px": 27.308766814101784,
+        "direction_cosine": 0.5342916295726154,
+        "direction_8bin_accuracy": 0.336,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "ridge_lambda": 0.0,
+      "test": {
+        "r2": 0.9999992639276142,
+        "coordinate_mae_px": 0.0008391494085883768,
+        "epe_px": 0.0012986938094845908,
+        "direction_cosine": 0.9999995381766955,
+        "direction_8bin_accuracy": 0.9993887530562348,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "ridge_lambda": 0.001,
+      "test": {
+        "r2": 0.5433825516364106,
+        "coordinate_mae_px": 2.0952268984983053,
+        "epe_px": 3.324780280726377,
+        "direction_cosine": 0.8676723621724846,
+        "direction_8bin_accuracy": 0.6438040345821325,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.5178824484839162,
+        "coordinate_mae_px": 1.8053189744351008,
+        "epe_px": 2.861329467340945,
+        "direction_cosine": 0.8267333450916414,
+        "direction_8bin_accuracy": 0.5242236024844721,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "ridge_lambda": 0.0001,
+      "test": {
+        "r2": 0.14008326057299259,
+        "coordinate_mae_px": 1.9534012715293982,
+        "epe_px": 3.0839471526097353,
+        "direction_cosine": 0.5081573434011326,
+        "direction_8bin_accuracy": 0.31269543464665417,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 0.001,
+      "test": {
+        "r2": 0.6496123449805818,
+        "coordinate_mae_px": 13.844837135800185,
+        "epe_px": 21.924528716265897,
+        "direction_cosine": 0.6439334652875669,
+        "direction_8bin_accuracy": 0.41133333333333333,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.8012131775831115,
+        "coordinate_mae_px": 1.425078022453401,
+        "epe_px": 2.256346299916282,
+        "direction_cosine": 0.9126524479567828,
+        "direction_8bin_accuracy": 0.7035452322738386,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.5212843782835814,
+        "coordinate_mae_px": 2.3136930273998706,
+        "epe_px": 3.660887791654122,
+        "direction_cosine": 0.8485763184162692,
+        "direction_8bin_accuracy": 0.6103746397694525,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.505868000969921,
+        "coordinate_mae_px": 1.8181699873069344,
+        "epe_px": 2.8847647581513822,
+        "direction_cosine": 0.8219838479199119,
+        "direction_8bin_accuracy": 0.5267080745341615,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.07707929235364452,
+        "coordinate_mae_px": 1.939273807244057,
+        "epe_px": 3.050768684848348,
+        "direction_cosine": 0.5426053175283541,
+        "direction_8bin_accuracy": 0.3233270794246404,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.41972412624609023,
+        "coordinate_mae_px": 16.774417487445607,
+        "epe_px": 26.483400021541442,
+        "direction_cosine": 0.5785489264543391,
+        "direction_8bin_accuracy": 0.3566666666666667,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7427260601923973,
+        "coordinate_mae_px": 1.5979838448067276,
+        "epe_px": 2.5300928296154788,
+        "direction_cosine": 0.8989279044713918,
+        "direction_8bin_accuracy": 0.6705378973105135,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5148710495634308,
+        "coordinate_mae_px": 2.335095826310295,
+        "epe_px": 3.700453633604447,
+        "direction_cosine": 0.8459508144833672,
+        "direction_8bin_accuracy": 0.607492795389049,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5071930954630919,
+        "coordinate_mae_px": 1.8150864370064088,
+        "epe_px": 2.883443106397375,
+        "direction_cosine": 0.8220497786904025,
+        "direction_8bin_accuracy": 0.5279503105590062,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.04473838994249146,
+        "coordinate_mae_px": 1.9041999609467608,
+        "epe_px": 3.003205533228124,
+        "direction_cosine": 0.5529874383606491,
+        "direction_8bin_accuracy": 0.32833020637898686,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.34697350702771046,
+        "coordinate_mae_px": 17.261674845026057,
+        "epe_px": 27.30862955117676,
+        "direction_cosine": 0.5378268813805565,
+        "direction_8bin_accuracy": 0.3353333333333333,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "ridge_lambda": 0.0,
+      "test": {
+        "r2": 0.9999997163335895,
+        "coordinate_mae_px": 0.0008935785269224944,
+        "epe_px": 0.0014073633562850835,
+        "direction_cosine": 0.9999991973045159,
+        "direction_8bin_accuracy": 0.9993887530562348,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "ridge_lambda": 0.001,
+      "test": {
+        "r2": 0.5369966472507055,
+        "coordinate_mae_px": 2.1038307949093915,
+        "epe_px": 3.3381372311345805,
+        "direction_cosine": 0.8671749603330818,
+        "direction_8bin_accuracy": 0.6472622478386167,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.5136315786348622,
+        "coordinate_mae_px": 1.8117136928785154,
+        "epe_px": 2.8726284327596043,
+        "direction_cosine": 0.826629503659314,
+        "direction_8bin_accuracy": 0.5248447204968945,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "ridge_lambda": 0.001,
+      "test": {
+        "r2": 0.15678606117703475,
+        "coordinate_mae_px": 1.9554849876397131,
+        "epe_px": 3.085869386272066,
+        "direction_cosine": 0.5017019102813368,
+        "direction_8bin_accuracy": 0.31269543464665417,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.6517653581049386,
+        "coordinate_mae_px": 13.885785711311398,
+        "epe_px": 21.978585330566247,
+        "direction_cosine": 0.6408696270004957,
+        "direction_8bin_accuracy": 0.4053333333333333,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7855235818165042,
+        "coordinate_mae_px": 1.4739078548971254,
+        "epe_px": 2.3209238228550717,
+        "direction_cosine": 0.9020743149268344,
+        "direction_8bin_accuracy": 0.6986552567237164,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.5090449606618448,
+        "coordinate_mae_px": 2.349143557286817,
+        "epe_px": 3.7321008391028867,
+        "direction_cosine": 0.8433107638263374,
+        "direction_8bin_accuracy": 0.5902017291066283,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.5017794692957265,
+        "coordinate_mae_px": 1.829622081805528,
+        "epe_px": 2.901981210633438,
+        "direction_cosine": 0.8235882773882908,
+        "direction_8bin_accuracy": 0.5024844720496895,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.06375253908652045,
+        "coordinate_mae_px": 1.8819187672726472,
+        "epe_px": 2.978518602194169,
+        "direction_cosine": 0.5568838228916566,
+        "direction_8bin_accuracy": 0.3333333333333333,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.41530501827872146,
+        "coordinate_mae_px": 16.58182696241705,
+        "epe_px": 26.259922836860998,
+        "direction_cosine": 0.5500060669305201,
+        "direction_8bin_accuracy": 0.3466666666666667,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.724825259061064,
+        "coordinate_mae_px": 1.6829146862380413,
+        "epe_px": 2.652329384839151,
+        "direction_cosine": 0.8844970265338992,
+        "direction_8bin_accuracy": 0.6558679706601467,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.4904492380495292,
+        "coordinate_mae_px": 2.4009403802152205,
+        "epe_px": 3.80985427937482,
+        "direction_cosine": 0.8415651468673463,
+        "direction_8bin_accuracy": 0.592507204610951,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.4895942202532404,
+        "coordinate_mae_px": 1.8376920247634556,
+        "epe_px": 2.92094657616331,
+        "direction_cosine": 0.8182858225979973,
+        "direction_8bin_accuracy": 0.5186335403726708,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.04424152479581822,
+        "coordinate_mae_px": 1.9030383103132802,
+        "epe_px": 3.0112446504860286,
+        "direction_cosine": 0.5492801681143443,
+        "direction_8bin_accuracy": 0.32707942464040024,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.349618913077019,
+        "coordinate_mae_px": 17.104998903855844,
+        "epe_px": 26.98207924480408,
+        "direction_cosine": 0.5307934860368646,
+        "direction_8bin_accuracy": 0.35133333333333333,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "ridge_lambda": 0.0001,
+      "test": {
+        "r2": 0.9999359250524112,
+        "coordinate_mae_px": 0.017979136041118695,
+        "epe_px": 0.02799661669152553,
+        "direction_cosine": 0.9999633054800577,
+        "direction_8bin_accuracy": 0.9938875305623472,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.6249421960892525,
+        "coordinate_mae_px": 1.9142493126885243,
+        "epe_px": 3.0398520269280076,
+        "direction_cosine": 0.8856180572912694,
+        "direction_8bin_accuracy": 0.6783861671469741,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.5951614338713628,
+        "coordinate_mae_px": 1.632009669991336,
+        "epe_px": 2.5869175660127537,
+        "direction_cosine": 0.8485205644725331,
+        "direction_8bin_accuracy": 0.5801242236024845,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.32085417076981626,
+        "coordinate_mae_px": 1.7665412394926807,
+        "epe_px": 2.7856742157328247,
+        "direction_cosine": 0.6000716099840815,
+        "direction_8bin_accuracy": 0.3614759224515322,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.7157037931630821,
+        "coordinate_mae_px": 12.45172289125912,
+        "epe_px": 19.699002489185798,
+        "direction_cosine": 0.6970146754232769,
+        "direction_8bin_accuracy": 0.45866666666666667,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7553419421078248,
+        "coordinate_mae_px": 1.621248920597138,
+        "epe_px": 2.5483072245213836,
+        "direction_cosine": 0.8903046873596917,
+        "direction_8bin_accuracy": 0.6766503667481663,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5824005450744214,
+        "coordinate_mae_px": 2.1747752530921196,
+        "epe_px": 3.4373534478175953,
+        "direction_cosine": 0.8659633900223355,
+        "direction_8bin_accuracy": 0.6368876080691642,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5873290928607766,
+        "coordinate_mae_px": 1.650560312535871,
+        "epe_px": 2.6040892334001353,
+        "direction_cosine": 0.8444450042828893,
+        "direction_8bin_accuracy": 0.577639751552795,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.04975819651915814,
+        "coordinate_mae_px": 1.86197933285051,
+        "epe_px": 2.9446433899124527,
+        "direction_cosine": 0.5705336007659966,
+        "direction_8bin_accuracy": 0.342714196372733,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.34678348801757974,
+        "coordinate_mae_px": 17.464137967616402,
+        "epe_px": 27.45203225923852,
+        "direction_cosine": 0.537192119512146,
+        "direction_8bin_accuracy": 0.3353333333333333,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7169665845503483,
+        "coordinate_mae_px": 1.7355196102346848,
+        "epe_px": 2.738160768380044,
+        "direction_cosine": 0.8795575638377539,
+        "direction_8bin_accuracy": 0.6509779951100244,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.582204778353171,
+        "coordinate_mae_px": 2.183847088502558,
+        "epe_px": 3.451437774365462,
+        "direction_cosine": 0.8663878741041211,
+        "direction_8bin_accuracy": 0.6270893371757925,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5809889595279886,
+        "coordinate_mae_px": 1.6674119983019344,
+        "epe_px": 2.629880413497943,
+        "direction_cosine": 0.8440134517577375,
+        "direction_8bin_accuracy": 0.568944099378882,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.021479738772160695,
+        "coordinate_mae_px": 1.9014493868294242,
+        "epe_px": 2.9992222308573533,
+        "direction_cosine": 0.5497127656959948,
+        "direction_8bin_accuracy": 0.32895559724828016,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.2816001345807675,
+        "coordinate_mae_px": 18.074403488141527,
+        "epe_px": 28.469425223376017,
+        "direction_cosine": 0.49690067135913296,
+        "direction_8bin_accuracy": 0.31666666666666665,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "ridge_lambda": 0.0,
+      "test": {
+        "r2": 0.9999545331767989,
+        "coordinate_mae_px": 0.016319171314973128,
+        "epe_px": 0.025673731026073236,
+        "direction_cosine": 0.9999421009931366,
+        "direction_8bin_accuracy": 0.9951100244498777,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.6209768017031361,
+        "coordinate_mae_px": 1.9246619056554404,
+        "epe_px": 3.053641262906347,
+        "direction_cosine": 0.8860213993152734,
+        "direction_8bin_accuracy": 0.6749279538904899,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.594992550014593,
+        "coordinate_mae_px": 1.6289155780513798,
+        "epe_px": 2.580653689639489,
+        "direction_cosine": 0.8506396881073308,
+        "direction_8bin_accuracy": 0.5881987577639751,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.21486707010343775,
+        "coordinate_mae_px": 1.7574714773937787,
+        "epe_px": 2.7683444593638216,
+        "direction_cosine": 0.6312556861292747,
+        "direction_8bin_accuracy": 0.38711694809255787,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.7175040569151817,
+        "coordinate_mae_px": 12.389554262630266,
+        "epe_px": 19.583324479803046,
+        "direction_cosine": 0.700101478511167,
+        "direction_8bin_accuracy": 0.4646666666666667,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7346521070690253,
+        "coordinate_mae_px": 1.7050110197027075,
+        "epe_px": 2.681621747923316,
+        "direction_cosine": 0.892832792031178,
+        "direction_8bin_accuracy": 0.6687041564792175,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5922234989943371,
+        "coordinate_mae_px": 2.1458318872069553,
+        "epe_px": 3.401086962173132,
+        "direction_cosine": 0.8692615197930177,
+        "direction_8bin_accuracy": 0.6374639769452449,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5944334531661151,
+        "coordinate_mae_px": 1.6408196145868903,
+        "epe_px": 2.588140954117094,
+        "direction_cosine": 0.8478914156544998,
+        "direction_8bin_accuracy": 0.5975155279503106,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.03985934066731589,
+        "coordinate_mae_px": 1.8704628867425572,
+        "epe_px": 2.955376803605702,
+        "direction_cosine": 0.5594272583778889,
+        "direction_8bin_accuracy": 0.3233270794246404,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.30630684827196664,
+        "coordinate_mae_px": 17.490686241729204,
+        "epe_px": 27.681814196744,
+        "direction_cosine": 0.5122277086848083,
+        "direction_8bin_accuracy": 0.3393333333333333,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.7072979618217494,
+        "coordinate_mae_px": 1.7780055655590692,
+        "epe_px": 2.7989439234156723,
+        "direction_cosine": 0.8850115952169082,
+        "direction_8bin_accuracy": 0.6466992665036675,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5848610625936534,
+        "coordinate_mae_px": 2.1843017945801244,
+        "epe_px": 3.4563964818049158,
+        "direction_cosine": 0.8661811633457601,
+        "direction_8bin_accuracy": 0.6368876080691642,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.592210093891016,
+        "coordinate_mae_px": 1.6520375796422069,
+        "epe_px": 2.6043701382348377,
+        "direction_cosine": 0.8444609857555345,
+        "direction_8bin_accuracy": 0.5832298136645963,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.022980796897656086,
+        "coordinate_mae_px": 1.8801565614967934,
+        "epe_px": 2.97408150537558,
+        "direction_cosine": 0.5508132762163056,
+        "direction_8bin_accuracy": 0.3239524702939337,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.28450357013677696,
+        "coordinate_mae_px": 17.739871742013687,
+        "epe_px": 28.078461013482265,
+        "direction_cosine": 0.4790983278568204,
+        "direction_8bin_accuracy": 0.31,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "ridge_lambda": 0.0001,
+      "test": {
+        "r2": 0.9998975969696291,
+        "coordinate_mae_px": 0.020697768290989453,
+        "epe_px": 0.03271817335528787,
+        "direction_cosine": 0.9999045103988573,
+        "direction_8bin_accuracy": 0.9938875305623472,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.6151573101257942,
+        "coordinate_mae_px": 1.9366126260444965,
+        "epe_px": 3.0732962629642806,
+        "direction_cosine": 0.8840224481182978,
+        "direction_8bin_accuracy": 0.6749279538904899,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.5748635100520774,
+        "coordinate_mae_px": 1.6648305119116964,
+        "epe_px": 2.6342048847424233,
+        "direction_cosine": 0.844411050166256,
+        "direction_8bin_accuracy": 0.5782608695652174,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.20177006031063272,
+        "coordinate_mae_px": 1.7924093640791736,
+        "epe_px": 2.8168727024560014,
+        "direction_cosine": 0.6112677044178616,
+        "direction_8bin_accuracy": 0.37335834896810505,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.7202993470690279,
+        "coordinate_mae_px": 12.313594163222184,
+        "epe_px": 19.50144751454128,
+        "direction_cosine": 0.7000203689986723,
+        "direction_8bin_accuracy": 0.4666666666666667,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7340119021412888,
+        "coordinate_mae_px": 1.7338949973875624,
+        "epe_px": 2.7295274214130694,
+        "direction_cosine": 0.8908663327326065,
+        "direction_8bin_accuracy": 0.6454767726161369,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5812772636990818,
+        "coordinate_mae_px": 2.195682107280299,
+        "epe_px": 3.46760756763381,
+        "direction_cosine": 0.865789917448899,
+        "direction_8bin_accuracy": 0.6432276657060518,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.588375783991987,
+        "coordinate_mae_px": 1.646911518557839,
+        "epe_px": 2.6047112980948093,
+        "direction_cosine": 0.8438022632062866,
+        "direction_8bin_accuracy": 0.5801242236024845,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.046898422193675904,
+        "coordinate_mae_px": 1.944431645449596,
+        "epe_px": 3.0699072442752433,
+        "direction_cosine": 0.5240707055148104,
+        "direction_8bin_accuracy": 0.30143839899937463,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.31425428694454527,
+        "coordinate_mae_px": 17.917377685184928,
+        "epe_px": 28.238330120453433,
+        "direction_cosine": 0.5165671408053251,
+        "direction_8bin_accuracy": 0.31066666666666665,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7064762357091102,
+        "coordinate_mae_px": 1.787582727016038,
+        "epe_px": 2.823282533634068,
+        "direction_cosine": 0.8819024176727482,
+        "direction_8bin_accuracy": 0.6546454767726161,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5819468366872884,
+        "coordinate_mae_px": 2.193182906113742,
+        "epe_px": 3.464731302816705,
+        "direction_cosine": 0.8645263539844,
+        "direction_8bin_accuracy": 0.6414985590778098,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5881258440562009,
+        "coordinate_mae_px": 1.656595148485921,
+        "epe_px": 2.6119658854249828,
+        "direction_cosine": 0.8437202674539606,
+        "direction_8bin_accuracy": 0.5739130434782609,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.009911223043974071,
+        "coordinate_mae_px": 1.9211348210264454,
+        "epe_px": 3.0313725405119976,
+        "direction_cosine": 0.5387633677638033,
+        "direction_8bin_accuracy": 0.324577861163227,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.25691059841258845,
+        "coordinate_mae_px": 18.235299860987297,
+        "epe_px": 28.82952725666539,
+        "direction_cosine": 0.4678662963381886,
+        "direction_8bin_accuracy": 0.30866666666666664,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "ridge_lambda": 0.0,
+      "test": {
+        "r2": 0.9999600442365018,
+        "coordinate_mae_px": 0.014167076743693168,
+        "epe_px": 0.02206594379634061,
+        "direction_cosine": 0.999966694865555,
+        "direction_8bin_accuracy": 0.9938875305623472,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.6189693428982431,
+        "coordinate_mae_px": 1.9557886580154968,
+        "epe_px": 3.0974701313801916,
+        "direction_cosine": 0.8822836446050278,
+        "direction_8bin_accuracy": 0.6778097982708934,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.595354563431103,
+        "coordinate_mae_px": 1.63166318520167,
+        "epe_px": 2.5863612734818497,
+        "direction_cosine": 0.8485970196002879,
+        "direction_8bin_accuracy": 0.5807453416149069,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.2089232408762557,
+        "coordinate_mae_px": 1.7628844868497295,
+        "epe_px": 2.7761867547680046,
+        "direction_cosine": 0.6271121807469245,
+        "direction_8bin_accuracy": 0.39399624765478425,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.7162682646268654,
+        "coordinate_mae_px": 12.4445536117234,
+        "epe_px": 19.672838837078064,
+        "direction_cosine": 0.697236146640155,
+        "direction_8bin_accuracy": 0.462,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7798308929076052,
+        "coordinate_mae_px": 1.5246478202550322,
+        "epe_px": 2.413796994613088,
+        "direction_cosine": 0.8989496626967585,
+        "direction_8bin_accuracy": 0.6876528117359413,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.590249514557978,
+        "coordinate_mae_px": 2.1331308960085087,
+        "epe_px": 3.3771266026748794,
+        "direction_cosine": 0.8695382666247486,
+        "direction_8bin_accuracy": 0.6536023054755044,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 0.0,
+      "test": {
+        "r2": 0.5867409553975755,
+        "coordinate_mae_px": 1.6510008151826585,
+        "epe_px": 2.6102950203613813,
+        "direction_cosine": 0.8448604409503061,
+        "direction_8bin_accuracy": 0.5739130434782609,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.09483662482285649,
+        "coordinate_mae_px": 1.8870437923991272,
+        "epe_px": 2.973560771553,
+        "direction_cosine": 0.5646067199946442,
+        "direction_8bin_accuracy": 0.33270794246404,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.3958204328817282,
+        "coordinate_mae_px": 16.680039898768992,
+        "epe_px": 26.242144243710282,
+        "direction_cosine": 0.5549546422274901,
+        "direction_8bin_accuracy": 0.36133333333333334,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.7193202174169124,
+        "coordinate_mae_px": 1.6950916685734505,
+        "epe_px": 2.6706907782392553,
+        "direction_cosine": 0.8861178111582616,
+        "direction_8bin_accuracy": 0.6625916870415648,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5862926074387642,
+        "coordinate_mae_px": 2.158068965544214,
+        "epe_px": 3.4120056875256783,
+        "direction_cosine": 0.8676385632864785,
+        "direction_8bin_accuracy": 0.6345821325648415,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5866275160801705,
+        "coordinate_mae_px": 1.6481184669081976,
+        "epe_px": 2.6078391674124317,
+        "direction_cosine": 0.8429785032504863,
+        "direction_8bin_accuracy": 0.5788819875776398,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.03629225995879004,
+        "coordinate_mae_px": 1.8746484529309966,
+        "epe_px": 2.9602371497093145,
+        "direction_cosine": 0.5665421733468164,
+        "direction_8bin_accuracy": 0.3302063789868668,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.2950164795873269,
+        "coordinate_mae_px": 17.400879395619203,
+        "epe_px": 27.571357580687707,
+        "direction_cosine": 0.5158389184524453,
+        "direction_8bin_accuracy": 0.334,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "ridge_lambda": 0.0,
+      "test": {
+        "r2": 0.9999535453695549,
+        "coordinate_mae_px": 0.015235026572435252,
+        "epe_px": 0.02396065939454478,
+        "direction_cosine": 0.999937752986135,
+        "direction_8bin_accuracy": 0.9957212713936431,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.6203720618066484,
+        "coordinate_mae_px": 1.9221152275274958,
+        "epe_px": 3.0500628047202905,
+        "direction_cosine": 0.885793838397254,
+        "direction_8bin_accuracy": 0.6789625360230548,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.5953939157256036,
+        "coordinate_mae_px": 1.6295158559619674,
+        "epe_px": 2.5808734911531177,
+        "direction_cosine": 0.8505837945541882,
+        "direction_8bin_accuracy": 0.5925465838509317,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.3215053637890555,
+        "coordinate_mae_px": 1.7703331041500239,
+        "epe_px": 2.7899697193591884,
+        "direction_cosine": 0.5988394577928817,
+        "direction_8bin_accuracy": 0.36397748592870544,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 1.0,
+      "test": {
+        "r2": 0.716939079841425,
+        "coordinate_mae_px": 12.408096588080943,
+        "epe_px": 19.606510448270452,
+        "direction_cosine": 0.7017032481784901,
+        "direction_8bin_accuracy": 0.468,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.7418394371329191,
+        "coordinate_mae_px": 1.6434217554017965,
+        "epe_px": 2.5857731554808474,
+        "direction_cosine": 0.8981426988507996,
+        "direction_8bin_accuracy": 0.6797066014669927,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5893657937634291,
+        "coordinate_mae_px": 2.1430788722588034,
+        "epe_px": 3.3915971770818065,
+        "direction_cosine": 0.8690843002027747,
+        "direction_8bin_accuracy": 0.6536023054755044,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5883288498106123,
+        "coordinate_mae_px": 1.6436010130768246,
+        "epe_px": 2.5990363809086685,
+        "direction_cosine": 0.846957127352666,
+        "direction_8bin_accuracy": 0.5900621118012422,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.05298162642764004,
+        "coordinate_mae_px": 1.8764766389075742,
+        "epe_px": 2.9571405542631766,
+        "direction_cosine": 0.574292103752458,
+        "direction_8bin_accuracy": 0.3258286429018136,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.3332613242785003,
+        "coordinate_mae_px": 17.24944799378716,
+        "epe_px": 27.280815063644145,
+        "direction_cosine": 0.5351492122296694,
+        "direction_8bin_accuracy": 0.346,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.7157274786436341,
+        "coordinate_mae_px": 1.7350051572045624,
+        "epe_px": 2.7367045591122716,
+        "direction_cosine": 0.8878864296655324,
+        "direction_8bin_accuracy": 0.6693154034229829,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5802353634784659,
+        "coordinate_mae_px": 2.1900755595987063,
+        "epe_px": 3.466369837374157,
+        "direction_cosine": 0.8668028255590362,
+        "direction_8bin_accuracy": 0.6455331412103746,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5827870799044234,
+        "coordinate_mae_px": 1.6589281639950253,
+        "epe_px": 2.619387020629909,
+        "direction_cosine": 0.8439761229869703,
+        "direction_8bin_accuracy": 0.5826086956521739,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.022335187360073783,
+        "coordinate_mae_px": 1.8997819972775474,
+        "epe_px": 2.994251493461933,
+        "direction_cosine": 0.5471259564961924,
+        "direction_8bin_accuracy": 0.3170731707317073,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.2895514952552837,
+        "coordinate_mae_px": 17.625682648183204,
+        "epe_px": 28.033806732071746,
+        "direction_cosine": 0.49406560007786604,
+        "direction_8bin_accuracy": 0.3333333333333333,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "ridge_lambda": 0.01,
+      "test": {
+        "r2": 0.9996724569562061,
+        "coordinate_mae_px": 0.03959898989080078,
+        "epe_px": 0.06221284921536708,
+        "direction_cosine": 0.9996679671134263,
+        "direction_8bin_accuracy": 0.988997555012225,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.6140564219740103,
+        "coordinate_mae_px": 1.9408247783593453,
+        "epe_px": 3.07684307739926,
+        "direction_cosine": 0.8825386680959751,
+        "direction_8bin_accuracy": 0.6789625360230548,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.5711663441991757,
+        "coordinate_mae_px": 1.6696508541150143,
+        "epe_px": 2.640968929092099,
+        "direction_cosine": 0.8445102747623475,
+        "direction_8bin_accuracy": 0.5726708074534161,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.20405879333151122,
+        "coordinate_mae_px": 1.7923553120875135,
+        "epe_px": 2.8157402678724686,
+        "direction_cosine": 0.6105426963613704,
+        "direction_8bin_accuracy": 0.37523452157598497,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 0.1,
+      "test": {
+        "r2": 0.7191510092806255,
+        "coordinate_mae_px": 12.341873301138785,
+        "epe_px": 19.541670354790885,
+        "direction_cosine": 0.701531522278479,
+        "direction_8bin_accuracy": 0.468,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.7257162060305615,
+        "coordinate_mae_px": 1.7223295796735554,
+        "epe_px": 2.7184565991466387,
+        "direction_cosine": 0.8906411698642006,
+        "direction_8bin_accuracy": 0.6613691931540342,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5822011879268358,
+        "coordinate_mae_px": 2.1793078380509847,
+        "epe_px": 3.448906639935571,
+        "direction_cosine": 0.8685164501786187,
+        "direction_8bin_accuracy": 0.6432276657060518,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5896747991945693,
+        "coordinate_mae_px": 1.6492004005954186,
+        "epe_px": 2.6023026829942943,
+        "direction_cosine": 0.8445606997068219,
+        "direction_8bin_accuracy": 0.5826086956521739,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.03571819411384791,
+        "coordinate_mae_px": 1.886961204581504,
+        "epe_px": 2.977653706235572,
+        "direction_cosine": 0.5580228093624607,
+        "direction_8bin_accuracy": 0.3170731707317073,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.30039029309387255,
+        "coordinate_mae_px": 17.655008704481414,
+        "epe_px": 28.003179611633538,
+        "direction_cosine": 0.5063419052665595,
+        "direction_8bin_accuracy": 0.32866666666666666,
+        "sample_count": 1501
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.7085417023735727,
+        "coordinate_mae_px": 1.7864132914301147,
+        "epe_px": 2.825313808591057,
+        "direction_cosine": 0.8839690166116456,
+        "direction_8bin_accuracy": 0.6577017114914425,
+        "sample_count": 1637
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5802597651953867,
+        "coordinate_mae_px": 2.1840788530392823,
+        "epe_px": 3.462812565196872,
+        "direction_cosine": 0.8671089230966819,
+        "direction_8bin_accuracy": 0.6449567723342939,
+        "sample_count": 1737
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.5833049387653995,
+        "coordinate_mae_px": 1.6651003390581116,
+        "epe_px": 2.6270192685645752,
+        "direction_cosine": 0.8417475045571234,
+        "direction_8bin_accuracy": 0.5726708074534161,
+        "sample_count": 1611
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "ridge_lambda": 100.0,
+      "test": {
+        "r2": 0.007924999400072963,
+        "coordinate_mae_px": 1.9307637317516686,
+        "epe_px": 3.046361841955846,
+        "direction_cosine": 0.5413910747080488,
+        "direction_8bin_accuracy": 0.3214509068167605,
+        "sample_count": 1616
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "ridge_lambda": 10.0,
+      "test": {
+        "r2": 0.2531098905400113,
+        "coordinate_mae_px": 18.37153873325688,
+        "epe_px": 29.079073563630605,
+        "direction_cosine": 0.4703981247579505,
+        "direction_8bin_accuracy": 0.31466666666666665,
+        "sample_count": 1501
+      }
+    }
+  ],
+  "r2_summary": [
+    {
+      "mode": "aligned_flow",
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "mean": 0.7178357323824306,
+      "sample_std": 0.002315660896438523,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "mean": 0.24583043372796223,
+      "sample_std": 0.06530163670362445,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "mean": 0.6203587693060609,
+      "sample_std": 0.004921632997526994,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "mean": 0.5883391646460111,
+      "sample_std": 0.011670564703154833,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "mean": 0.9999293517329465,
+      "sample_std": 2.9031695064390484e-05,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "mean": 0.32244820774469724,
+      "sample_std": 0.021446324739530752,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "mean": 0.04550531979338331,
+      "sample_std": 0.005094348586145594,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "mean": 0.5853004359226134,
+      "sample_std": 0.0060217972386443054,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "mean": 0.5900461100062929,
+      "sample_std": 0.0038354237813529113,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "mean": 0.7413353171060463,
+      "sample_std": 0.012134315948693186,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "mean": 0.27433810104337764,
+      "sample_std": 0.01516231745039649,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "mean": 0.01812391957126362,
+      "sample_std": 0.007151893599673045,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "mean": 0.5830042258780376,
+      "sample_std": 0.001613231358824214,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "mean": 0.5871082991584019,
+      "sample_std": 0.00567934963816777,
+      "n": 3
+    },
+    {
+      "mode": "aligned_flow",
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "mean": 0.7102469273604027,
+      "sample_std": 0.005833879756546219,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "mean": 0.717452784582972,
+      "sample_std": 0.001508467303527455,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "mean": 0.24482913266560746,
+      "sample_std": 0.06644809272621154,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "mean": 0.6177992755596339,
+      "sample_std": 0.003316416711838407,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "mean": 0.5873049411186274,
+      "sample_std": 0.013976448763801714,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "mean": 0.9998620155207543,
+      "sample_std": 0.000164194688900307,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "mean": 0.34315735008470033,
+      "sample_std": 0.048478617864478664,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "mean": 0.06117881512144815,
+      "sample_std": 0.030399714459767274,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "mean": 0.587272165416081,
+      "sample_std": 0.0044137682464083765,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "mean": 0.5882482014675857,
+      "sample_std": 0.0014685836621433732,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "mean": 0.7491288453570286,
+      "sample_std": 0.02778401407542487,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "mean": 0.2792259551275406,
+      "sample_std": 0.02278164031829955,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "mean": 0.022184148906312262,
+      "sample_std": 0.014184233407640414,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "mean": 0.5822625787042056,
+      "sample_std": 0.003490128588171668,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "mean": 0.5842398449166645,
+      "sample_std": 0.002083932493808677,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "mean": 0.7145297994780396,
+      "sample_std": 0.005488162094239668,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "input_projection",
+      "target": "cv_residual_h8",
+      "mean": 0.6508091341011069,
+      "sample_std": 0.001096480761317925,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "input_projection",
+      "target": "first_acceleration",
+      "mean": 0.15419181250161695,
+      "sample_std": 0.013006931673523176,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "input_projection",
+      "target": "future_first_displacement",
+      "mean": 0.5416124906613916,
+      "sample_std": 0.004033460295974808,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "input_projection",
+      "target": "future_mean_velocity",
+      "mean": 0.5158975948529164,
+      "sample_std": 0.0021393370278356004,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "input_projection",
+      "target": "observed_velocity",
+      "mean": 0.9999994476384414,
+      "sample_std": 2.378750569412328e-07,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_1",
+      "target": "cv_residual_h8",
+      "mean": 0.41271108820311114,
+      "sample_std": 0.00860828125298605,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_1",
+      "target": "first_acceleration",
+      "mean": 0.0701068784683387,
+      "sample_std": 0.006684841077362765,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_1",
+      "target": "future_first_displacement",
+      "mean": 0.506430444103856,
+      "sample_std": 0.01631903533643398,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_1",
+      "target": "future_mean_velocity",
+      "mean": 0.4989007256908636,
+      "sample_std": 0.008768528309220897,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_1",
+      "target": "observed_velocity",
+      "mean": 0.7830873030223096,
+      "sample_std": 0.019458737543213922,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_2",
+      "target": "cv_residual_h8",
+      "mean": 0.3416238478183322,
+      "sample_std": 0.01163231690755804,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_2",
+      "target": "first_acceleration",
+      "mean": 0.043416516350903565,
+      "sample_std": 0.0018757786656446662,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_2",
+      "target": "future_first_displacement",
+      "mean": 0.4976134500198448,
+      "sample_std": 0.015017109373422084,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_2",
+      "target": "future_mean_velocity",
+      "mean": 0.495988885643223,
+      "sample_std": 0.009735445053014722,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "layer": "transformer_2",
+      "target": "observed_velocity",
+      "mean": 0.7258555153855472,
+      "sample_std": 0.01637973518373663,
+      "n": 3
+    }
+  ]
+}

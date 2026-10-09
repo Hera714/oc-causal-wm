@@ -1,0 +1,62 @@
+[
+  {
+    "rank": 0,
+    "scene_index": 32,
+    "video_id": "1706",
+    "object_index": 3,
+    "no_flow_mse": 0.03232151811773127,
+    "aligned_flow_mse": 0.007601350545883179,
+    "mse_gain": 0.02472016757184809,
+    "figure": "/root/autodl-tmp/oc-causal-wm/out/movi_c_flow/interpretability/wm_flow_004/figures/case_studies/case_00_1706_obj3.png"
+  },
+  {
+    "rank": 1,
+    "scene_index": 46,
+    "video_id": "2074",
+    "object_index": 4,
+    "no_flow_mse": 0.037053201879773824,
+    "aligned_flow_mse": 0.016533762216567993,
+    "mse_gain": 0.02051943966320583,
+    "figure": "/root/autodl-tmp/oc-causal-wm/out/movi_c_flow/interpretability/wm_flow_004/figures/case_studies/case_01_2074_obj4.png"
+  },
+  {
+    "rank": 2,
+    "scene_index": 235,
+    "video_id": "8180",
+    "object_index": 0,
+    "no_flow_mse": 0.022856162941974144,
+    "aligned_flow_mse": 0.006138157585392828,
+    "mse_gain": 0.016718005356581314,
+    "figure": "/root/autodl-tmp/oc-causal-wm/out/movi_c_flow/interpretability/wm_flow_004/figures/case_studies/case_02_8180_obj0.png"
+  },
+  {
+    "rank": 3,
+    "scene_index": 224,
+    "video_id": "7996",
+    "object_index": 0,
+    "no_flow_mse": 0.026877108961343765,
+    "aligned_flow_mse": 0.011386429890990257,
+    "mse_gain": 0.015490679070353508,
+    "figure": "/root/autodl-tmp/oc-causal-wm/out/movi_c_flow/interpretability/wm_flow_004/figures/case_studies/case_03_7996_obj0.png"
+  },
+  {
+    "rank": 4,
+    "scene_index": 190,
+    "video_id": "7072",
+    "object_index": 4,
+    "no_flow_mse": 0.02579474449157715,
+    "aligned_flow_mse": 0.03497061729431152,
+    "mse_gain": -0.009175872802734374,
+    "figure": "/root/autodl-tmp/oc-causal-wm/out/movi_c_flow/interpretability/wm_flow_004/figures/case_studies/case_04_7072_obj4.png"
+  },
+  {
+    "rank": 5,
+    "scene_index": 63,
+    "video_id": "2807",
+    "object_index": 3,
+    "no_flow_mse": 0.03833877522012462,
+    "aligned_flow_mse": 0.04603504097980002,
+    "mse_gain": -0.0076962657596754,
+    "figure": "/root/autodl-tmp/oc-causal-wm/out/movi_c_flow/interpretability/wm_flow_004/figures/case_studies/case_05_2807_obj3.png"
+  }
+]

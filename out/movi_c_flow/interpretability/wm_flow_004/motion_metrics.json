@@ -1,0 +1,886 @@
+{
+  "thresholds_from_train": {
+    "speed_px_per_frame": [
+      3.977578341960907,
+      5.974017381668091,
+      8.614603281021118
+    ],
+    "acceleration_px_per_frame2": [
+      1.2502350211143494,
+      2.121480941772461,
+      3.8322800993919373
+    ]
+  },
+  "per_seed": [
+    {
+      "mode": "no_flow",
+      "seed": 0,
+      "test": {
+        "position_mse": 0.01727241650223732,
+        "coordinate_mae_px": 11.093400955200195,
+        "ade_px": 17.58248519897461,
+        "fde_px": 25.84363555908203,
+        "velocity_epe_px_per_frame": 4.709537982940674,
+        "speed_mae_px_per_frame": 2.863630533218384,
+        "velocity_direction_cosine": 0.5534907579421997,
+        "acceleration_epe_px_per_frame2": 4.581214904785156,
+        "per_horizon_mse": [
+          0.004957427736371756,
+          0.008614951744675636,
+          0.011576445773243904,
+          0.014988484792411327,
+          0.019094757735729218,
+          0.022875308990478516,
+          0.026537898927927017,
+          0.0297499168664217
+        ],
+        "per_horizon_ade_px": [
+          6.608158111572266,
+          10.750280380249023,
+          14.027767181396484,
+          17.076148986816406,
+          19.961061477661133,
+          22.21929931640625,
+          24.241344451904297,
+          25.84363555908203
+        ]
+      },
+      "binned": {
+        "speed": [
+          {
+            "bin": 0,
+            "object_count": 392,
+            "position_mse": 0.007969848811626434
+          },
+          {
+            "bin": 1,
+            "object_count": 404,
+            "position_mse": 0.0080232173204422
+          },
+          {
+            "bin": 2,
+            "object_count": 412,
+            "position_mse": 0.011575397104024887
+          },
+          {
+            "bin": 3,
+            "object_count": 429,
+            "position_mse": 0.015071859583258629
+          }
+        ],
+        "acceleration": [
+          {
+            "bin": 0,
+            "object_count": 379,
+            "position_mse": 0.005746846552938223
+          },
+          {
+            "bin": 1,
+            "object_count": 422,
+            "position_mse": 0.00849615503102541
+          },
+          {
+            "bin": 2,
+            "object_count": 405,
+            "position_mse": 0.010317021049559116
+          },
+          {
+            "bin": 3,
+            "object_count": 410,
+            "position_mse": 0.01763562113046646
+          }
+        ],
+        "visibility": {
+          "always_visible": {
+            "object_count": 1426,
+            "position_mse": 0.010549768805503845
+          },
+          "future_occlusion": {
+            "object_count": 208,
+            "position_mse": 0.01274138130247593
+          }
+        }
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 1,
+      "test": {
+        "position_mse": 0.016743933781981468,
+        "coordinate_mae_px": 10.836318016052246,
+        "ade_px": 17.17088508605957,
+        "fde_px": 25.226285934448242,
+        "velocity_epe_px_per_frame": 4.693152904510498,
+        "speed_mae_px_per_frame": 2.8749125003814697,
+        "velocity_direction_cosine": 0.5693881511688232,
+        "acceleration_epe_px_per_frame2": 4.60859489440918,
+        "per_horizon_mse": [
+          0.0049306731671094894,
+          0.008380193263292313,
+          0.011308993212878704,
+          0.014666839502751827,
+          0.01855582557618618,
+          0.022207319736480713,
+          0.02555747516453266,
+          0.02854415960609913
+        ],
+        "per_horizon_ade_px": [
+          6.411438941955566,
+          10.464256286621094,
+          13.751917839050293,
+          16.708290100097656,
+          19.487043380737305,
+          21.721961975097656,
+          23.659929275512695,
+          25.226285934448242
+        ]
+      },
+      "binned": {
+        "speed": [
+          {
+            "bin": 0,
+            "object_count": 392,
+            "position_mse": 0.007397008128464222
+          },
+          {
+            "bin": 1,
+            "object_count": 404,
+            "position_mse": 0.007711014244705439
+          },
+          {
+            "bin": 2,
+            "object_count": 412,
+            "position_mse": 0.010884718969464302
+          },
+          {
+            "bin": 3,
+            "object_count": 429,
+            "position_mse": 0.014978064224123955
+          }
+        ],
+        "acceleration": [
+          {
+            "bin": 0,
+            "object_count": 379,
+            "position_mse": 0.0056200395338237286
+          },
+          {
+            "bin": 1,
+            "object_count": 422,
+            "position_mse": 0.00785031821578741
+          },
+          {
+            "bin": 2,
+            "object_count": 405,
+            "position_mse": 0.00956684723496437
+          },
+          {
+            "bin": 3,
+            "object_count": 410,
+            "position_mse": 0.017595501616597176
+          }
+        ],
+        "visibility": {
+          "always_visible": {
+            "object_count": 1426,
+            "position_mse": 0.010181702673435211
+          },
+          "future_occlusion": {
+            "object_count": 208,
+            "position_mse": 0.011871050111949444
+          }
+        }
+      }
+    },
+    {
+      "mode": "no_flow",
+      "seed": 2,
+      "test": {
+        "position_mse": 0.0175617728382349,
+        "coordinate_mae_px": 11.082181930541992,
+        "ade_px": 17.588478088378906,
+        "fde_px": 25.834976196289062,
+        "velocity_epe_px_per_frame": 4.7343430519104,
+        "speed_mae_px_per_frame": 2.900700330734253,
+        "velocity_direction_cosine": 0.5615472793579102,
+        "acceleration_epe_px_per_frame2": 4.618263244628906,
+        "per_horizon_mse": [
+          0.005264792125672102,
+          0.008923186920583248,
+          0.011907484382390976,
+          0.015379440039396286,
+          0.019403062760829926,
+          0.023047855123877525,
+          0.02684301882982254,
+          0.02993823029100895
+        ],
+        "per_horizon_ade_px": [
+          6.376331329345703,
+          10.694012641906738,
+          14.162627220153809,
+          17.166244506835938,
+          20.07203483581543,
+          22.201154708862305,
+          24.26017189025879,
+          25.834976196289062
+        ]
+      },
+      "binned": {
+        "speed": [
+          {
+            "bin": 0,
+            "object_count": 392,
+            "position_mse": 0.00756696704775095
+          },
+          {
+            "bin": 1,
+            "object_count": 404,
+            "position_mse": 0.007927516475319862
+          },
+          {
+            "bin": 2,
+            "object_count": 412,
+            "position_mse": 0.011460958048701286
+          },
+          {
+            "bin": 3,
+            "object_count": 429,
+            "position_mse": 0.014922089874744415
+          }
+        ],
+        "acceleration": [
+          {
+            "bin": 0,
+            "object_count": 379,
+            "position_mse": 0.005510694347321987
+          },
+          {
+            "bin": 1,
+            "object_count": 422,
+            "position_mse": 0.008209716528654099
+          },
+          {
+            "bin": 2,
+            "object_count": 405,
+            "position_mse": 0.010009807534515858
+          },
+          {
+            "bin": 3,
+            "object_count": 410,
+            "position_mse": 0.017844000831246376
+          }
+        ],
+        "visibility": {
+          "always_visible": {
+            "object_count": 1426,
+            "position_mse": 0.010465717874467373
+          },
+          "future_occlusion": {
+            "object_count": 208,
+            "position_mse": 0.011486980132758617
+          }
+        }
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 0,
+      "test": {
+        "position_mse": 0.014919407665729523,
+        "coordinate_mae_px": 10.023090362548828,
+        "ade_px": 15.836512565612793,
+        "fde_px": 23.463743209838867,
+        "velocity_epe_px_per_frame": 4.339078903198242,
+        "speed_mae_px_per_frame": 2.695305109024048,
+        "velocity_direction_cosine": 0.611198902130127,
+        "acceleration_epe_px_per_frame2": 4.166667461395264,
+        "per_horizon_mse": [
+          0.0046082851476967335,
+          0.007848898880183697,
+          0.010317621752619743,
+          0.013053253293037415,
+          0.016424132511019707,
+          0.01946401409804821,
+          0.02263714373111725,
+          0.025175562128424644
+        ],
+        "per_horizon_ade_px": [
+          5.92203426361084,
+          9.716241836547852,
+          12.516900062561035,
+          15.26341438293457,
+          17.92296028137207,
+          20.033456802368164,
+          21.922121047973633,
+          23.463743209838867
+        ]
+      },
+      "binned": {
+        "speed": [
+          {
+            "bin": 0,
+            "object_count": 392,
+            "position_mse": 0.006491763051599264
+          },
+          {
+            "bin": 1,
+            "object_count": 404,
+            "position_mse": 0.006220653653144836
+          },
+          {
+            "bin": 2,
+            "object_count": 412,
+            "position_mse": 0.008627952076494694
+          },
+          {
+            "bin": 3,
+            "object_count": 429,
+            "position_mse": 0.010736205615103245
+          }
+        ],
+        "acceleration": [
+          {
+            "bin": 0,
+            "object_count": 379,
+            "position_mse": 0.0047846706584095955
+          },
+          {
+            "bin": 1,
+            "object_count": 422,
+            "position_mse": 0.00602751225233078
+          },
+          {
+            "bin": 2,
+            "object_count": 405,
+            "position_mse": 0.008117999881505966
+          },
+          {
+            "bin": 3,
+            "object_count": 410,
+            "position_mse": 0.012976398691534996
+          }
+        ],
+        "visibility": {
+          "always_visible": {
+            "object_count": 1426,
+            "position_mse": 0.007967397570610046
+          },
+          "future_occlusion": {
+            "object_count": 208,
+            "position_mse": 0.009132628329098225
+          }
+        }
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 1,
+      "test": {
+        "position_mse": 0.014923798851668835,
+        "coordinate_mae_px": 10.039726257324219,
+        "ade_px": 15.84713363647461,
+        "fde_px": 23.232318878173828,
+        "velocity_epe_px_per_frame": 4.352978706359863,
+        "speed_mae_px_per_frame": 2.691985607147217,
+        "velocity_direction_cosine": 0.6022356748580933,
+        "acceleration_epe_px_per_frame2": 4.165577411651611,
+        "per_horizon_mse": [
+          0.004911087919026613,
+          0.007955820299685001,
+          0.01035303995013237,
+          0.012927639298141003,
+          0.01658380776643753,
+          0.019406544044613838,
+          0.022561198100447655,
+          0.024861285462975502
+        ],
+        "per_horizon_ade_px": [
+          6.062742710113525,
+          9.677905082702637,
+          12.623502731323242,
+          15.274249076843262,
+          18.109325408935547,
+          19.976123809814453,
+          21.88317108154297,
+          23.232318878173828
+        ]
+      },
+      "binned": {
+        "speed": [
+          {
+            "bin": 0,
+            "object_count": 392,
+            "position_mse": 0.0067293583415448666
+          },
+          {
+            "bin": 1,
+            "object_count": 404,
+            "position_mse": 0.006377573125064373
+          },
+          {
+            "bin": 2,
+            "object_count": 412,
+            "position_mse": 0.008591072633862495
+          },
+          {
+            "bin": 3,
+            "object_count": 429,
+            "position_mse": 0.010567526333034039
+          }
+        ],
+        "acceleration": [
+          {
+            "bin": 0,
+            "object_count": 379,
+            "position_mse": 0.004684825427830219
+          },
+          {
+            "bin": 1,
+            "object_count": 422,
+            "position_mse": 0.006042284891009331
+          },
+          {
+            "bin": 2,
+            "object_count": 405,
+            "position_mse": 0.00816043559461832
+          },
+          {
+            "bin": 3,
+            "object_count": 410,
+            "position_mse": 0.013227349147200584
+          }
+        ],
+        "visibility": {
+          "always_visible": {
+            "object_count": 1426,
+            "position_mse": 0.008011646568775177
+          },
+          "future_occlusion": {
+            "object_count": 208,
+            "position_mse": 0.009158351458609104
+          }
+        }
+      }
+    },
+    {
+      "mode": "aligned_flow",
+      "seed": 2,
+      "test": {
+        "position_mse": 0.01499180682003498,
+        "coordinate_mae_px": 10.023845672607422,
+        "ade_px": 15.825674057006836,
+        "fde_px": 23.283287048339844,
+        "velocity_epe_px_per_frame": 4.473659038543701,
+        "speed_mae_px_per_frame": 2.743248224258423,
+        "velocity_direction_cosine": 0.5833712220191956,
+        "acceleration_epe_px_per_frame2": 4.488264560699463,
+        "per_horizon_mse": [
+          0.004946105647832155,
+          0.007918544113636017,
+          0.010223973542451859,
+          0.013080648146569729,
+          0.01645933836698532,
+          0.019512413069605827,
+          0.02273569442331791,
+          0.025239678099751472
+        ],
+        "per_horizon_ade_px": [
+          6.163476467132568,
+          9.592867851257324,
+          12.485821723937988,
+          15.343485832214355,
+          17.922805786132812,
+          19.979719161987305,
+          21.903215408325195,
+          23.283287048339844
+        ]
+      },
+      "binned": {
+        "speed": [
+          {
+            "bin": 0,
+            "object_count": 392,
+            "position_mse": 0.006562285125255585
+          },
+          {
+            "bin": 1,
+            "object_count": 404,
+            "position_mse": 0.00626211054623127
+          },
+          {
+            "bin": 2,
+            "object_count": 412,
+            "position_mse": 0.008716022595763206
+          },
+          {
+            "bin": 3,
+            "object_count": 429,
+            "position_mse": 0.010667381808161736
+          }
+        ],
+        "acceleration": [
+          {
+            "bin": 0,
+            "object_count": 379,
+            "position_mse": 0.004585437010973692
+          },
+          {
+            "bin": 1,
+            "object_count": 422,
+            "position_mse": 0.006226386409252882
+          },
+          {
+            "bin": 2,
+            "object_count": 405,
+            "position_mse": 0.008128149434924126
+          },
+          {
+            "bin": 3,
+            "object_count": 410,
+            "position_mse": 0.013103597797453403
+          }
+        ],
+        "visibility": {
+          "always_visible": {
+            "object_count": 1426,
+            "position_mse": 0.007986185140907764
+          },
+          "future_occlusion": {
+            "object_count": 208,
+            "position_mse": 0.009291517548263073
+          }
+        }
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 0,
+      "test": {
+        "position_mse": 0.014913806691765785,
+        "coordinate_mae_px": 10.016336441040039,
+        "ade_px": 15.841327667236328,
+        "fde_px": 23.30965805053711,
+        "velocity_epe_px_per_frame": 4.324782371520996,
+        "speed_mae_px_per_frame": 2.6821298599243164,
+        "velocity_direction_cosine": 0.6040125489234924,
+        "acceleration_epe_px_per_frame2": 4.099879741668701,
+        "per_horizon_mse": [
+          0.004836706444621086,
+          0.008065602742135525,
+          0.010384425520896912,
+          0.013043321669101715,
+          0.01646583154797554,
+          0.019372960552573204,
+          0.022392163053154945,
+          0.024917898699641228
+        ],
+        "per_horizon_ade_px": [
+          6.075309753417969,
+          9.760151863098145,
+          12.56804370880127,
+          15.216935157775879,
+          17.97135353088379,
+          20.042926788330078,
+          21.852540969848633,
+          23.30965805053711
+        ]
+      },
+      "binned": {
+        "speed": [
+          {
+            "bin": 0,
+            "object_count": 392,
+            "position_mse": 0.006529487203806639
+          },
+          {
+            "bin": 1,
+            "object_count": 404,
+            "position_mse": 0.006149659398943186
+          },
+          {
+            "bin": 2,
+            "object_count": 412,
+            "position_mse": 0.008507860824465752
+          },
+          {
+            "bin": 3,
+            "object_count": 429,
+            "position_mse": 0.010651703923940659
+          }
+        ],
+        "acceleration": [
+          {
+            "bin": 0,
+            "object_count": 379,
+            "position_mse": 0.0047988975420594215
+          },
+          {
+            "bin": 1,
+            "object_count": 422,
+            "position_mse": 0.005946981254965067
+          },
+          {
+            "bin": 2,
+            "object_count": 405,
+            "position_mse": 0.008019322529435158
+          },
+          {
+            "bin": 3,
+            "object_count": 410,
+            "position_mse": 0.01291949674487114
+          }
+        ],
+        "visibility": {
+          "always_visible": {
+            "object_count": 1426,
+            "position_mse": 0.007901535369455814
+          },
+          "future_occlusion": {
+            "object_count": 208,
+            "position_mse": 0.009125773794949055
+          }
+        }
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 1,
+      "test": {
+        "position_mse": 0.015160380862653255,
+        "coordinate_mae_px": 10.07917594909668,
+        "ade_px": 15.924899101257324,
+        "fde_px": 23.43177032470703,
+        "velocity_epe_px_per_frame": 4.3830060958862305,
+        "speed_mae_px_per_frame": 2.71815824508667,
+        "velocity_direction_cosine": 0.6055933237075806,
+        "acceleration_epe_px_per_frame2": 4.242922782897949,
+        "per_horizon_mse": [
+          0.004979509394615889,
+          0.008178049698472023,
+          0.010476834140717983,
+          0.013173949904739857,
+          0.016700074076652527,
+          0.01977350190281868,
+          0.022893177345395088,
+          0.025282122194767
+        ],
+        "per_horizon_ade_px": [
+          6.055492877960205,
+          9.827996253967285,
+          12.630864143371582,
+          15.326615333557129,
+          18.039369583129883,
+          20.107816696166992,
+          22.04585075378418,
+          23.43177032470703
+        ]
+      },
+      "binned": {
+        "speed": [
+          {
+            "bin": 0,
+            "object_count": 392,
+            "position_mse": 0.006789327599108219
+          },
+          {
+            "bin": 1,
+            "object_count": 404,
+            "position_mse": 0.006299816537648439
+          },
+          {
+            "bin": 2,
+            "object_count": 412,
+            "position_mse": 0.00864865630865097
+          },
+          {
+            "bin": 3,
+            "object_count": 429,
+            "position_mse": 0.01072483416646719
+          }
+        ],
+        "acceleration": [
+          {
+            "bin": 0,
+            "object_count": 379,
+            "position_mse": 0.004835040308535099
+          },
+          {
+            "bin": 1,
+            "object_count": 422,
+            "position_mse": 0.006116997450590134
+          },
+          {
+            "bin": 2,
+            "object_count": 405,
+            "position_mse": 0.00817018374800682
+          },
+          {
+            "bin": 3,
+            "object_count": 410,
+            "position_mse": 0.013166461139917374
+          }
+        ],
+        "visibility": {
+          "always_visible": {
+            "object_count": 1426,
+            "position_mse": 0.008067572489380836
+          },
+          "future_occlusion": {
+            "object_count": 208,
+            "position_mse": 0.009159009903669357
+          }
+        }
+      }
+    },
+    {
+      "mode": "input_aux",
+      "seed": 2,
+      "test": {
+        "position_mse": 0.015047895722091198,
+        "coordinate_mae_px": 10.117653846740723,
+        "ade_px": 15.975149154663086,
+        "fde_px": 23.448158264160156,
+        "velocity_epe_px_per_frame": 4.397789001464844,
+        "speed_mae_px_per_frame": 2.7540805339813232,
+        "velocity_direction_cosine": 0.6025475263595581,
+        "acceleration_epe_px_per_frame2": 4.195556640625,
+        "per_horizon_mse": [
+          0.004800141789019108,
+          0.007827925495803356,
+          0.010258623398840427,
+          0.013097701594233513,
+          0.016599087044596672,
+          0.019664417952299118,
+          0.02289634756743908,
+          0.02542049251496792
+        ],
+        "per_horizon_ade_px": [
+          6.188328742980957,
+          9.774587631225586,
+          12.682717323303223,
+          15.480957984924316,
+          18.134010314941406,
+          20.15321922302246,
+          22.004709243774414,
+          23.448158264160156
+        ]
+      },
+      "binned": {
+        "speed": [
+          {
+            "bin": 0,
+            "object_count": 392,
+            "position_mse": 0.006728735752403736
+          },
+          {
+            "bin": 1,
+            "object_count": 404,
+            "position_mse": 0.0064213159494102
+          },
+          {
+            "bin": 2,
+            "object_count": 412,
+            "position_mse": 0.008803893812000751
+          },
+          {
+            "bin": 3,
+            "object_count": 429,
+            "position_mse": 0.010851936414837837
+          }
+        ],
+        "acceleration": [
+          {
+            "bin": 0,
+            "object_count": 379,
+            "position_mse": 0.004653204698115587
+          },
+          {
+            "bin": 1,
+            "object_count": 422,
+            "position_mse": 0.006356194149702787
+          },
+          {
+            "bin": 2,
+            "object_count": 405,
+            "position_mse": 0.008294868282973766
+          },
+          {
+            "bin": 3,
+            "object_count": 410,
+            "position_mse": 0.013320326805114746
+          }
+        ],
+        "visibility": {
+          "always_visible": {
+            "object_count": 1426,
+            "position_mse": 0.008147290907800198
+          },
+          "future_occlusion": {
+            "object_count": 208,
+            "position_mse": 0.0093249985948205
+          }
+        }
+      }
+    }
+  ],
+  "position_mse_summary": [
+    {
+      "mode": "aligned_flow",
+      "mean": 0.014945004445811113,
+      "sample_std": 4.059146835520544e-05,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "mean": 0.015040694425503412,
+      "sample_std": 0.00012344472221046868,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "mean": 0.017192707707484562,
+      "sample_std": 0.00041470507526925613,
+      "n": 3
+    }
+  ],
+  "velocity_epe_summary": [
+    {
+      "mode": "aligned_flow",
+      "mean": 4.3885722160339355,
+      "sample_std": 0.07401436789968027,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "mean": 4.3685258229573565,
+      "sample_std": 0.03859728917955875,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "mean": 4.712344646453857,
+      "sample_std": 0.0207380105305113,
+      "n": 3
+    }
+  ],
+  "acceleration_epe_summary": [
+    {
+      "mode": "aligned_flow",
+      "mean": 4.273503144582112,
+      "sample_std": 0.185989640683717,
+      "n": 3
+    },
+    {
+      "mode": "input_aux",
+      "mean": 4.179453055063884,
+      "sample_std": 0.07286852552351557,
+      "n": 3
+    },
+    {
+      "mode": "no_flow",
+      "mean": 4.602691014607747,
+      "sample_std": 0.019216834256110413,
+      "n": 3
+    }
+  ]
+}

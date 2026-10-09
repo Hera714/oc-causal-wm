@@ -1,0 +1,6068 @@
+{
+  "experiment_id": "WM-FLOW-004",
+  "config": {
+    "data_root": "/autodl-fs/data/movi_c_flow_v2_1200",
+    "checkpoint_root": "/root/autodl-tmp/oc-causal-wm/models/movi_c_flow/full_1200",
+    "output_dir": "/root/autodl-tmp/oc-causal-wm/out/movi_c_flow/interpretability/wm_flow_004",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "modes": [
+      "no_flow",
+      "aligned_flow",
+      "input_aux"
+    ],
+    "batch_size": 128,
+    "device": "cuda",
+    "max_scenes": 0,
+    "case_count": 6,
+    "flow_order": "xy",
+    "device_resolved": "cuda",
+    "torch": "2.5.1+cu121",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "pixel_scale": 127.0
+  },
+  "motion": {
+    "thresholds_from_train": {
+      "speed_px_per_frame": [
+        3.977578341960907,
+        5.974017381668091,
+        8.614603281021118
+      ],
+      "acceleration_px_per_frame2": [
+        1.2502350211143494,
+        2.121480941772461,
+        3.8322800993919373
+      ]
+    },
+    "per_seed": [
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "test": {
+          "position_mse": 0.01727241650223732,
+          "coordinate_mae_px": 11.093400955200195,
+          "ade_px": 17.58248519897461,
+          "fde_px": 25.84363555908203,
+          "velocity_epe_px_per_frame": 4.709537982940674,
+          "speed_mae_px_per_frame": 2.863630533218384,
+          "velocity_direction_cosine": 0.5534907579421997,
+          "acceleration_epe_px_per_frame2": 4.581214904785156,
+          "per_horizon_mse": [
+            0.004957427736371756,
+            0.008614951744675636,
+            0.011576445773243904,
+            0.014988484792411327,
+            0.019094757735729218,
+            0.022875308990478516,
+            0.026537898927927017,
+            0.0297499168664217
+          ],
+          "per_horizon_ade_px": [
+            6.608158111572266,
+            10.750280380249023,
+            14.027767181396484,
+            17.076148986816406,
+            19.961061477661133,
+            22.21929931640625,
+            24.241344451904297,
+            25.84363555908203
+          ]
+        },
+        "binned": {
+          "speed": [
+            {
+              "bin": 0,
+              "object_count": 392,
+              "position_mse": 0.007969848811626434
+            },
+            {
+              "bin": 1,
+              "object_count": 404,
+              "position_mse": 0.0080232173204422
+            },
+            {
+              "bin": 2,
+              "object_count": 412,
+              "position_mse": 0.011575397104024887
+            },
+            {
+              "bin": 3,
+              "object_count": 429,
+              "position_mse": 0.015071859583258629
+            }
+          ],
+          "acceleration": [
+            {
+              "bin": 0,
+              "object_count": 379,
+              "position_mse": 0.005746846552938223
+            },
+            {
+              "bin": 1,
+              "object_count": 422,
+              "position_mse": 0.00849615503102541
+            },
+            {
+              "bin": 2,
+              "object_count": 405,
+              "position_mse": 0.010317021049559116
+            },
+            {
+              "bin": 3,
+              "object_count": 410,
+              "position_mse": 0.01763562113046646
+            }
+          ],
+          "visibility": {
+            "always_visible": {
+              "object_count": 1426,
+              "position_mse": 0.010549768805503845
+            },
+            "future_occlusion": {
+              "object_count": 208,
+              "position_mse": 0.01274138130247593
+            }
+          }
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "test": {
+          "position_mse": 0.016743933781981468,
+          "coordinate_mae_px": 10.836318016052246,
+          "ade_px": 17.17088508605957,
+          "fde_px": 25.226285934448242,
+          "velocity_epe_px_per_frame": 4.693152904510498,
+          "speed_mae_px_per_frame": 2.8749125003814697,
+          "velocity_direction_cosine": 0.5693881511688232,
+          "acceleration_epe_px_per_frame2": 4.60859489440918,
+          "per_horizon_mse": [
+            0.0049306731671094894,
+            0.008380193263292313,
+            0.011308993212878704,
+            0.014666839502751827,
+            0.01855582557618618,
+            0.022207319736480713,
+            0.02555747516453266,
+            0.02854415960609913
+          ],
+          "per_horizon_ade_px": [
+            6.411438941955566,
+            10.464256286621094,
+            13.751917839050293,
+            16.708290100097656,
+            19.487043380737305,
+            21.721961975097656,
+            23.659929275512695,
+            25.226285934448242
+          ]
+        },
+        "binned": {
+          "speed": [
+            {
+              "bin": 0,
+              "object_count": 392,
+              "position_mse": 0.007397008128464222
+            },
+            {
+              "bin": 1,
+              "object_count": 404,
+              "position_mse": 0.007711014244705439
+            },
+            {
+              "bin": 2,
+              "object_count": 412,
+              "position_mse": 0.010884718969464302
+            },
+            {
+              "bin": 3,
+              "object_count": 429,
+              "position_mse": 0.014978064224123955
+            }
+          ],
+          "acceleration": [
+            {
+              "bin": 0,
+              "object_count": 379,
+              "position_mse": 0.0056200395338237286
+            },
+            {
+              "bin": 1,
+              "object_count": 422,
+              "position_mse": 0.00785031821578741
+            },
+            {
+              "bin": 2,
+              "object_count": 405,
+              "position_mse": 0.00956684723496437
+            },
+            {
+              "bin": 3,
+              "object_count": 410,
+              "position_mse": 0.017595501616597176
+            }
+          ],
+          "visibility": {
+            "always_visible": {
+              "object_count": 1426,
+              "position_mse": 0.010181702673435211
+            },
+            "future_occlusion": {
+              "object_count": 208,
+              "position_mse": 0.011871050111949444
+            }
+          }
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "test": {
+          "position_mse": 0.0175617728382349,
+          "coordinate_mae_px": 11.082181930541992,
+          "ade_px": 17.588478088378906,
+          "fde_px": 25.834976196289062,
+          "velocity_epe_px_per_frame": 4.7343430519104,
+          "speed_mae_px_per_frame": 2.900700330734253,
+          "velocity_direction_cosine": 0.5615472793579102,
+          "acceleration_epe_px_per_frame2": 4.618263244628906,
+          "per_horizon_mse": [
+            0.005264792125672102,
+            0.008923186920583248,
+            0.011907484382390976,
+            0.015379440039396286,
+            0.019403062760829926,
+            0.023047855123877525,
+            0.02684301882982254,
+            0.02993823029100895
+          ],
+          "per_horizon_ade_px": [
+            6.376331329345703,
+            10.694012641906738,
+            14.162627220153809,
+            17.166244506835938,
+            20.07203483581543,
+            22.201154708862305,
+            24.26017189025879,
+            25.834976196289062
+          ]
+        },
+        "binned": {
+          "speed": [
+            {
+              "bin": 0,
+              "object_count": 392,
+              "position_mse": 0.00756696704775095
+            },
+            {
+              "bin": 1,
+              "object_count": 404,
+              "position_mse": 0.007927516475319862
+            },
+            {
+              "bin": 2,
+              "object_count": 412,
+              "position_mse": 0.011460958048701286
+            },
+            {
+              "bin": 3,
+              "object_count": 429,
+              "position_mse": 0.014922089874744415
+            }
+          ],
+          "acceleration": [
+            {
+              "bin": 0,
+              "object_count": 379,
+              "position_mse": 0.005510694347321987
+            },
+            {
+              "bin": 1,
+              "object_count": 422,
+              "position_mse": 0.008209716528654099
+            },
+            {
+              "bin": 2,
+              "object_count": 405,
+              "position_mse": 0.010009807534515858
+            },
+            {
+              "bin": 3,
+              "object_count": 410,
+              "position_mse": 0.017844000831246376
+            }
+          ],
+          "visibility": {
+            "always_visible": {
+              "object_count": 1426,
+              "position_mse": 0.010465717874467373
+            },
+            "future_occlusion": {
+              "object_count": 208,
+              "position_mse": 0.011486980132758617
+            }
+          }
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "test": {
+          "position_mse": 0.014919407665729523,
+          "coordinate_mae_px": 10.023090362548828,
+          "ade_px": 15.836512565612793,
+          "fde_px": 23.463743209838867,
+          "velocity_epe_px_per_frame": 4.339078903198242,
+          "speed_mae_px_per_frame": 2.695305109024048,
+          "velocity_direction_cosine": 0.611198902130127,
+          "acceleration_epe_px_per_frame2": 4.166667461395264,
+          "per_horizon_mse": [
+            0.0046082851476967335,
+            0.007848898880183697,
+            0.010317621752619743,
+            0.013053253293037415,
+            0.016424132511019707,
+            0.01946401409804821,
+            0.02263714373111725,
+            0.025175562128424644
+          ],
+          "per_horizon_ade_px": [
+            5.92203426361084,
+            9.716241836547852,
+            12.516900062561035,
+            15.26341438293457,
+            17.92296028137207,
+            20.033456802368164,
+            21.922121047973633,
+            23.463743209838867
+          ]
+        },
+        "binned": {
+          "speed": [
+            {
+              "bin": 0,
+              "object_count": 392,
+              "position_mse": 0.006491763051599264
+            },
+            {
+              "bin": 1,
+              "object_count": 404,
+              "position_mse": 0.006220653653144836
+            },
+            {
+              "bin": 2,
+              "object_count": 412,
+              "position_mse": 0.008627952076494694
+            },
+            {
+              "bin": 3,
+              "object_count": 429,
+              "position_mse": 0.010736205615103245
+            }
+          ],
+          "acceleration": [
+            {
+              "bin": 0,
+              "object_count": 379,
+              "position_mse": 0.0047846706584095955
+            },
+            {
+              "bin": 1,
+              "object_count": 422,
+              "position_mse": 0.00602751225233078
+            },
+            {
+              "bin": 2,
+              "object_count": 405,
+              "position_mse": 0.008117999881505966
+            },
+            {
+              "bin": 3,
+              "object_count": 410,
+              "position_mse": 0.012976398691534996
+            }
+          ],
+          "visibility": {
+            "always_visible": {
+              "object_count": 1426,
+              "position_mse": 0.007967397570610046
+            },
+            "future_occlusion": {
+              "object_count": 208,
+              "position_mse": 0.009132628329098225
+            }
+          }
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "test": {
+          "position_mse": 0.014923798851668835,
+          "coordinate_mae_px": 10.039726257324219,
+          "ade_px": 15.84713363647461,
+          "fde_px": 23.232318878173828,
+          "velocity_epe_px_per_frame": 4.352978706359863,
+          "speed_mae_px_per_frame": 2.691985607147217,
+          "velocity_direction_cosine": 0.6022356748580933,
+          "acceleration_epe_px_per_frame2": 4.165577411651611,
+          "per_horizon_mse": [
+            0.004911087919026613,
+            0.007955820299685001,
+            0.01035303995013237,
+            0.012927639298141003,
+            0.01658380776643753,
+            0.019406544044613838,
+            0.022561198100447655,
+            0.024861285462975502
+          ],
+          "per_horizon_ade_px": [
+            6.062742710113525,
+            9.677905082702637,
+            12.623502731323242,
+            15.274249076843262,
+            18.109325408935547,
+            19.976123809814453,
+            21.88317108154297,
+            23.232318878173828
+          ]
+        },
+        "binned": {
+          "speed": [
+            {
+              "bin": 0,
+              "object_count": 392,
+              "position_mse": 0.0067293583415448666
+            },
+            {
+              "bin": 1,
+              "object_count": 404,
+              "position_mse": 0.006377573125064373
+            },
+            {
+              "bin": 2,
+              "object_count": 412,
+              "position_mse": 0.008591072633862495
+            },
+            {
+              "bin": 3,
+              "object_count": 429,
+              "position_mse": 0.010567526333034039
+            }
+          ],
+          "acceleration": [
+            {
+              "bin": 0,
+              "object_count": 379,
+              "position_mse": 0.004684825427830219
+            },
+            {
+              "bin": 1,
+              "object_count": 422,
+              "position_mse": 0.006042284891009331
+            },
+            {
+              "bin": 2,
+              "object_count": 405,
+              "position_mse": 0.00816043559461832
+            },
+            {
+              "bin": 3,
+              "object_count": 410,
+              "position_mse": 0.013227349147200584
+            }
+          ],
+          "visibility": {
+            "always_visible": {
+              "object_count": 1426,
+              "position_mse": 0.008011646568775177
+            },
+            "future_occlusion": {
+              "object_count": 208,
+              "position_mse": 0.009158351458609104
+            }
+          }
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "test": {
+          "position_mse": 0.01499180682003498,
+          "coordinate_mae_px": 10.023845672607422,
+          "ade_px": 15.825674057006836,
+          "fde_px": 23.283287048339844,
+          "velocity_epe_px_per_frame": 4.473659038543701,
+          "speed_mae_px_per_frame": 2.743248224258423,
+          "velocity_direction_cosine": 0.5833712220191956,
+          "acceleration_epe_px_per_frame2": 4.488264560699463,
+          "per_horizon_mse": [
+            0.004946105647832155,
+            0.007918544113636017,
+            0.010223973542451859,
+            0.013080648146569729,
+            0.01645933836698532,
+            0.019512413069605827,
+            0.02273569442331791,
+            0.025239678099751472
+          ],
+          "per_horizon_ade_px": [
+            6.163476467132568,
+            9.592867851257324,
+            12.485821723937988,
+            15.343485832214355,
+            17.922805786132812,
+            19.979719161987305,
+            21.903215408325195,
+            23.283287048339844
+          ]
+        },
+        "binned": {
+          "speed": [
+            {
+              "bin": 0,
+              "object_count": 392,
+              "position_mse": 0.006562285125255585
+            },
+            {
+              "bin": 1,
+              "object_count": 404,
+              "position_mse": 0.00626211054623127
+            },
+            {
+              "bin": 2,
+              "object_count": 412,
+              "position_mse": 0.008716022595763206
+            },
+            {
+              "bin": 3,
+              "object_count": 429,
+              "position_mse": 0.010667381808161736
+            }
+          ],
+          "acceleration": [
+            {
+              "bin": 0,
+              "object_count": 379,
+              "position_mse": 0.004585437010973692
+            },
+            {
+              "bin": 1,
+              "object_count": 422,
+              "position_mse": 0.006226386409252882
+            },
+            {
+              "bin": 2,
+              "object_count": 405,
+              "position_mse": 0.008128149434924126
+            },
+            {
+              "bin": 3,
+              "object_count": 410,
+              "position_mse": 0.013103597797453403
+            }
+          ],
+          "visibility": {
+            "always_visible": {
+              "object_count": 1426,
+              "position_mse": 0.007986185140907764
+            },
+            "future_occlusion": {
+              "object_count": 208,
+              "position_mse": 0.009291517548263073
+            }
+          }
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "test": {
+          "position_mse": 0.014913806691765785,
+          "coordinate_mae_px": 10.016336441040039,
+          "ade_px": 15.841327667236328,
+          "fde_px": 23.30965805053711,
+          "velocity_epe_px_per_frame": 4.324782371520996,
+          "speed_mae_px_per_frame": 2.6821298599243164,
+          "velocity_direction_cosine": 0.6040125489234924,
+          "acceleration_epe_px_per_frame2": 4.099879741668701,
+          "per_horizon_mse": [
+            0.004836706444621086,
+            0.008065602742135525,
+            0.010384425520896912,
+            0.013043321669101715,
+            0.01646583154797554,
+            0.019372960552573204,
+            0.022392163053154945,
+            0.024917898699641228
+          ],
+          "per_horizon_ade_px": [
+            6.075309753417969,
+            9.760151863098145,
+            12.56804370880127,
+            15.216935157775879,
+            17.97135353088379,
+            20.042926788330078,
+            21.852540969848633,
+            23.30965805053711
+          ]
+        },
+        "binned": {
+          "speed": [
+            {
+              "bin": 0,
+              "object_count": 392,
+              "position_mse": 0.006529487203806639
+            },
+            {
+              "bin": 1,
+              "object_count": 404,
+              "position_mse": 0.006149659398943186
+            },
+            {
+              "bin": 2,
+              "object_count": 412,
+              "position_mse": 0.008507860824465752
+            },
+            {
+              "bin": 3,
+              "object_count": 429,
+              "position_mse": 0.010651703923940659
+            }
+          ],
+          "acceleration": [
+            {
+              "bin": 0,
+              "object_count": 379,
+              "position_mse": 0.0047988975420594215
+            },
+            {
+              "bin": 1,
+              "object_count": 422,
+              "position_mse": 0.005946981254965067
+            },
+            {
+              "bin": 2,
+              "object_count": 405,
+              "position_mse": 0.008019322529435158
+            },
+            {
+              "bin": 3,
+              "object_count": 410,
+              "position_mse": 0.01291949674487114
+            }
+          ],
+          "visibility": {
+            "always_visible": {
+              "object_count": 1426,
+              "position_mse": 0.007901535369455814
+            },
+            "future_occlusion": {
+              "object_count": 208,
+              "position_mse": 0.009125773794949055
+            }
+          }
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "test": {
+          "position_mse": 0.015160380862653255,
+          "coordinate_mae_px": 10.07917594909668,
+          "ade_px": 15.924899101257324,
+          "fde_px": 23.43177032470703,
+          "velocity_epe_px_per_frame": 4.3830060958862305,
+          "speed_mae_px_per_frame": 2.71815824508667,
+          "velocity_direction_cosine": 0.6055933237075806,
+          "acceleration_epe_px_per_frame2": 4.242922782897949,
+          "per_horizon_mse": [
+            0.004979509394615889,
+            0.008178049698472023,
+            0.010476834140717983,
+            0.013173949904739857,
+            0.016700074076652527,
+            0.01977350190281868,
+            0.022893177345395088,
+            0.025282122194767
+          ],
+          "per_horizon_ade_px": [
+            6.055492877960205,
+            9.827996253967285,
+            12.630864143371582,
+            15.326615333557129,
+            18.039369583129883,
+            20.107816696166992,
+            22.04585075378418,
+            23.43177032470703
+          ]
+        },
+        "binned": {
+          "speed": [
+            {
+              "bin": 0,
+              "object_count": 392,
+              "position_mse": 0.006789327599108219
+            },
+            {
+              "bin": 1,
+              "object_count": 404,
+              "position_mse": 0.006299816537648439
+            },
+            {
+              "bin": 2,
+              "object_count": 412,
+              "position_mse": 0.00864865630865097
+            },
+            {
+              "bin": 3,
+              "object_count": 429,
+              "position_mse": 0.01072483416646719
+            }
+          ],
+          "acceleration": [
+            {
+              "bin": 0,
+              "object_count": 379,
+              "position_mse": 0.004835040308535099
+            },
+            {
+              "bin": 1,
+              "object_count": 422,
+              "position_mse": 0.006116997450590134
+            },
+            {
+              "bin": 2,
+              "object_count": 405,
+              "position_mse": 0.00817018374800682
+            },
+            {
+              "bin": 3,
+              "object_count": 410,
+              "position_mse": 0.013166461139917374
+            }
+          ],
+          "visibility": {
+            "always_visible": {
+              "object_count": 1426,
+              "position_mse": 0.008067572489380836
+            },
+            "future_occlusion": {
+              "object_count": 208,
+              "position_mse": 0.009159009903669357
+            }
+          }
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "test": {
+          "position_mse": 0.015047895722091198,
+          "coordinate_mae_px": 10.117653846740723,
+          "ade_px": 15.975149154663086,
+          "fde_px": 23.448158264160156,
+          "velocity_epe_px_per_frame": 4.397789001464844,
+          "speed_mae_px_per_frame": 2.7540805339813232,
+          "velocity_direction_cosine": 0.6025475263595581,
+          "acceleration_epe_px_per_frame2": 4.195556640625,
+          "per_horizon_mse": [
+            0.004800141789019108,
+            0.007827925495803356,
+            0.010258623398840427,
+            0.013097701594233513,
+            0.016599087044596672,
+            0.019664417952299118,
+            0.02289634756743908,
+            0.02542049251496792
+          ],
+          "per_horizon_ade_px": [
+            6.188328742980957,
+            9.774587631225586,
+            12.682717323303223,
+            15.480957984924316,
+            18.134010314941406,
+            20.15321922302246,
+            22.004709243774414,
+            23.448158264160156
+          ]
+        },
+        "binned": {
+          "speed": [
+            {
+              "bin": 0,
+              "object_count": 392,
+              "position_mse": 0.006728735752403736
+            },
+            {
+              "bin": 1,
+              "object_count": 404,
+              "position_mse": 0.0064213159494102
+            },
+            {
+              "bin": 2,
+              "object_count": 412,
+              "position_mse": 0.008803893812000751
+            },
+            {
+              "bin": 3,
+              "object_count": 429,
+              "position_mse": 0.010851936414837837
+            }
+          ],
+          "acceleration": [
+            {
+              "bin": 0,
+              "object_count": 379,
+              "position_mse": 0.004653204698115587
+            },
+            {
+              "bin": 1,
+              "object_count": 422,
+              "position_mse": 0.006356194149702787
+            },
+            {
+              "bin": 2,
+              "object_count": 405,
+              "position_mse": 0.008294868282973766
+            },
+            {
+              "bin": 3,
+              "object_count": 410,
+              "position_mse": 0.013320326805114746
+            }
+          ],
+          "visibility": {
+            "always_visible": {
+              "object_count": 1426,
+              "position_mse": 0.008147290907800198
+            },
+            "future_occlusion": {
+              "object_count": 208,
+              "position_mse": 0.0093249985948205
+            }
+          }
+        }
+      }
+    ],
+    "position_mse_summary": [
+      {
+        "mode": "aligned_flow",
+        "mean": 0.014945004445811113,
+        "sample_std": 4.059146835520544e-05,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "mean": 0.015040694425503412,
+        "sample_std": 0.00012344472221046868,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "mean": 0.017192707707484562,
+        "sample_std": 0.00041470507526925613,
+        "n": 3
+      }
+    ],
+    "velocity_epe_summary": [
+      {
+        "mode": "aligned_flow",
+        "mean": 4.3885722160339355,
+        "sample_std": 0.07401436789968027,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "mean": 4.3685258229573565,
+        "sample_std": 0.03859728917955875,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "mean": 4.712344646453857,
+        "sample_std": 0.0207380105305113,
+        "n": 3
+      }
+    ],
+    "acceleration_epe_summary": [
+      {
+        "mode": "aligned_flow",
+        "mean": 4.273503144582112,
+        "sample_std": 0.185989640683717,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "mean": 4.179453055063884,
+        "sample_std": 0.07286852552351557,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "mean": 4.602691014607747,
+        "sample_std": 0.019216834256110413,
+        "n": 3
+      }
+    ]
+  },
+  "probes": {
+    "protocol": "Frozen predictor; train-only ridge probe; lambda chosen on validation; test once.",
+    "per_seed_layer_target": [
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "ridge_lambda": 0.0,
+        "test": {
+          "r2": 0.9999993626541207,
+          "coordinate_mae_px": 0.0008208684426565452,
+          "epe_px": 0.0013172052221451362,
+          "direction_cosine": 0.9999992273718037,
+          "direction_8bin_accuracy": 0.9993887530562348,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "ridge_lambda": 0.001,
+        "test": {
+          "r2": 0.5444582730970586,
+          "coordinate_mae_px": 2.0912075804911834,
+          "epe_px": 3.3184898188952565,
+          "direction_cosine": 0.8679668218434845,
+          "direction_8bin_accuracy": 0.6449567723342939,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.516178757439971,
+          "coordinate_mae_px": 1.8091514847988155,
+          "epe_px": 2.868660017920928,
+          "direction_cosine": 0.827632772917208,
+          "direction_8bin_accuracy": 0.522360248447205,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "ridge_lambda": 0.0001,
+        "test": {
+          "r2": 0.16570611575482352,
+          "coordinate_mae_px": 1.9419316027160396,
+          "epe_px": 3.066004289913204,
+          "direction_cosine": 0.5076063730724522,
+          "direction_8bin_accuracy": 0.31769856160100063,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 0.01,
+        "test": {
+          "r2": 0.6510496992178,
+          "coordinate_mae_px": 13.858920422047374,
+          "epe_px": 21.932023994794424,
+          "direction_cosine": 0.6420728196534582,
+          "direction_8bin_accuracy": 0.4086666666666667,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.762525149667313,
+          "coordinate_mae_px": 1.588546316683025,
+          "epe_px": 2.50795625666539,
+          "direction_cosine": 0.8958796463875609,
+          "direction_8bin_accuracy": 0.6742053789731052,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.48896199336614177,
+          "coordinate_mae_px": 2.4350685408432606,
+          "epe_px": 3.855067057418575,
+          "direction_cosine": 0.8369050001491193,
+          "direction_8bin_accuracy": 0.5930835734870317,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.4890547068069434,
+          "coordinate_mae_px": 1.8450126636607778,
+          "epe_px": 2.922648462473368,
+          "direction_cosine": 0.8166442304260151,
+          "direction_8bin_accuracy": 0.5198757763975155,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.06948880396485113,
+          "coordinate_mae_px": 1.9140287887232788,
+          "epe_px": 3.023800180920703,
+          "direction_cosine": 0.5531112322222113,
+          "direction_8bin_accuracy": 0.3333333333333333,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.4031041200845217,
+          "coordinate_mae_px": 16.68945682807012,
+          "epe_px": 26.35064630676573,
+          "direction_cosine": 0.5654340308102728,
+          "direction_8bin_accuracy": 0.36333333333333334,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7100152269031803,
+          "coordinate_mae_px": 1.7445677724510358,
+          "epe_px": 2.7641488817794215,
+          "direction_cosine": 0.8770008852424479,
+          "direction_8bin_accuracy": 0.6491442542787286,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.4875200624465743,
+          "coordinate_mae_px": 2.452427512062193,
+          "epe_px": 3.8920086045670286,
+          "direction_cosine": 0.8362416293555479,
+          "direction_8bin_accuracy": 0.5809798270893372,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.49117934121333673,
+          "coordinate_mae_px": 1.8497089586176576,
+          "epe_px": 2.9280276390997164,
+          "direction_cosine": 0.8151710331108878,
+          "direction_8bin_accuracy": 0.5273291925465838,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.041269634314401005,
+          "coordinate_mae_px": 1.8941106869931925,
+          "epe_px": 2.987762093246677,
+          "direction_cosine": 0.5650224405036826,
+          "direction_8bin_accuracy": 0.32645403377110693,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.3282791233502671,
+          "coordinate_mae_px": 17.264821130502188,
+          "epe_px": 27.308766814101784,
+          "direction_cosine": 0.5342916295726154,
+          "direction_8bin_accuracy": 0.336,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "ridge_lambda": 0.0,
+        "test": {
+          "r2": 0.9999992639276142,
+          "coordinate_mae_px": 0.0008391494085883768,
+          "epe_px": 0.0012986938094845908,
+          "direction_cosine": 0.9999995381766955,
+          "direction_8bin_accuracy": 0.9993887530562348,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "ridge_lambda": 0.001,
+        "test": {
+          "r2": 0.5433825516364106,
+          "coordinate_mae_px": 2.0952268984983053,
+          "epe_px": 3.324780280726377,
+          "direction_cosine": 0.8676723621724846,
+          "direction_8bin_accuracy": 0.6438040345821325,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.5178824484839162,
+          "coordinate_mae_px": 1.8053189744351008,
+          "epe_px": 2.861329467340945,
+          "direction_cosine": 0.8267333450916414,
+          "direction_8bin_accuracy": 0.5242236024844721,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "ridge_lambda": 0.0001,
+        "test": {
+          "r2": 0.14008326057299259,
+          "coordinate_mae_px": 1.9534012715293982,
+          "epe_px": 3.0839471526097353,
+          "direction_cosine": 0.5081573434011326,
+          "direction_8bin_accuracy": 0.31269543464665417,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 0.001,
+        "test": {
+          "r2": 0.6496123449805818,
+          "coordinate_mae_px": 13.844837135800185,
+          "epe_px": 21.924528716265897,
+          "direction_cosine": 0.6439334652875669,
+          "direction_8bin_accuracy": 0.41133333333333333,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.8012131775831115,
+          "coordinate_mae_px": 1.425078022453401,
+          "epe_px": 2.256346299916282,
+          "direction_cosine": 0.9126524479567828,
+          "direction_8bin_accuracy": 0.7035452322738386,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.5212843782835814,
+          "coordinate_mae_px": 2.3136930273998706,
+          "epe_px": 3.660887791654122,
+          "direction_cosine": 0.8485763184162692,
+          "direction_8bin_accuracy": 0.6103746397694525,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.505868000969921,
+          "coordinate_mae_px": 1.8181699873069344,
+          "epe_px": 2.8847647581513822,
+          "direction_cosine": 0.8219838479199119,
+          "direction_8bin_accuracy": 0.5267080745341615,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.07707929235364452,
+          "coordinate_mae_px": 1.939273807244057,
+          "epe_px": 3.050768684848348,
+          "direction_cosine": 0.5426053175283541,
+          "direction_8bin_accuracy": 0.3233270794246404,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.41972412624609023,
+          "coordinate_mae_px": 16.774417487445607,
+          "epe_px": 26.483400021541442,
+          "direction_cosine": 0.5785489264543391,
+          "direction_8bin_accuracy": 0.3566666666666667,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7427260601923973,
+          "coordinate_mae_px": 1.5979838448067276,
+          "epe_px": 2.5300928296154788,
+          "direction_cosine": 0.8989279044713918,
+          "direction_8bin_accuracy": 0.6705378973105135,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5148710495634308,
+          "coordinate_mae_px": 2.335095826310295,
+          "epe_px": 3.700453633604447,
+          "direction_cosine": 0.8459508144833672,
+          "direction_8bin_accuracy": 0.607492795389049,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5071930954630919,
+          "coordinate_mae_px": 1.8150864370064088,
+          "epe_px": 2.883443106397375,
+          "direction_cosine": 0.8220497786904025,
+          "direction_8bin_accuracy": 0.5279503105590062,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.04473838994249146,
+          "coordinate_mae_px": 1.9041999609467608,
+          "epe_px": 3.003205533228124,
+          "direction_cosine": 0.5529874383606491,
+          "direction_8bin_accuracy": 0.32833020637898686,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.34697350702771046,
+          "coordinate_mae_px": 17.261674845026057,
+          "epe_px": 27.30862955117676,
+          "direction_cosine": 0.5378268813805565,
+          "direction_8bin_accuracy": 0.3353333333333333,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "ridge_lambda": 0.0,
+        "test": {
+          "r2": 0.9999997163335895,
+          "coordinate_mae_px": 0.0008935785269224944,
+          "epe_px": 0.0014073633562850835,
+          "direction_cosine": 0.9999991973045159,
+          "direction_8bin_accuracy": 0.9993887530562348,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "ridge_lambda": 0.001,
+        "test": {
+          "r2": 0.5369966472507055,
+          "coordinate_mae_px": 2.1038307949093915,
+          "epe_px": 3.3381372311345805,
+          "direction_cosine": 0.8671749603330818,
+          "direction_8bin_accuracy": 0.6472622478386167,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.5136315786348622,
+          "coordinate_mae_px": 1.8117136928785154,
+          "epe_px": 2.8726284327596043,
+          "direction_cosine": 0.826629503659314,
+          "direction_8bin_accuracy": 0.5248447204968945,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "ridge_lambda": 0.001,
+        "test": {
+          "r2": 0.15678606117703475,
+          "coordinate_mae_px": 1.9554849876397131,
+          "epe_px": 3.085869386272066,
+          "direction_cosine": 0.5017019102813368,
+          "direction_8bin_accuracy": 0.31269543464665417,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.6517653581049386,
+          "coordinate_mae_px": 13.885785711311398,
+          "epe_px": 21.978585330566247,
+          "direction_cosine": 0.6408696270004957,
+          "direction_8bin_accuracy": 0.4053333333333333,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7855235818165042,
+          "coordinate_mae_px": 1.4739078548971254,
+          "epe_px": 2.3209238228550717,
+          "direction_cosine": 0.9020743149268344,
+          "direction_8bin_accuracy": 0.6986552567237164,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.5090449606618448,
+          "coordinate_mae_px": 2.349143557286817,
+          "epe_px": 3.7321008391028867,
+          "direction_cosine": 0.8433107638263374,
+          "direction_8bin_accuracy": 0.5902017291066283,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.5017794692957265,
+          "coordinate_mae_px": 1.829622081805528,
+          "epe_px": 2.901981210633438,
+          "direction_cosine": 0.8235882773882908,
+          "direction_8bin_accuracy": 0.5024844720496895,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.06375253908652045,
+          "coordinate_mae_px": 1.8819187672726472,
+          "epe_px": 2.978518602194169,
+          "direction_cosine": 0.5568838228916566,
+          "direction_8bin_accuracy": 0.3333333333333333,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.41530501827872146,
+          "coordinate_mae_px": 16.58182696241705,
+          "epe_px": 26.259922836860998,
+          "direction_cosine": 0.5500060669305201,
+          "direction_8bin_accuracy": 0.3466666666666667,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.724825259061064,
+          "coordinate_mae_px": 1.6829146862380413,
+          "epe_px": 2.652329384839151,
+          "direction_cosine": 0.8844970265338992,
+          "direction_8bin_accuracy": 0.6558679706601467,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.4904492380495292,
+          "coordinate_mae_px": 2.4009403802152205,
+          "epe_px": 3.80985427937482,
+          "direction_cosine": 0.8415651468673463,
+          "direction_8bin_accuracy": 0.592507204610951,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.4895942202532404,
+          "coordinate_mae_px": 1.8376920247634556,
+          "epe_px": 2.92094657616331,
+          "direction_cosine": 0.8182858225979973,
+          "direction_8bin_accuracy": 0.5186335403726708,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.04424152479581822,
+          "coordinate_mae_px": 1.9030383103132802,
+          "epe_px": 3.0112446504860286,
+          "direction_cosine": 0.5492801681143443,
+          "direction_8bin_accuracy": 0.32707942464040024,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "no_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.349618913077019,
+          "coordinate_mae_px": 17.104998903855844,
+          "epe_px": 26.98207924480408,
+          "direction_cosine": 0.5307934860368646,
+          "direction_8bin_accuracy": 0.35133333333333333,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "ridge_lambda": 0.0001,
+        "test": {
+          "r2": 0.9999359250524112,
+          "coordinate_mae_px": 0.017979136041118695,
+          "epe_px": 0.02799661669152553,
+          "direction_cosine": 0.9999633054800577,
+          "direction_8bin_accuracy": 0.9938875305623472,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.6249421960892525,
+          "coordinate_mae_px": 1.9142493126885243,
+          "epe_px": 3.0398520269280076,
+          "direction_cosine": 0.8856180572912694,
+          "direction_8bin_accuracy": 0.6783861671469741,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.5951614338713628,
+          "coordinate_mae_px": 1.632009669991336,
+          "epe_px": 2.5869175660127537,
+          "direction_cosine": 0.8485205644725331,
+          "direction_8bin_accuracy": 0.5801242236024845,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.32085417076981626,
+          "coordinate_mae_px": 1.7665412394926807,
+          "epe_px": 2.7856742157328247,
+          "direction_cosine": 0.6000716099840815,
+          "direction_8bin_accuracy": 0.3614759224515322,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.7157037931630821,
+          "coordinate_mae_px": 12.45172289125912,
+          "epe_px": 19.699002489185798,
+          "direction_cosine": 0.6970146754232769,
+          "direction_8bin_accuracy": 0.45866666666666667,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7553419421078248,
+          "coordinate_mae_px": 1.621248920597138,
+          "epe_px": 2.5483072245213836,
+          "direction_cosine": 0.8903046873596917,
+          "direction_8bin_accuracy": 0.6766503667481663,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5824005450744214,
+          "coordinate_mae_px": 2.1747752530921196,
+          "epe_px": 3.4373534478175953,
+          "direction_cosine": 0.8659633900223355,
+          "direction_8bin_accuracy": 0.6368876080691642,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5873290928607766,
+          "coordinate_mae_px": 1.650560312535871,
+          "epe_px": 2.6040892334001353,
+          "direction_cosine": 0.8444450042828893,
+          "direction_8bin_accuracy": 0.577639751552795,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.04975819651915814,
+          "coordinate_mae_px": 1.86197933285051,
+          "epe_px": 2.9446433899124527,
+          "direction_cosine": 0.5705336007659966,
+          "direction_8bin_accuracy": 0.342714196372733,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.34678348801757974,
+          "coordinate_mae_px": 17.464137967616402,
+          "epe_px": 27.45203225923852,
+          "direction_cosine": 0.537192119512146,
+          "direction_8bin_accuracy": 0.3353333333333333,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7169665845503483,
+          "coordinate_mae_px": 1.7355196102346848,
+          "epe_px": 2.738160768380044,
+          "direction_cosine": 0.8795575638377539,
+          "direction_8bin_accuracy": 0.6509779951100244,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.582204778353171,
+          "coordinate_mae_px": 2.183847088502558,
+          "epe_px": 3.451437774365462,
+          "direction_cosine": 0.8663878741041211,
+          "direction_8bin_accuracy": 0.6270893371757925,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5809889595279886,
+          "coordinate_mae_px": 1.6674119983019344,
+          "epe_px": 2.629880413497943,
+          "direction_cosine": 0.8440134517577375,
+          "direction_8bin_accuracy": 0.568944099378882,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.021479738772160695,
+          "coordinate_mae_px": 1.9014493868294242,
+          "epe_px": 2.9992222308573533,
+          "direction_cosine": 0.5497127656959948,
+          "direction_8bin_accuracy": 0.32895559724828016,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.2816001345807675,
+          "coordinate_mae_px": 18.074403488141527,
+          "epe_px": 28.469425223376017,
+          "direction_cosine": 0.49690067135913296,
+          "direction_8bin_accuracy": 0.31666666666666665,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "ridge_lambda": 0.0,
+        "test": {
+          "r2": 0.9999545331767989,
+          "coordinate_mae_px": 0.016319171314973128,
+          "epe_px": 0.025673731026073236,
+          "direction_cosine": 0.9999421009931366,
+          "direction_8bin_accuracy": 0.9951100244498777,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.6209768017031361,
+          "coordinate_mae_px": 1.9246619056554404,
+          "epe_px": 3.053641262906347,
+          "direction_cosine": 0.8860213993152734,
+          "direction_8bin_accuracy": 0.6749279538904899,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.594992550014593,
+          "coordinate_mae_px": 1.6289155780513798,
+          "epe_px": 2.580653689639489,
+          "direction_cosine": 0.8506396881073308,
+          "direction_8bin_accuracy": 0.5881987577639751,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.21486707010343775,
+          "coordinate_mae_px": 1.7574714773937787,
+          "epe_px": 2.7683444593638216,
+          "direction_cosine": 0.6312556861292747,
+          "direction_8bin_accuracy": 0.38711694809255787,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.7175040569151817,
+          "coordinate_mae_px": 12.389554262630266,
+          "epe_px": 19.583324479803046,
+          "direction_cosine": 0.700101478511167,
+          "direction_8bin_accuracy": 0.4646666666666667,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7346521070690253,
+          "coordinate_mae_px": 1.7050110197027075,
+          "epe_px": 2.681621747923316,
+          "direction_cosine": 0.892832792031178,
+          "direction_8bin_accuracy": 0.6687041564792175,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5922234989943371,
+          "coordinate_mae_px": 2.1458318872069553,
+          "epe_px": 3.401086962173132,
+          "direction_cosine": 0.8692615197930177,
+          "direction_8bin_accuracy": 0.6374639769452449,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5944334531661151,
+          "coordinate_mae_px": 1.6408196145868903,
+          "epe_px": 2.588140954117094,
+          "direction_cosine": 0.8478914156544998,
+          "direction_8bin_accuracy": 0.5975155279503106,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.03985934066731589,
+          "coordinate_mae_px": 1.8704628867425572,
+          "epe_px": 2.955376803605702,
+          "direction_cosine": 0.5594272583778889,
+          "direction_8bin_accuracy": 0.3233270794246404,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.30630684827196664,
+          "coordinate_mae_px": 17.490686241729204,
+          "epe_px": 27.681814196744,
+          "direction_cosine": 0.5122277086848083,
+          "direction_8bin_accuracy": 0.3393333333333333,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.7072979618217494,
+          "coordinate_mae_px": 1.7780055655590692,
+          "epe_px": 2.7989439234156723,
+          "direction_cosine": 0.8850115952169082,
+          "direction_8bin_accuracy": 0.6466992665036675,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5848610625936534,
+          "coordinate_mae_px": 2.1843017945801244,
+          "epe_px": 3.4563964818049158,
+          "direction_cosine": 0.8661811633457601,
+          "direction_8bin_accuracy": 0.6368876080691642,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.592210093891016,
+          "coordinate_mae_px": 1.6520375796422069,
+          "epe_px": 2.6043701382348377,
+          "direction_cosine": 0.8444609857555345,
+          "direction_8bin_accuracy": 0.5832298136645963,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.022980796897656086,
+          "coordinate_mae_px": 1.8801565614967934,
+          "epe_px": 2.97408150537558,
+          "direction_cosine": 0.5508132762163056,
+          "direction_8bin_accuracy": 0.3239524702939337,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.28450357013677696,
+          "coordinate_mae_px": 17.739871742013687,
+          "epe_px": 28.078461013482265,
+          "direction_cosine": 0.4790983278568204,
+          "direction_8bin_accuracy": 0.31,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "ridge_lambda": 0.0001,
+        "test": {
+          "r2": 0.9998975969696291,
+          "coordinate_mae_px": 0.020697768290989453,
+          "epe_px": 0.03271817335528787,
+          "direction_cosine": 0.9999045103988573,
+          "direction_8bin_accuracy": 0.9938875305623472,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.6151573101257942,
+          "coordinate_mae_px": 1.9366126260444965,
+          "epe_px": 3.0732962629642806,
+          "direction_cosine": 0.8840224481182978,
+          "direction_8bin_accuracy": 0.6749279538904899,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.5748635100520774,
+          "coordinate_mae_px": 1.6648305119116964,
+          "epe_px": 2.6342048847424233,
+          "direction_cosine": 0.844411050166256,
+          "direction_8bin_accuracy": 0.5782608695652174,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.20177006031063272,
+          "coordinate_mae_px": 1.7924093640791736,
+          "epe_px": 2.8168727024560014,
+          "direction_cosine": 0.6112677044178616,
+          "direction_8bin_accuracy": 0.37335834896810505,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.7202993470690279,
+          "coordinate_mae_px": 12.313594163222184,
+          "epe_px": 19.50144751454128,
+          "direction_cosine": 0.7000203689986723,
+          "direction_8bin_accuracy": 0.4666666666666667,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7340119021412888,
+          "coordinate_mae_px": 1.7338949973875624,
+          "epe_px": 2.7295274214130694,
+          "direction_cosine": 0.8908663327326065,
+          "direction_8bin_accuracy": 0.6454767726161369,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5812772636990818,
+          "coordinate_mae_px": 2.195682107280299,
+          "epe_px": 3.46760756763381,
+          "direction_cosine": 0.865789917448899,
+          "direction_8bin_accuracy": 0.6432276657060518,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.588375783991987,
+          "coordinate_mae_px": 1.646911518557839,
+          "epe_px": 2.6047112980948093,
+          "direction_cosine": 0.8438022632062866,
+          "direction_8bin_accuracy": 0.5801242236024845,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.046898422193675904,
+          "coordinate_mae_px": 1.944431645449596,
+          "epe_px": 3.0699072442752433,
+          "direction_cosine": 0.5240707055148104,
+          "direction_8bin_accuracy": 0.30143839899937463,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.31425428694454527,
+          "coordinate_mae_px": 17.917377685184928,
+          "epe_px": 28.238330120453433,
+          "direction_cosine": 0.5165671408053251,
+          "direction_8bin_accuracy": 0.31066666666666665,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7064762357091102,
+          "coordinate_mae_px": 1.787582727016038,
+          "epe_px": 2.823282533634068,
+          "direction_cosine": 0.8819024176727482,
+          "direction_8bin_accuracy": 0.6546454767726161,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5819468366872884,
+          "coordinate_mae_px": 2.193182906113742,
+          "epe_px": 3.464731302816705,
+          "direction_cosine": 0.8645263539844,
+          "direction_8bin_accuracy": 0.6414985590778098,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5881258440562009,
+          "coordinate_mae_px": 1.656595148485921,
+          "epe_px": 2.6119658854249828,
+          "direction_cosine": 0.8437202674539606,
+          "direction_8bin_accuracy": 0.5739130434782609,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.009911223043974071,
+          "coordinate_mae_px": 1.9211348210264454,
+          "epe_px": 3.0313725405119976,
+          "direction_cosine": 0.5387633677638033,
+          "direction_8bin_accuracy": 0.324577861163227,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "aligned_flow",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.25691059841258845,
+          "coordinate_mae_px": 18.235299860987297,
+          "epe_px": 28.82952725666539,
+          "direction_cosine": 0.4678662963381886,
+          "direction_8bin_accuracy": 0.30866666666666664,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "ridge_lambda": 0.0,
+        "test": {
+          "r2": 0.9999600442365018,
+          "coordinate_mae_px": 0.014167076743693168,
+          "epe_px": 0.02206594379634061,
+          "direction_cosine": 0.999966694865555,
+          "direction_8bin_accuracy": 0.9938875305623472,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.6189693428982431,
+          "coordinate_mae_px": 1.9557886580154968,
+          "epe_px": 3.0974701313801916,
+          "direction_cosine": 0.8822836446050278,
+          "direction_8bin_accuracy": 0.6778097982708934,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.595354563431103,
+          "coordinate_mae_px": 1.63166318520167,
+          "epe_px": 2.5863612734818497,
+          "direction_cosine": 0.8485970196002879,
+          "direction_8bin_accuracy": 0.5807453416149069,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.2089232408762557,
+          "coordinate_mae_px": 1.7628844868497295,
+          "epe_px": 2.7761867547680046,
+          "direction_cosine": 0.6271121807469245,
+          "direction_8bin_accuracy": 0.39399624765478425,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.7162682646268654,
+          "coordinate_mae_px": 12.4445536117234,
+          "epe_px": 19.672838837078064,
+          "direction_cosine": 0.697236146640155,
+          "direction_8bin_accuracy": 0.462,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7798308929076052,
+          "coordinate_mae_px": 1.5246478202550322,
+          "epe_px": 2.413796994613088,
+          "direction_cosine": 0.8989496626967585,
+          "direction_8bin_accuracy": 0.6876528117359413,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.590249514557978,
+          "coordinate_mae_px": 2.1331308960085087,
+          "epe_px": 3.3771266026748794,
+          "direction_cosine": 0.8695382666247486,
+          "direction_8bin_accuracy": 0.6536023054755044,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 0.0,
+        "test": {
+          "r2": 0.5867409553975755,
+          "coordinate_mae_px": 1.6510008151826585,
+          "epe_px": 2.6102950203613813,
+          "direction_cosine": 0.8448604409503061,
+          "direction_8bin_accuracy": 0.5739130434782609,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.09483662482285649,
+          "coordinate_mae_px": 1.8870437923991272,
+          "epe_px": 2.973560771553,
+          "direction_cosine": 0.5646067199946442,
+          "direction_8bin_accuracy": 0.33270794246404,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.3958204328817282,
+          "coordinate_mae_px": 16.680039898768992,
+          "epe_px": 26.242144243710282,
+          "direction_cosine": 0.5549546422274901,
+          "direction_8bin_accuracy": 0.36133333333333334,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.7193202174169124,
+          "coordinate_mae_px": 1.6950916685734505,
+          "epe_px": 2.6706907782392553,
+          "direction_cosine": 0.8861178111582616,
+          "direction_8bin_accuracy": 0.6625916870415648,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5862926074387642,
+          "coordinate_mae_px": 2.158068965544214,
+          "epe_px": 3.4120056875256783,
+          "direction_cosine": 0.8676385632864785,
+          "direction_8bin_accuracy": 0.6345821325648415,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5866275160801705,
+          "coordinate_mae_px": 1.6481184669081976,
+          "epe_px": 2.6078391674124317,
+          "direction_cosine": 0.8429785032504863,
+          "direction_8bin_accuracy": 0.5788819875776398,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.03629225995879004,
+          "coordinate_mae_px": 1.8746484529309966,
+          "epe_px": 2.9602371497093145,
+          "direction_cosine": 0.5665421733468164,
+          "direction_8bin_accuracy": 0.3302063789868668,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 0,
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.2950164795873269,
+          "coordinate_mae_px": 17.400879395619203,
+          "epe_px": 27.571357580687707,
+          "direction_cosine": 0.5158389184524453,
+          "direction_8bin_accuracy": 0.334,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "ridge_lambda": 0.0,
+        "test": {
+          "r2": 0.9999535453695549,
+          "coordinate_mae_px": 0.015235026572435252,
+          "epe_px": 0.02396065939454478,
+          "direction_cosine": 0.999937752986135,
+          "direction_8bin_accuracy": 0.9957212713936431,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.6203720618066484,
+          "coordinate_mae_px": 1.9221152275274958,
+          "epe_px": 3.0500628047202905,
+          "direction_cosine": 0.885793838397254,
+          "direction_8bin_accuracy": 0.6789625360230548,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.5953939157256036,
+          "coordinate_mae_px": 1.6295158559619674,
+          "epe_px": 2.5808734911531177,
+          "direction_cosine": 0.8505837945541882,
+          "direction_8bin_accuracy": 0.5925465838509317,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.3215053637890555,
+          "coordinate_mae_px": 1.7703331041500239,
+          "epe_px": 2.7899697193591884,
+          "direction_cosine": 0.5988394577928817,
+          "direction_8bin_accuracy": 0.36397748592870544,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 1.0,
+        "test": {
+          "r2": 0.716939079841425,
+          "coordinate_mae_px": 12.408096588080943,
+          "epe_px": 19.606510448270452,
+          "direction_cosine": 0.7017032481784901,
+          "direction_8bin_accuracy": 0.468,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.7418394371329191,
+          "coordinate_mae_px": 1.6434217554017965,
+          "epe_px": 2.5857731554808474,
+          "direction_cosine": 0.8981426988507996,
+          "direction_8bin_accuracy": 0.6797066014669927,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5893657937634291,
+          "coordinate_mae_px": 2.1430788722588034,
+          "epe_px": 3.3915971770818065,
+          "direction_cosine": 0.8690843002027747,
+          "direction_8bin_accuracy": 0.6536023054755044,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5883288498106123,
+          "coordinate_mae_px": 1.6436010130768246,
+          "epe_px": 2.5990363809086685,
+          "direction_cosine": 0.846957127352666,
+          "direction_8bin_accuracy": 0.5900621118012422,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.05298162642764004,
+          "coordinate_mae_px": 1.8764766389075742,
+          "epe_px": 2.9571405542631766,
+          "direction_cosine": 0.574292103752458,
+          "direction_8bin_accuracy": 0.3258286429018136,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.3332613242785003,
+          "coordinate_mae_px": 17.24944799378716,
+          "epe_px": 27.280815063644145,
+          "direction_cosine": 0.5351492122296694,
+          "direction_8bin_accuracy": 0.346,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.7157274786436341,
+          "coordinate_mae_px": 1.7350051572045624,
+          "epe_px": 2.7367045591122716,
+          "direction_cosine": 0.8878864296655324,
+          "direction_8bin_accuracy": 0.6693154034229829,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5802353634784659,
+          "coordinate_mae_px": 2.1900755595987063,
+          "epe_px": 3.466369837374157,
+          "direction_cosine": 0.8668028255590362,
+          "direction_8bin_accuracy": 0.6455331412103746,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5827870799044234,
+          "coordinate_mae_px": 1.6589281639950253,
+          "epe_px": 2.619387020629909,
+          "direction_cosine": 0.8439761229869703,
+          "direction_8bin_accuracy": 0.5826086956521739,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.022335187360073783,
+          "coordinate_mae_px": 1.8997819972775474,
+          "epe_px": 2.994251493461933,
+          "direction_cosine": 0.5471259564961924,
+          "direction_8bin_accuracy": 0.3170731707317073,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 1,
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.2895514952552837,
+          "coordinate_mae_px": 17.625682648183204,
+          "epe_px": 28.033806732071746,
+          "direction_cosine": 0.49406560007786604,
+          "direction_8bin_accuracy": 0.3333333333333333,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "ridge_lambda": 0.01,
+        "test": {
+          "r2": 0.9996724569562061,
+          "coordinate_mae_px": 0.03959898989080078,
+          "epe_px": 0.06221284921536708,
+          "direction_cosine": 0.9996679671134263,
+          "direction_8bin_accuracy": 0.988997555012225,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.6140564219740103,
+          "coordinate_mae_px": 1.9408247783593453,
+          "epe_px": 3.07684307739926,
+          "direction_cosine": 0.8825386680959751,
+          "direction_8bin_accuracy": 0.6789625360230548,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.5711663441991757,
+          "coordinate_mae_px": 1.6696508541150143,
+          "epe_px": 2.640968929092099,
+          "direction_cosine": 0.8445102747623475,
+          "direction_8bin_accuracy": 0.5726708074534161,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.20405879333151122,
+          "coordinate_mae_px": 1.7923553120875135,
+          "epe_px": 2.8157402678724686,
+          "direction_cosine": 0.6105426963613704,
+          "direction_8bin_accuracy": 0.37523452157598497,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 0.1,
+        "test": {
+          "r2": 0.7191510092806255,
+          "coordinate_mae_px": 12.341873301138785,
+          "epe_px": 19.541670354790885,
+          "direction_cosine": 0.701531522278479,
+          "direction_8bin_accuracy": 0.468,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.7257162060305615,
+          "coordinate_mae_px": 1.7223295796735554,
+          "epe_px": 2.7184565991466387,
+          "direction_cosine": 0.8906411698642006,
+          "direction_8bin_accuracy": 0.6613691931540342,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5822011879268358,
+          "coordinate_mae_px": 2.1793078380509847,
+          "epe_px": 3.448906639935571,
+          "direction_cosine": 0.8685164501786187,
+          "direction_8bin_accuracy": 0.6432276657060518,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5896747991945693,
+          "coordinate_mae_px": 1.6492004005954186,
+          "epe_px": 2.6023026829942943,
+          "direction_cosine": 0.8445606997068219,
+          "direction_8bin_accuracy": 0.5826086956521739,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.03571819411384791,
+          "coordinate_mae_px": 1.886961204581504,
+          "epe_px": 2.977653706235572,
+          "direction_cosine": 0.5580228093624607,
+          "direction_8bin_accuracy": 0.3170731707317073,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.30039029309387255,
+          "coordinate_mae_px": 17.655008704481414,
+          "epe_px": 28.003179611633538,
+          "direction_cosine": 0.5063419052665595,
+          "direction_8bin_accuracy": 0.32866666666666666,
+          "sample_count": 1501
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.7085417023735727,
+          "coordinate_mae_px": 1.7864132914301147,
+          "epe_px": 2.825313808591057,
+          "direction_cosine": 0.8839690166116456,
+          "direction_8bin_accuracy": 0.6577017114914425,
+          "sample_count": 1637
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5802597651953867,
+          "coordinate_mae_px": 2.1840788530392823,
+          "epe_px": 3.462812565196872,
+          "direction_cosine": 0.8671089230966819,
+          "direction_8bin_accuracy": 0.6449567723342939,
+          "sample_count": 1737
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.5833049387653995,
+          "coordinate_mae_px": 1.6651003390581116,
+          "epe_px": 2.6270192685645752,
+          "direction_cosine": 0.8417475045571234,
+          "direction_8bin_accuracy": 0.5726708074534161,
+          "sample_count": 1611
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "ridge_lambda": 100.0,
+        "test": {
+          "r2": 0.007924999400072963,
+          "coordinate_mae_px": 1.9307637317516686,
+          "epe_px": 3.046361841955846,
+          "direction_cosine": 0.5413910747080488,
+          "direction_8bin_accuracy": 0.3214509068167605,
+          "sample_count": 1616
+        }
+      },
+      {
+        "mode": "input_aux",
+        "seed": 2,
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "ridge_lambda": 10.0,
+        "test": {
+          "r2": 0.2531098905400113,
+          "coordinate_mae_px": 18.37153873325688,
+          "epe_px": 29.079073563630605,
+          "direction_cosine": 0.4703981247579505,
+          "direction_8bin_accuracy": 0.31466666666666665,
+          "sample_count": 1501
+        }
+      }
+    ],
+    "r2_summary": [
+      {
+        "mode": "aligned_flow",
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "mean": 0.7178357323824306,
+        "sample_std": 0.002315660896438523,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "mean": 0.24583043372796223,
+        "sample_std": 0.06530163670362445,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "mean": 0.6203587693060609,
+        "sample_std": 0.004921632997526994,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "mean": 0.5883391646460111,
+        "sample_std": 0.011670564703154833,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "mean": 0.9999293517329465,
+        "sample_std": 2.9031695064390484e-05,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "mean": 0.32244820774469724,
+        "sample_std": 0.021446324739530752,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "mean": 0.04550531979338331,
+        "sample_std": 0.005094348586145594,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "mean": 0.5853004359226134,
+        "sample_std": 0.0060217972386443054,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "mean": 0.5900461100062929,
+        "sample_std": 0.0038354237813529113,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "mean": 0.7413353171060463,
+        "sample_std": 0.012134315948693186,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "mean": 0.27433810104337764,
+        "sample_std": 0.01516231745039649,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "mean": 0.01812391957126362,
+        "sample_std": 0.007151893599673045,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "mean": 0.5830042258780376,
+        "sample_std": 0.001613231358824214,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "mean": 0.5871082991584019,
+        "sample_std": 0.00567934963816777,
+        "n": 3
+      },
+      {
+        "mode": "aligned_flow",
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "mean": 0.7102469273604027,
+        "sample_std": 0.005833879756546219,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "mean": 0.717452784582972,
+        "sample_std": 0.001508467303527455,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "mean": 0.24482913266560746,
+        "sample_std": 0.06644809272621154,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "mean": 0.6177992755596339,
+        "sample_std": 0.003316416711838407,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "mean": 0.5873049411186274,
+        "sample_std": 0.013976448763801714,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "mean": 0.9998620155207543,
+        "sample_std": 0.000164194688900307,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "mean": 0.34315735008470033,
+        "sample_std": 0.048478617864478664,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "mean": 0.06117881512144815,
+        "sample_std": 0.030399714459767274,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "mean": 0.587272165416081,
+        "sample_std": 0.0044137682464083765,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "mean": 0.5882482014675857,
+        "sample_std": 0.0014685836621433732,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "mean": 0.7491288453570286,
+        "sample_std": 0.02778401407542487,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "mean": 0.2792259551275406,
+        "sample_std": 0.02278164031829955,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "mean": 0.022184148906312262,
+        "sample_std": 0.014184233407640414,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "mean": 0.5822625787042056,
+        "sample_std": 0.003490128588171668,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "mean": 0.5842398449166645,
+        "sample_std": 0.002083932493808677,
+        "n": 3
+      },
+      {
+        "mode": "input_aux",
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "mean": 0.7145297994780396,
+        "sample_std": 0.005488162094239668,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "input_projection",
+        "target": "cv_residual_h8",
+        "mean": 0.6508091341011069,
+        "sample_std": 0.001096480761317925,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "input_projection",
+        "target": "first_acceleration",
+        "mean": 0.15419181250161695,
+        "sample_std": 0.013006931673523176,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "input_projection",
+        "target": "future_first_displacement",
+        "mean": 0.5416124906613916,
+        "sample_std": 0.004033460295974808,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "input_projection",
+        "target": "future_mean_velocity",
+        "mean": 0.5158975948529164,
+        "sample_std": 0.0021393370278356004,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "input_projection",
+        "target": "observed_velocity",
+        "mean": 0.9999994476384414,
+        "sample_std": 2.378750569412328e-07,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_1",
+        "target": "cv_residual_h8",
+        "mean": 0.41271108820311114,
+        "sample_std": 0.00860828125298605,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_1",
+        "target": "first_acceleration",
+        "mean": 0.0701068784683387,
+        "sample_std": 0.006684841077362765,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_1",
+        "target": "future_first_displacement",
+        "mean": 0.506430444103856,
+        "sample_std": 0.01631903533643398,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_1",
+        "target": "future_mean_velocity",
+        "mean": 0.4989007256908636,
+        "sample_std": 0.008768528309220897,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_1",
+        "target": "observed_velocity",
+        "mean": 0.7830873030223096,
+        "sample_std": 0.019458737543213922,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_2",
+        "target": "cv_residual_h8",
+        "mean": 0.3416238478183322,
+        "sample_std": 0.01163231690755804,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_2",
+        "target": "first_acceleration",
+        "mean": 0.043416516350903565,
+        "sample_std": 0.0018757786656446662,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_2",
+        "target": "future_first_displacement",
+        "mean": 0.4976134500198448,
+        "sample_std": 0.015017109373422084,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_2",
+        "target": "future_mean_velocity",
+        "mean": 0.495988885643223,
+        "sample_std": 0.009735445053014722,
+        "n": 3
+      },
+      {
+        "mode": "no_flow",
+        "layer": "transformer_2",
+        "target": "observed_velocity",
+        "mean": 0.7258555153855472,
+        "sample_std": 0.01637973518373663,
+        "n": 3
+      }
+    ]
+  },
+  "interventions": {
+    "protocol": "Same aligned-flow checkpoint; only test observed flow is transformed.",
+    "per_seed": [
+      {
+        "seed": 0,
+        "kind": "scale",
+        "value": -1.0,
+        "test": {
+          "position_mse": 0.04424254223704338,
+          "coordinate_mae_px": 18.905153274536133,
+          "ade_px": 30.125425338745117,
+          "fde_px": 43.6184196472168,
+          "velocity_epe_px_per_frame": 6.74368953704834,
+          "speed_mae_px_per_frame": 3.594040632247925,
+          "velocity_direction_cosine": 0.13131926953792572,
+          "acceleration_epe_px_per_frame2": 5.394337177276611,
+          "per_horizon_mse": [
+            0.007899176329374313,
+            0.017165927216410637,
+            0.026785114780068398,
+            0.03875071927905083,
+            0.0498802587389946,
+            0.06031132861971855,
+            0.07227107137441635,
+            0.08153322339057922
+          ],
+          "per_horizon_ade_px": [
+            10.964529037475586,
+            19.036457061767578,
+            24.58530616760254,
+            29.959135055541992,
+            34.169921875,
+            37.65557861328125,
+            41.09136199951172,
+            43.6184196472168
+          ],
+          "output_change_epe_px": 22.84392738342285,
+          "final_displacement_projection_on_original_flow_px": -2.6843137741088867
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "scale",
+        "value": -0.5,
+        "test": {
+          "position_mse": 0.03401622921228409,
+          "coordinate_mae_px": 16.53788948059082,
+          "ade_px": 26.314970016479492,
+          "fde_px": 38.13051986694336,
+          "velocity_epe_px_per_frame": 6.041381359100342,
+          "speed_mae_px_per_frame": 3.7248382568359375,
+          "velocity_direction_cosine": 0.2571863532066345,
+          "acceleration_epe_px_per_frame2": 4.84285306930542,
+          "per_horizon_mse": [
+            0.006487872917205095,
+            0.013573558069765568,
+            0.020855067297816277,
+            0.029483523219823837,
+            0.038217104971408844,
+            0.04629942774772644,
+            0.05555308237671852,
+            0.06215965375304222
+          ],
+          "per_horizon_ade_px": [
+            9.514528274536133,
+            16.488317489624023,
+            21.454448699951172,
+            26.025463104248047,
+            29.876001358032227,
+            33.00196838378906,
+            36.09815216064453,
+            38.13051986694336
+          ],
+          "output_change_epe_px": 18.37588119506836,
+          "final_displacement_projection_on_original_flow_px": 4.650115966796875
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "scale",
+        "value": 0.0,
+        "test": {
+          "position_mse": 0.024062780663371086,
+          "coordinate_mae_px": 13.788899421691895,
+          "ade_px": 21.889020919799805,
+          "fde_px": 31.719825744628906,
+          "velocity_epe_px_per_frame": 5.267323017120361,
+          "speed_mae_px_per_frame": 3.6311211585998535,
+          "velocity_direction_cosine": 0.4516645073890686,
+          "acceleration_epe_px_per_frame2": 4.42515754699707,
+          "per_horizon_mse": [
+            0.005449212621897459,
+            0.010512405075132847,
+            0.015331127680838108,
+            0.02077719196677208,
+            0.02682322822511196,
+            0.03235945850610733,
+            0.03874498978257179,
+            0.04283682256937027
+          ],
+          "per_horizon_ade_px": [
+            8.034110069274902,
+            13.690411567687988,
+            17.796131134033203,
+            21.485227584838867,
+            24.819486618041992,
+            27.47665023803711,
+            30.153919219970703,
+            31.719825744628906
+          ],
+          "output_change_epe_px": 12.777584075927734,
+          "final_displacement_projection_on_original_flow_px": 14.046446800231934
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "scale",
+        "value": 0.5,
+        "test": {
+          "position_mse": 0.017308391630649567,
+          "coordinate_mae_px": 11.286993980407715,
+          "ade_px": 17.8837947845459,
+          "fde_px": 26.012996673583984,
+          "velocity_epe_px_per_frame": 4.601903438568115,
+          "speed_mae_px_per_frame": 3.146009683609009,
+          "velocity_direction_cosine": 0.5801117420196533,
+          "acceleration_epe_px_per_frame2": 4.1515278816223145,
+          "per_horizon_mse": [
+            0.004865472204983234,
+            0.00857546180486679,
+            0.011598856188356876,
+            0.015020950697362423,
+            0.019138867035508156,
+            0.022846737876534462,
+            0.026923812925815582,
+            0.02971220761537552
+          ],
+          "per_horizon_ade_px": [
+            6.755300045013428,
+            11.188100814819336,
+            14.40442943572998,
+            17.38429069519043,
+            20.25653839111328,
+            22.50281524658203,
+            24.626977920532227,
+            26.012996673583984
+          ],
+          "output_change_epe_px": 6.532563209533691,
+          "final_displacement_projection_on_original_flow_px": 24.166826248168945
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "scale",
+        "value": 1.0,
+        "test": {
+          "position_mse": 0.014919407665729523,
+          "coordinate_mae_px": 10.023090362548828,
+          "ade_px": 15.836512565612793,
+          "fde_px": 23.463743209838867,
+          "velocity_epe_px_per_frame": 4.339078903198242,
+          "speed_mae_px_per_frame": 2.695305109024048,
+          "velocity_direction_cosine": 0.611198902130127,
+          "acceleration_epe_px_per_frame2": 4.166667461395264,
+          "per_horizon_mse": [
+            0.0046082851476967335,
+            0.007848898880183697,
+            0.010317621752619743,
+            0.013053253293037415,
+            0.016424132511019707,
+            0.01946401409804821,
+            0.02263714373111725,
+            0.025175562128424644
+          ],
+          "per_horizon_ade_px": [
+            5.92203426361084,
+            9.716241836547852,
+            12.516900062561035,
+            15.26341438293457,
+            17.92296028137207,
+            20.033456802368164,
+            21.922121047973633,
+            23.463743209838867
+          ],
+          "output_change_epe_px": 0.0,
+          "final_displacement_projection_on_original_flow_px": 34.565818786621094
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "scale",
+        "value": 1.5,
+        "test": {
+          "position_mse": 0.01663164235651493,
+          "coordinate_mae_px": 10.938721656799316,
+          "ade_px": 17.236146926879883,
+          "fde_px": 25.248868942260742,
+          "velocity_epe_px_per_frame": 4.629703044891357,
+          "speed_mae_px_per_frame": 2.76595139503479,
+          "velocity_direction_cosine": 0.6126264929771423,
+          "acceleration_epe_px_per_frame2": 4.556802272796631,
+          "per_horizon_mse": [
+            0.004823184572160244,
+            0.008302045986056328,
+            0.011472903192043304,
+            0.014701197855174541,
+            0.01851656474173069,
+            0.021761439740657806,
+            0.025436876341700554,
+            0.028229985386133194
+          ],
+          "per_horizon_ade_px": [
+            6.469361305236816,
+            10.422745704650879,
+            13.927122116088867,
+            16.872066497802734,
+            19.60116958618164,
+            21.69002914428711,
+            23.71854019165039,
+            25.248868942260742
+          ],
+          "output_change_epe_px": 6.401392936706543,
+          "final_displacement_projection_on_original_flow_px": 44.79845428466797
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "scale",
+        "value": 2.0,
+        "test": {
+          "position_mse": 0.021285763010382652,
+          "coordinate_mae_px": 13.159639358520508,
+          "ade_px": 20.656206130981445,
+          "fde_px": 29.648685455322266,
+          "velocity_epe_px_per_frame": 5.249271392822266,
+          "speed_mae_px_per_frame": 3.2357280254364014,
+          "velocity_direction_cosine": 0.6077526211738586,
+          "acceleration_epe_px_per_frame2": 5.190530776977539,
+          "per_horizon_mse": [
+            0.005516197066754103,
+            0.009735092520713806,
+            0.014430456794798374,
+            0.01901434361934662,
+            0.024200040847063065,
+            0.028169060125947,
+            0.033001821488142014,
+            0.03645993024110794
+          ],
+          "per_horizon_ade_px": [
+            7.928009510040283,
+            12.533540725708008,
+            17.120750427246094,
+            20.5548152923584,
+            23.63312530517578,
+            25.794883728027344,
+            28.085010528564453,
+            29.648685455322266
+          ],
+          "output_change_epe_px": 12.25339412689209,
+          "final_displacement_projection_on_original_flow_px": 54.00463104248047
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "rotate",
+        "value": -90.0,
+        "test": {
+          "position_mse": 0.034425072371959686,
+          "coordinate_mae_px": 16.839923858642578,
+          "ade_px": 26.734111785888672,
+          "fde_px": 38.786590576171875,
+          "velocity_epe_px_per_frame": 6.106385707855225,
+          "speed_mae_px_per_frame": 3.145066976547241,
+          "velocity_direction_cosine": 0.34482601284980774,
+          "acceleration_epe_px_per_frame2": 4.950013637542725,
+          "per_horizon_mse": [
+            0.006453563459217548,
+            0.013729683123528957,
+            0.021111220121383667,
+            0.02995876967906952,
+            0.039381880313158035,
+            0.047033924609422684,
+            0.05549610033631325,
+            0.06271883845329285
+          ],
+          "per_horizon_ade_px": [
+            9.664587020874023,
+            16.676502227783203,
+            21.712879180908203,
+            26.51080894470215,
+            30.617652893066406,
+            33.50102615356445,
+            36.471229553222656,
+            38.786590576171875
+          ],
+          "output_change_epe_px": 19.117900848388672,
+          "final_displacement_projection_on_original_flow_px": 12.123414039611816
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "rotate",
+        "value": -45.0,
+        "test": {
+          "position_mse": 0.02051399089396,
+          "coordinate_mae_px": 12.773477554321289,
+          "ade_px": 20.073326110839844,
+          "fde_px": 29.259702682495117,
+          "velocity_epe_px_per_frame": 4.991447925567627,
+          "speed_mae_px_per_frame": 2.8449318408966064,
+          "velocity_direction_cosine": 0.5371479988098145,
+          "acceleration_epe_px_per_frame2": 4.439700126647949,
+          "per_horizon_mse": [
+            0.005080255679786205,
+            0.009425994008779526,
+            0.013505212031304836,
+            0.017854852601885796,
+            0.02327045425772667,
+            0.02729322947561741,
+            0.03203665837645531,
+            0.035902537405490875
+          ],
+          "per_horizon_ade_px": [
+            7.263412952423096,
+            12.319314956665039,
+            16.32443618774414,
+            19.683944702148438,
+            23.100234985351562,
+            25.194520950317383,
+            27.497406005859375,
+            29.259702682495117
+          ],
+          "output_change_epe_px": 10.723146438598633,
+          "final_displacement_projection_on_original_flow_px": 27.64983367919922
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "rotate",
+        "value": 0.0,
+        "test": {
+          "position_mse": 0.014919407665729523,
+          "coordinate_mae_px": 10.023090362548828,
+          "ade_px": 15.836512565612793,
+          "fde_px": 23.463743209838867,
+          "velocity_epe_px_per_frame": 4.339078903198242,
+          "speed_mae_px_per_frame": 2.695305109024048,
+          "velocity_direction_cosine": 0.611198902130127,
+          "acceleration_epe_px_per_frame2": 4.166667461395264,
+          "per_horizon_mse": [
+            0.0046082851476967335,
+            0.007848898880183697,
+            0.010317621752619743,
+            0.013053253293037415,
+            0.016424132511019707,
+            0.01946401409804821,
+            0.02263714373111725,
+            0.025175562128424644
+          ],
+          "per_horizon_ade_px": [
+            5.92203426361084,
+            9.716241836547852,
+            12.516900062561035,
+            15.26341438293457,
+            17.92296028137207,
+            20.033456802368164,
+            21.922121047973633,
+            23.463743209838867
+          ],
+          "output_change_epe_px": 0.0,
+          "final_displacement_projection_on_original_flow_px": 34.565818786621094
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "rotate",
+        "value": 45.0,
+        "test": {
+          "position_mse": 0.02076140232384205,
+          "coordinate_mae_px": 12.93368911743164,
+          "ade_px": 20.309768676757812,
+          "fde_px": 29.764942169189453,
+          "velocity_epe_px_per_frame": 5.0244598388671875,
+          "speed_mae_px_per_frame": 2.876296281814575,
+          "velocity_direction_cosine": 0.527237057685852,
+          "acceleration_epe_px_per_frame2": 4.403804779052734,
+          "per_horizon_mse": [
+            0.005031887907534838,
+            0.009456918574869633,
+            0.013306544162333012,
+            0.01829938031733036,
+            0.023024510592222214,
+            0.02784065343439579,
+            0.03279464319348335,
+            0.03661244362592697
+          ],
+          "per_horizon_ade_px": [
+            7.238143444061279,
+            12.48686695098877,
+            16.236696243286133,
+            20.112449645996094,
+            23.028772354125977,
+            25.63753318786621,
+            28.038423538208008,
+            29.764942169189453
+          ],
+          "output_change_epe_px": 10.376160621643066,
+          "final_displacement_projection_on_original_flow_px": 26.75969696044922
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "rotate",
+        "value": 90.0,
+        "test": {
+          "position_mse": 0.032396625727415085,
+          "coordinate_mae_px": 16.408164978027344,
+          "ade_px": 25.958755493164062,
+          "fde_px": 37.87333679199219,
+          "velocity_epe_px_per_frame": 5.980686664581299,
+          "speed_mae_px_per_frame": 3.2850899696350098,
+          "velocity_direction_cosine": 0.34646815061569214,
+          "acceleration_epe_px_per_frame2": 4.811342716217041,
+          "per_horizon_mse": [
+            0.00611904077231884,
+            0.012953425757586956,
+            0.019924646243453026,
+            0.02836308814585209,
+            0.03638571873307228,
+            0.044150955975055695,
+            0.05249340087175369,
+            0.05925162136554718
+          ],
+          "per_horizon_ade_px": [
+            9.136168479919434,
+            16.08269500732422,
+            21.045114517211914,
+            25.73133087158203,
+            29.464670181274414,
+            32.69662857055664,
+            35.71211624145508,
+            37.87333679199219
+          ],
+          "output_change_epe_px": 17.74322509765625,
+          "final_displacement_projection_on_original_flow_px": 11.286489486694336
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "rotate",
+        "value": 180.0,
+        "test": {
+          "position_mse": 0.04424254223704338,
+          "coordinate_mae_px": 18.905153274536133,
+          "ade_px": 30.125425338745117,
+          "fde_px": 43.6184196472168,
+          "velocity_epe_px_per_frame": 6.74368953704834,
+          "speed_mae_px_per_frame": 3.594040632247925,
+          "velocity_direction_cosine": 0.13131926953792572,
+          "acceleration_epe_px_per_frame2": 5.394337177276611,
+          "per_horizon_mse": [
+            0.007899176329374313,
+            0.017165927216410637,
+            0.026785114780068398,
+            0.03875071927905083,
+            0.0498802587389946,
+            0.06031132861971855,
+            0.07227107137441635,
+            0.08153322339057922
+          ],
+          "per_horizon_ade_px": [
+            10.964529037475586,
+            19.036457061767578,
+            24.58530616760254,
+            29.959135055541992,
+            34.169921875,
+            37.65557861328125,
+            41.09136199951172,
+            43.6184196472168
+          ],
+          "output_change_epe_px": 22.84392738342285,
+          "final_displacement_projection_on_original_flow_px": -2.6843137741088867
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "time_zero",
+        "value": 0,
+        "test": {
+          "position_mse": 0.015069525688886642,
+          "coordinate_mae_px": 10.13451862335205,
+          "ade_px": 16.02699089050293,
+          "fde_px": 23.634851455688477,
+          "velocity_epe_px_per_frame": 4.348760604858398,
+          "speed_mae_px_per_frame": 2.7731218338012695,
+          "velocity_direction_cosine": 0.6087060570716858,
+          "acceleration_epe_px_per_frame2": 4.129931449890137,
+          "per_horizon_mse": [
+            0.004655457567423582,
+            0.00795093085616827,
+            0.010421289131045341,
+            0.01317646075040102,
+            0.016590991988778114,
+            0.019645698368549347,
+            0.022875569760799408,
+            0.02541505917906761
+          ],
+          "per_horizon_ade_px": [
+            6.076219081878662,
+            9.960530281066895,
+            12.736238479614258,
+            15.443974494934082,
+            18.10262107849121,
+            20.21700668334961,
+            22.111791610717773,
+            23.634851455688477
+          ],
+          "output_change_epe_px": 1.9073234796524048,
+          "final_displacement_projection_on_original_flow_px": 31.804454803466797
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "time_zero",
+        "value": 1,
+        "test": {
+          "position_mse": 0.015638452023267746,
+          "coordinate_mae_px": 10.461085319519043,
+          "ade_px": 16.574691772460938,
+          "fde_px": 24.268966674804688,
+          "velocity_epe_px_per_frame": 4.4163689613342285,
+          "speed_mae_px_per_frame": 2.9195563793182373,
+          "velocity_direction_cosine": 0.6024516224861145,
+          "acceleration_epe_px_per_frame2": 4.1068902015686035,
+          "per_horizon_mse": [
+            0.004705965053290129,
+            0.008087419904768467,
+            0.010682415217161179,
+            0.013609218411147594,
+            0.017249174416065216,
+            0.020491311326622963,
+            0.023942964151501656,
+            0.02652588300406933
+          ],
+          "per_horizon_ade_px": [
+            6.29929256439209,
+            10.346080780029297,
+            13.248908042907715,
+            16.021785736083984,
+            18.75391387939453,
+            20.885570526123047,
+            22.836618423461914,
+            24.268966674804688
+          ],
+          "output_change_epe_px": 3.8401732444763184,
+          "final_displacement_projection_on_original_flow_px": 28.62086296081543
+        }
+      },
+      {
+        "seed": 0,
+        "kind": "time_zero",
+        "value": 2,
+        "test": {
+          "position_mse": 0.019168397411704063,
+          "coordinate_mae_px": 11.90471363067627,
+          "ade_px": 18.868322372436523,
+          "fde_px": 27.476762771606445,
+          "velocity_epe_px_per_frame": 4.77130651473999,
+          "speed_mae_px_per_frame": 3.237426280975342,
+          "velocity_direction_cosine": 0.5517215132713318,
+          "acceleration_epe_px_per_frame2": 4.232489109039307,
+          "per_horizon_mse": [
+            0.004991733003407717,
+            0.009042029269039631,
+            0.012585465796291828,
+            0.016630394384264946,
+            0.02124563418328762,
+            0.025493096560239792,
+            0.030206123366951942,
+            0.03340204060077667
+          ],
+          "per_horizon_ade_px": [
+            7.027611255645752,
+            11.735031127929688,
+            15.19500732421875,
+            18.392351150512695,
+            21.385848999023438,
+            23.77439308166504,
+            26.022693634033203,
+            27.476762771606445
+          ],
+          "output_change_epe_px": 7.84095573425293,
+          "final_displacement_projection_on_original_flow_px": 22.274734497070312
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "scale",
+        "value": -1.0,
+        "test": {
+          "position_mse": 0.04638376459479332,
+          "coordinate_mae_px": 19.546369552612305,
+          "ade_px": 31.018068313598633,
+          "fde_px": 44.50275802612305,
+          "velocity_epe_px_per_frame": 6.87388801574707,
+          "speed_mae_px_per_frame": 3.57598876953125,
+          "velocity_direction_cosine": 0.0967910960316658,
+          "acceleration_epe_px_per_frame2": 5.627198696136475,
+          "per_horizon_mse": [
+            0.00848087202757597,
+            0.017695477232336998,
+            0.02919698692858219,
+            0.040324147790670395,
+            0.05228424072265625,
+            0.06397473812103271,
+            0.07510297000408173,
+            0.08466074615716934
+          ],
+          "per_horizon_ade_px": [
+            12.031759262084961,
+            19.027042388916016,
+            25.73691177368164,
+            30.679880142211914,
+            35.18244934082031,
+            38.939056396484375,
+            42.12272644042969,
+            44.50275802612305
+          ],
+          "output_change_epe_px": 24.878026962280273,
+          "final_displacement_projection_on_original_flow_px": -3.6276204586029053
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "scale",
+        "value": -0.5,
+        "test": {
+          "position_mse": 0.03604981675744057,
+          "coordinate_mae_px": 17.294116973876953,
+          "ade_px": 27.42194938659668,
+          "fde_px": 39.49493408203125,
+          "velocity_epe_px_per_frame": 6.234455108642578,
+          "speed_mae_px_per_frame": 3.814168691635132,
+          "velocity_direction_cosine": 0.19761262834072113,
+          "acceleration_epe_px_per_frame2": 5.1324076652526855,
+          "per_horizon_mse": [
+            0.006901553366333246,
+            0.013879392296075821,
+            0.022500963881611824,
+            0.03123031184077263,
+            0.04045099392533302,
+            0.049685001373291016,
+            0.05848927050828934,
+            0.06577808409929276
+          ],
+          "per_horizon_ade_px": [
+            10.486987113952637,
+            16.690473556518555,
+            22.587942123413086,
+            27.13336181640625,
+            31.122745513916016,
+            34.51365661621094,
+            37.41865921020508,
+            39.49493408203125
+          ],
+          "output_change_epe_px": 20.73175621032715,
+          "final_displacement_projection_on_original_flow_px": 2.4598357677459717
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "scale",
+        "value": 0.0,
+        "test": {
+          "position_mse": 0.025491131469607353,
+          "coordinate_mae_px": 14.39759349822998,
+          "ade_px": 22.76728630065918,
+          "fde_px": 32.75830078125,
+          "velocity_epe_px_per_frame": 5.413247585296631,
+          "speed_mae_px_per_frame": 3.8715872764587402,
+          "velocity_direction_cosine": 0.4313018023967743,
+          "acceleration_epe_px_per_frame2": 4.566434383392334,
+          "per_horizon_mse": [
+            0.005728568881750107,
+            0.01070424821227789,
+            0.01618754304945469,
+            0.022245263680815697,
+            0.02867499552667141,
+            0.034737564623355865,
+            0.040686704218387604,
+            0.04530508816242218
+          ],
+          "per_horizon_ade_px": [
+            8.634963035583496,
+            13.934398651123047,
+            18.59945297241211,
+            22.572019577026367,
+            25.947751998901367,
+            28.68634605407715,
+            31.0639705657959,
+            32.75830078125
+          ],
+          "output_change_epe_px": 15.0374116897583,
+          "final_displacement_projection_on_original_flow_px": 11.546041488647461
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "scale",
+        "value": 0.5,
+        "test": {
+          "position_mse": 0.017314137890934944,
+          "coordinate_mae_px": 11.29110050201416,
+          "ade_px": 17.872753143310547,
+          "fde_px": 25.915740966796875,
+          "velocity_epe_px_per_frame": 4.634920120239258,
+          "speed_mae_px_per_frame": 3.1903557777404785,
+          "velocity_direction_cosine": 0.572283923625946,
+          "acceleration_epe_px_per_frame2": 4.230016231536865,
+          "per_horizon_mse": [
+            0.004994639661163092,
+            0.008490343578159809,
+            0.011546369642019272,
+            0.015124606899917126,
+            0.01939973793923855,
+            0.02300497330725193,
+            0.026530079543590546,
+            0.0296312365680933
+          ],
+          "per_horizon_ade_px": [
+            6.785632610321045,
+            11.034819602966309,
+            14.355453491210938,
+            17.547943115234375,
+            20.454282760620117,
+            22.57548713684082,
+            24.36717987060547,
+            25.915740966796875
+          ],
+          "output_change_epe_px": 7.415302753448486,
+          "final_displacement_projection_on_original_flow_px": 23.41242027282715
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "scale",
+        "value": 1.0,
+        "test": {
+          "position_mse": 0.014923798851668835,
+          "coordinate_mae_px": 10.039726257324219,
+          "ade_px": 15.84713363647461,
+          "fde_px": 23.232318878173828,
+          "velocity_epe_px_per_frame": 4.352978706359863,
+          "speed_mae_px_per_frame": 2.691985607147217,
+          "velocity_direction_cosine": 0.6022356748580933,
+          "acceleration_epe_px_per_frame2": 4.165577411651611,
+          "per_horizon_mse": [
+            0.004911087919026613,
+            0.007955820299685001,
+            0.01035303995013237,
+            0.012927639298141003,
+            0.01658380776643753,
+            0.019406544044613838,
+            0.022561198100447655,
+            0.024861285462975502
+          ],
+          "per_horizon_ade_px": [
+            6.062742710113525,
+            9.677905082702637,
+            12.623502731323242,
+            15.274249076843262,
+            18.109325408935547,
+            19.976123809814453,
+            21.88317108154297,
+            23.232318878173828
+          ],
+          "output_change_epe_px": 0.0,
+          "final_displacement_projection_on_original_flow_px": 35.10176086425781
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "scale",
+        "value": 1.5,
+        "test": {
+          "position_mse": 0.017104174941778183,
+          "coordinate_mae_px": 11.137415885925293,
+          "ade_px": 17.55437660217285,
+          "fde_px": 25.359508514404297,
+          "velocity_epe_px_per_frame": 4.6843061447143555,
+          "speed_mae_px_per_frame": 2.804388999938965,
+          "velocity_direction_cosine": 0.6012076735496521,
+          "acceleration_epe_px_per_frame2": 4.519410610198975,
+          "per_horizon_mse": [
+            0.005239427555352449,
+            0.008623725734651089,
+            0.011809275485575199,
+            0.014839228242635727,
+            0.019115934148430824,
+            0.022526025772094727,
+            0.026480037719011307,
+            0.02838892489671707
+          ],
+          "per_horizon_ade_px": [
+            6.554356575012207,
+            10.54981803894043,
+            14.321765899658203,
+            17.049673080444336,
+            20.051610946655273,
+            22.19925880432129,
+            24.401405334472656,
+            25.359508514404297
+          ],
+          "output_change_epe_px": 6.841425895690918,
+          "final_displacement_projection_on_original_flow_px": 45.64537048339844
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "scale",
+        "value": 2.0,
+        "test": {
+          "position_mse": 0.022150782868266106,
+          "coordinate_mae_px": 13.497785568237305,
+          "ade_px": 21.166595458984375,
+          "fde_px": 29.86900520324707,
+          "velocity_epe_px_per_frame": 5.3772783279418945,
+          "speed_mae_px_per_frame": 3.321943521499634,
+          "velocity_direction_cosine": 0.5917216539382935,
+          "acceleration_epe_px_per_frame2": 5.2527852058410645,
+          "per_horizon_mse": [
+            0.00601369421929121,
+            0.010114072822034359,
+            0.015026692301034927,
+            0.01940685510635376,
+            0.025004886090755463,
+            0.02999125048518181,
+            0.035079225897789,
+            0.036805037409067154
+          ],
+          "per_horizon_ade_px": [
+            8.095417022705078,
+            12.710103034973145,
+            17.637035369873047,
+            20.87670135498047,
+            24.177963256835938,
+            26.81233024597168,
+            29.19386863708496,
+            29.86900520324707
+          ],
+          "output_change_epe_px": 12.865817070007324,
+          "final_displacement_projection_on_original_flow_px": 54.651634216308594
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "rotate",
+        "value": -90.0,
+        "test": {
+          "position_mse": 0.03537159040570259,
+          "coordinate_mae_px": 17.417491912841797,
+          "ade_px": 27.525672912597656,
+          "fde_px": 39.786231994628906,
+          "velocity_epe_px_per_frame": 6.270523548126221,
+          "speed_mae_px_per_frame": 3.193317174911499,
+          "velocity_direction_cosine": 0.32553964853286743,
+          "acceleration_epe_px_per_frame2": 5.1187334060668945,
+          "per_horizon_mse": [
+            0.006977778393775225,
+            0.013834206387400627,
+            0.022523770108819008,
+            0.030896728858351707,
+            0.039200473576784134,
+            0.048978231847286224,
+            0.056617621332407,
+            0.0644412562251091
+          ],
+          "per_horizon_ade_px": [
+            10.412607192993164,
+            16.911087036132812,
+            22.926694869995117,
+            27.308713912963867,
+            30.968914031982422,
+            34.73964309692383,
+            37.22116470336914,
+            39.786231994628906
+          ],
+          "output_change_epe_px": 21.070045471191406,
+          "final_displacement_projection_on_original_flow_px": 10.611949920654297
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "rotate",
+        "value": -45.0,
+        "test": {
+          "position_mse": 0.02151196449995041,
+          "coordinate_mae_px": 13.19905948638916,
+          "ade_px": 20.752477645874023,
+          "fde_px": 30.339725494384766,
+          "velocity_epe_px_per_frame": 5.1341233253479,
+          "speed_mae_px_per_frame": 2.856574296951294,
+          "velocity_direction_cosine": 0.512334942817688,
+          "acceleration_epe_px_per_frame2": 4.494966983795166,
+          "per_horizon_mse": [
+            0.005459020379930735,
+            0.00975713599473238,
+            0.014099390245974064,
+            0.018594469875097275,
+            0.023621991276741028,
+            0.029189441353082657,
+            0.03372018411755562,
+            0.03794170171022415
+          ],
+          "per_horizon_ade_px": [
+            7.74627685546875,
+            12.774785995483398,
+            16.916837692260742,
+            20.298728942871094,
+            23.330080032348633,
+            26.319162368774414,
+            28.362613677978516,
+            30.339725494384766
+          ],
+          "output_change_epe_px": 12.352752685546875,
+          "final_displacement_projection_on_original_flow_px": 27.272809982299805
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "rotate",
+        "value": 0.0,
+        "test": {
+          "position_mse": 0.014923798851668835,
+          "coordinate_mae_px": 10.039726257324219,
+          "ade_px": 15.84713363647461,
+          "fde_px": 23.232318878173828,
+          "velocity_epe_px_per_frame": 4.352978706359863,
+          "speed_mae_px_per_frame": 2.691985607147217,
+          "velocity_direction_cosine": 0.6022356748580933,
+          "acceleration_epe_px_per_frame2": 4.165577411651611,
+          "per_horizon_mse": [
+            0.004911087919026613,
+            0.007955820299685001,
+            0.01035303995013237,
+            0.012927639298141003,
+            0.01658380776643753,
+            0.019406544044613838,
+            0.022561198100447655,
+            0.024861285462975502
+          ],
+          "per_horizon_ade_px": [
+            6.062742710113525,
+            9.677905082702637,
+            12.623502731323242,
+            15.274249076843262,
+            18.109325408935547,
+            19.976123809814453,
+            21.88317108154297,
+            23.232318878173828
+          ],
+          "output_change_epe_px": 0.0,
+          "final_displacement_projection_on_original_flow_px": 35.10176086425781
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "rotate",
+        "value": 45.0,
+        "test": {
+          "position_mse": 0.02142174355685711,
+          "coordinate_mae_px": 13.301436424255371,
+          "ade_px": 20.929933547973633,
+          "fde_px": 30.19321060180664,
+          "velocity_epe_px_per_frame": 5.124625205993652,
+          "speed_mae_px_per_frame": 2.8821277618408203,
+          "velocity_direction_cosine": 0.5123510956764221,
+          "acceleration_epe_px_per_frame2": 4.578273296356201,
+          "per_horizon_mse": [
+            0.005378571338951588,
+            0.009503230452537537,
+            0.013713281601667404,
+            0.018345745280385017,
+            0.024444174021482468,
+            0.02883893996477127,
+            0.03425460681319237,
+            0.0371696837246418
+          ],
+          "per_horizon_ade_px": [
+            7.790151119232178,
+            12.6284761428833,
+            16.842302322387695,
+            20.4653377532959,
+            24.180858612060547,
+            26.42123794555664,
+            28.977359771728516,
+            30.19321060180664
+          ],
+          "output_change_epe_px": 11.78276538848877,
+          "final_displacement_projection_on_original_flow_px": 25.93229866027832
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "rotate",
+        "value": 90.0,
+        "test": {
+          "position_mse": 0.03416263684630394,
+          "coordinate_mae_px": 16.943058013916016,
+          "ade_px": 26.85930061340332,
+          "fde_px": 38.89323806762695,
+          "velocity_epe_px_per_frame": 6.113689422607422,
+          "speed_mae_px_per_frame": 3.2964351177215576,
+          "velocity_direction_cosine": 0.32234635949134827,
+          "acceleration_epe_px_per_frame2": 4.9396843910217285,
+          "per_horizon_mse": [
+            0.00639131898060441,
+            0.012788294814527035,
+            0.02090395987033844,
+            0.029483454301953316,
+            0.03909124806523323,
+            0.04716037958860397,
+            0.05596724897623062,
+            0.061998043209314346
+          ],
+          "per_horizon_ade_px": [
+            9.711896896362305,
+            15.996753692626953,
+            21.859355926513672,
+            26.52492332458496,
+            30.890607833862305,
+            33.9970703125,
+            37.06987762451172,
+            38.89323806762695
+          ],
+          "output_change_epe_px": 19.759159088134766,
+          "final_displacement_projection_on_original_flow_px": 9.974998474121094
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "rotate",
+        "value": 180.0,
+        "test": {
+          "position_mse": 0.04638376459479332,
+          "coordinate_mae_px": 19.546369552612305,
+          "ade_px": 31.018068313598633,
+          "fde_px": 44.50275802612305,
+          "velocity_epe_px_per_frame": 6.87388801574707,
+          "speed_mae_px_per_frame": 3.57598876953125,
+          "velocity_direction_cosine": 0.0967910960316658,
+          "acceleration_epe_px_per_frame2": 5.627198696136475,
+          "per_horizon_mse": [
+            0.00848087202757597,
+            0.017695477232336998,
+            0.02919698692858219,
+            0.040324147790670395,
+            0.05228424072265625,
+            0.06397473812103271,
+            0.07510297000408173,
+            0.08466074615716934
+          ],
+          "per_horizon_ade_px": [
+            12.031759262084961,
+            19.027042388916016,
+            25.73691177368164,
+            30.679880142211914,
+            35.18244934082031,
+            38.939056396484375,
+            42.12272644042969,
+            44.50275802612305
+          ],
+          "output_change_epe_px": 24.878026962280273,
+          "final_displacement_projection_on_original_flow_px": -3.6276204586029053
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "time_zero",
+        "value": 0,
+        "test": {
+          "position_mse": 0.014943135902285576,
+          "coordinate_mae_px": 10.077058792114258,
+          "ade_px": 15.917313575744629,
+          "fde_px": 23.30297088623047,
+          "velocity_epe_px_per_frame": 4.351199150085449,
+          "speed_mae_px_per_frame": 2.7610316276550293,
+          "velocity_direction_cosine": 0.6017686724662781,
+          "acceleration_epe_px_per_frame2": 4.141733169555664,
+          "per_horizon_mse": [
+            0.004869180731475353,
+            0.00793128926306963,
+            0.010327974334359169,
+            0.012976251542568207,
+            0.016624867916107178,
+            0.019449740648269653,
+            0.022560372948646545,
+            0.0249765757471323
+          ],
+          "per_horizon_ade_px": [
+            6.1243391036987305,
+            9.792536735534668,
+            12.674808502197266,
+            15.37492561340332,
+            18.186424255371094,
+            20.052215576171875,
+            21.891691207885742,
+            23.30297088623047
+          ],
+          "output_change_epe_px": 1.9879729747772217,
+          "final_displacement_projection_on_original_flow_px": 32.29256057739258
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "time_zero",
+        "value": 1,
+        "test": {
+          "position_mse": 0.015447667799890041,
+          "coordinate_mae_px": 10.355508804321289,
+          "ade_px": 16.393104553222656,
+          "fde_px": 23.88858413696289,
+          "velocity_epe_px_per_frame": 4.427689075469971,
+          "speed_mae_px_per_frame": 2.898894786834717,
+          "velocity_direction_cosine": 0.592980146408081,
+          "acceleration_epe_px_per_frame2": 4.18771505355835,
+          "per_horizon_mse": [
+            0.004889510106295347,
+            0.008031222969293594,
+            0.010575555264949799,
+            0.013457276858389378,
+            0.017216837033629417,
+            0.020231416448950768,
+            0.023355942219495773,
+            0.026002973318099976
+          ],
+          "per_horizon_ade_px": [
+            6.316440105438232,
+            10.129668235778809,
+            13.104574203491211,
+            15.951848983764648,
+            18.737979888916016,
+            20.661344528198242,
+            22.412094116210938,
+            23.88858413696289
+          ],
+          "output_change_epe_px": 4.020632266998291,
+          "final_displacement_projection_on_original_flow_px": 29.088781356811523
+        }
+      },
+      {
+        "seed": 1,
+        "kind": "time_zero",
+        "value": 2,
+        "test": {
+          "position_mse": 0.019751589745283127,
+          "coordinate_mae_px": 12.154544830322266,
+          "ade_px": 19.24833106994629,
+          "fde_px": 27.95005989074707,
+          "velocity_epe_px_per_frame": 4.851043224334717,
+          "speed_mae_px_per_frame": 3.355935573577881,
+          "velocity_direction_cosine": 0.538919985294342,
+          "acceleration_epe_px_per_frame2": 4.293415546417236,
+          "per_horizon_mse": [
+            0.005192158278077841,
+            0.009129847399890423,
+            0.012861995957791805,
+            0.017217401415109634,
+            0.022149423137307167,
+            0.026549115777015686,
+            0.030734697356820107,
+            0.03443002700805664
+          ],
+          "per_horizon_ade_px": [
+            7.222134590148926,
+            11.810822486877441,
+            15.485200881958008,
+            18.926755905151367,
+            22.009151458740234,
+            24.353317260742188,
+            26.287202835083008,
+            27.95005989074707
+          ],
+          "output_change_epe_px": 9.447601318359375,
+          "final_displacement_projection_on_original_flow_px": 20.41693878173828
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "scale",
+        "value": -1.0,
+        "test": {
+          "position_mse": 0.04763156548142433,
+          "coordinate_mae_px": 20.07086181640625,
+          "ade_px": 31.826499938964844,
+          "fde_px": 46.159671783447266,
+          "velocity_epe_px_per_frame": 7.045100688934326,
+          "speed_mae_px_per_frame": 3.6705617904663086,
+          "velocity_direction_cosine": 0.057413190603256226,
+          "acceleration_epe_px_per_frame2": 5.444851398468018,
+          "per_horizon_mse": [
+            0.007784528657793999,
+            0.01785415969789028,
+            0.029544375836849213,
+            0.04145168513059616,
+            0.053076740354299545,
+            0.06515176594257355,
+            0.0785164162516594,
+            0.08838553726673126
+          ],
+          "per_horizon_ade_px": [
+            11.313798904418945,
+            19.81243896484375,
+            26.479326248168945,
+            31.726158142089844,
+            35.94891357421875,
+            39.72669219970703,
+            43.519142150878906,
+            46.159671783447266
+          ],
+          "output_change_epe_px": 24.717557907104492,
+          "final_displacement_projection_on_original_flow_px": -6.740126609802246
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "scale",
+        "value": -0.5,
+        "test": {
+          "position_mse": 0.036837704479694366,
+          "coordinate_mae_px": 17.47639274597168,
+          "ade_px": 27.727373123168945,
+          "fde_px": 40.24393081665039,
+          "velocity_epe_px_per_frame": 6.29221248626709,
+          "speed_mae_px_per_frame": 3.850517511367798,
+          "velocity_direction_cosine": 0.19073863327503204,
+          "acceleration_epe_px_per_frame2": 4.888848304748535,
+          "per_horizon_mse": [
+            0.006765313446521759,
+            0.01441868394613266,
+            0.022900814190506935,
+            0.032083988189697266,
+            0.04084381088614464,
+            0.050367217510938644,
+            0.060115620493888855,
+            0.06775165349245071
+          ],
+          "per_horizon_ade_px": [
+            9.915127754211426,
+            17.17932891845703,
+            22.937393188476562,
+            27.6547908782959,
+            31.278079986572266,
+            34.774539947509766,
+            37.90357971191406,
+            40.24393081665039
+          ],
+          "output_change_epe_px": 20.01753807067871,
+          "final_displacement_projection_on_original_flow_px": 1.0442521572113037
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "scale",
+        "value": 0.0,
+        "test": {
+          "position_mse": 0.025734907016158104,
+          "coordinate_mae_px": 14.331555366516113,
+          "ade_px": 22.72065544128418,
+          "fde_px": 33.080467224121094,
+          "velocity_epe_px_per_frame": 5.441192626953125,
+          "speed_mae_px_per_frame": 3.7532408237457275,
+          "velocity_direction_cosine": 0.4062061011791229,
+          "acceleration_epe_px_per_frame2": 4.471065998077393,
+          "per_horizon_mse": [
+            0.005795028060674667,
+            0.011105692945420742,
+            0.01630137860774994,
+            0.022378889843821526,
+            0.02846241369843483,
+            0.03481510654091835,
+            0.041061654686927795,
+            0.04632457345724106
+          ],
+          "per_horizon_ade_px": [
+            8.191289901733398,
+            14.08228874206543,
+            18.59698486328125,
+            22.532068252563477,
+            25.658296585083008,
+            28.590538024902344,
+            31.095951080322266,
+            33.080467224121094
+          ],
+          "output_change_epe_px": 13.946029663085938,
+          "final_displacement_projection_on_original_flow_px": 11.484753608703613
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "scale",
+        "value": 0.5,
+        "test": {
+          "position_mse": 0.01791367679834366,
+          "coordinate_mae_px": 11.495186805725098,
+          "ade_px": 18.19565773010254,
+          "fde_px": 26.62959098815918,
+          "velocity_epe_px_per_frame": 4.738876819610596,
+          "speed_mae_px_per_frame": 3.198129177093506,
+          "velocity_direction_cosine": 0.5436652898788452,
+          "acceleration_epe_px_per_frame2": 4.324557781219482,
+          "per_horizon_mse": [
+            0.005181020591408014,
+            0.00880028773099184,
+            0.011759493499994278,
+            0.01553545705974102,
+            0.01978112943470478,
+            0.02373698353767395,
+            0.027616074308753014,
+            0.031135231256484985
+          ],
+          "per_horizon_ade_px": [
+            6.798773288726807,
+            11.259676933288574,
+            14.608949661254883,
+            17.804250717163086,
+            20.610403060913086,
+            22.968048095703125,
+            24.948959350585938,
+            26.62959098815918
+          ],
+          "output_change_epe_px": 7.041514873504639,
+          "final_displacement_projection_on_original_flow_px": 22.412626266479492
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "scale",
+        "value": 1.0,
+        "test": {
+          "position_mse": 0.01499180682003498,
+          "coordinate_mae_px": 10.023845672607422,
+          "ade_px": 15.825674057006836,
+          "fde_px": 23.283287048339844,
+          "velocity_epe_px_per_frame": 4.473659038543701,
+          "speed_mae_px_per_frame": 2.743248224258423,
+          "velocity_direction_cosine": 0.5833712220191956,
+          "acceleration_epe_px_per_frame2": 4.488264560699463,
+          "per_horizon_mse": [
+            0.004946105647832155,
+            0.007918544113636017,
+            0.010223973542451859,
+            0.013080648146569729,
+            0.01645933836698532,
+            0.019512413069605827,
+            0.02273569442331791,
+            0.025239678099751472
+          ],
+          "per_horizon_ade_px": [
+            6.163476467132568,
+            9.592867851257324,
+            12.485821723937988,
+            15.343485832214355,
+            17.922805786132812,
+            19.979719161987305,
+            21.903215408325195,
+            23.283287048339844
+          ],
+          "output_change_epe_px": 0.0,
+          "final_displacement_projection_on_original_flow_px": 33.3155632019043
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "scale",
+        "value": 1.5,
+        "test": {
+          "position_mse": 0.016410324722528458,
+          "coordinate_mae_px": 10.81568431854248,
+          "ade_px": 17.038318634033203,
+          "fde_px": 24.6573429107666,
+          "velocity_epe_px_per_frame": 4.787761688232422,
+          "speed_mae_px_per_frame": 2.846632719039917,
+          "velocity_direction_cosine": 0.5904288291931152,
+          "acceleration_epe_px_per_frame2": 5.041162490844727,
+          "per_horizon_mse": [
+            0.005226785782724619,
+            0.008370996452867985,
+            0.011301807127892971,
+            0.014422549866139889,
+            0.018088597804307938,
+            0.021290330216288567,
+            0.025334691628813744,
+            0.027439501136541367
+          ],
+          "per_horizon_ade_px": [
+            6.765751361846924,
+            10.291304588317871,
+            13.741312026977539,
+            16.648923873901367,
+            19.27006721496582,
+            21.32586669921875,
+            23.66992950439453,
+            24.6573429107666
+          ],
+          "output_change_epe_px": 6.724371433258057,
+          "final_displacement_projection_on_original_flow_px": 43.724796295166016
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "scale",
+        "value": 2.0,
+        "test": {
+          "position_mse": 0.020729823037981987,
+          "coordinate_mae_px": 12.91356086730957,
+          "ade_px": 20.291397094726562,
+          "fde_px": 28.87375831604004,
+          "velocity_epe_px_per_frame": 5.457160472869873,
+          "speed_mae_px_per_frame": 3.3662123680114746,
+          "velocity_direction_cosine": 0.5891380310058594,
+          "acceleration_epe_px_per_frame2": 5.889331817626953,
+          "per_horizon_mse": [
+            0.006105982232838869,
+            0.00980935338884592,
+            0.014150230213999748,
+            0.018194574862718582,
+            0.022983184084296227,
+            0.027095695957541466,
+            0.032725006341934204,
+            0.035024601966142654
+          ],
+          "per_horizon_ade_px": [
+            8.29724407196045,
+            12.458013534545898,
+            16.845712661743164,
+            19.88514518737793,
+            22.88738250732422,
+            25.165332794189453,
+            27.979827880859375,
+            28.87375831604004
+          ],
+          "output_change_epe_px": 12.707448959350586,
+          "final_displacement_projection_on_original_flow_px": 52.964576721191406
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "rotate",
+        "value": -90.0,
+        "test": {
+          "position_mse": 0.03616061806678772,
+          "coordinate_mae_px": 17.56954002380371,
+          "ade_px": 27.868221282958984,
+          "fde_px": 40.65019989013672,
+          "velocity_epe_px_per_frame": 6.383144855499268,
+          "speed_mae_px_per_frame": 3.1370203495025635,
+          "velocity_direction_cosine": 0.2899264991283417,
+          "acceleration_epe_px_per_frame2": 5.1602253913879395,
+          "per_horizon_mse": [
+            0.006388528738170862,
+            0.014013138599693775,
+            0.022228138521313667,
+            0.030921073630452156,
+            0.04060257226228714,
+            0.04908350110054016,
+            0.059744685888290405,
+            0.06685376912355423
+          ],
+          "per_horizon_ade_px": [
+            9.596961975097656,
+            17.195606231689453,
+            22.94133758544922,
+            27.568342208862305,
+            31.719465255737305,
+            34.833335876464844,
+            38.51136016845703,
+            40.65019989013672
+          ],
+          "output_change_epe_px": 20.849599838256836,
+          "final_displacement_projection_on_original_flow_px": 9.725349426269531
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "rotate",
+        "value": -45.0,
+        "test": {
+          "position_mse": 0.021479783579707146,
+          "coordinate_mae_px": 13.125811576843262,
+          "ade_px": 20.630582809448242,
+          "fde_px": 30.309307098388672,
+          "velocity_epe_px_per_frame": 5.200602054595947,
+          "speed_mae_px_per_frame": 2.835721254348755,
+          "velocity_direction_cosine": 0.4990185499191284,
+          "acceleration_epe_px_per_frame2": 4.708829879760742,
+          "per_horizon_mse": [
+            0.005219023209065199,
+            0.009582465514540672,
+            0.013800794258713722,
+            0.018182901665568352,
+            0.02380925789475441,
+            0.028689684346318245,
+            0.03460070118308067,
+            0.03826073557138443
+          ],
+          "per_horizon_ade_px": [
+            7.094742774963379,
+            12.587151527404785,
+            16.69870948791504,
+            20.072481155395508,
+            23.50094985961914,
+            26.02541732788086,
+            28.82157325744629,
+            30.309307098388672
+          ],
+          "output_change_epe_px": 11.902786254882812,
+          "final_displacement_projection_on_original_flow_px": 26.29898452758789
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "rotate",
+        "value": 0.0,
+        "test": {
+          "position_mse": 0.01499180682003498,
+          "coordinate_mae_px": 10.023845672607422,
+          "ade_px": 15.825674057006836,
+          "fde_px": 23.283287048339844,
+          "velocity_epe_px_per_frame": 4.473659038543701,
+          "speed_mae_px_per_frame": 2.743248224258423,
+          "velocity_direction_cosine": 0.5833712220191956,
+          "acceleration_epe_px_per_frame2": 4.488264560699463,
+          "per_horizon_mse": [
+            0.004946105647832155,
+            0.007918544113636017,
+            0.010223973542451859,
+            0.013080648146569729,
+            0.01645933836698532,
+            0.019512413069605827,
+            0.02273569442331791,
+            0.025239678099751472
+          ],
+          "per_horizon_ade_px": [
+            6.163476467132568,
+            9.592867851257324,
+            12.485821723937988,
+            15.343485832214355,
+            17.922805786132812,
+            19.979719161987305,
+            21.903215408325195,
+            23.283287048339844
+          ],
+          "output_change_epe_px": 0.0,
+          "final_displacement_projection_on_original_flow_px": 33.3155632019043
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "rotate",
+        "value": 45.0,
+        "test": {
+          "position_mse": 0.021486492827534676,
+          "coordinate_mae_px": 13.206884384155273,
+          "ade_px": 20.734180450439453,
+          "fde_px": 30.1801815032959,
+          "velocity_epe_px_per_frame": 5.222342014312744,
+          "speed_mae_px_per_frame": 2.8829102516174316,
+          "velocity_direction_cosine": 0.4957258105278015,
+          "acceleration_epe_px_per_frame2": 4.87452507019043,
+          "per_horizon_mse": [
+            0.005535571835935116,
+            0.009868321940302849,
+            0.013873943127691746,
+            0.018993359059095383,
+            0.023877417668700218,
+            0.028569046407938004,
+            0.03347942605614662,
+            0.03798363730311394
+          ],
+          "per_horizon_ade_px": [
+            7.886862277984619,
+            12.726987838745117,
+            16.802473068237305,
+            20.70431900024414,
+            23.437070846557617,
+            25.981197357177734,
+            28.219711303710938,
+            30.1801815032959
+          ],
+          "output_change_epe_px": 11.002135276794434,
+          "final_displacement_projection_on_original_flow_px": 26.567543029785156
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "rotate",
+        "value": 90.0,
+        "test": {
+          "position_mse": 0.03369058668613434,
+          "coordinate_mae_px": 16.92668342590332,
+          "ade_px": 26.689697265625,
+          "fde_px": 38.83391189575195,
+          "velocity_epe_px_per_frame": 6.208961486816406,
+          "speed_mae_px_per_frame": 3.2485671043395996,
+          "velocity_direction_cosine": 0.3203403651714325,
+          "acceleration_epe_px_per_frame2": 5.2453532218933105,
+          "per_horizon_mse": [
+            0.006557382643222809,
+            0.013548229821026325,
+            0.020812498405575752,
+            0.029514232650399208,
+            0.03750217705965042,
+            0.0462404303252697,
+            0.05408593639731407,
+            0.06175428628921509
+          ],
+          "per_horizon_ade_px": [
+            9.650350570678711,
+            16.453723907470703,
+            21.797574996948242,
+            26.653091430664062,
+            30.132890701293945,
+            33.6829833984375,
+            36.38426971435547,
+            38.83391189575195
+          ],
+          "output_change_epe_px": 18.584369659423828,
+          "final_displacement_projection_on_original_flow_px": 11.279722213745117
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "rotate",
+        "value": 180.0,
+        "test": {
+          "position_mse": 0.04763156548142433,
+          "coordinate_mae_px": 20.07086181640625,
+          "ade_px": 31.826499938964844,
+          "fde_px": 46.159671783447266,
+          "velocity_epe_px_per_frame": 7.045100688934326,
+          "speed_mae_px_per_frame": 3.6705617904663086,
+          "velocity_direction_cosine": 0.057413190603256226,
+          "acceleration_epe_px_per_frame2": 5.444851398468018,
+          "per_horizon_mse": [
+            0.007784528657793999,
+            0.01785415969789028,
+            0.029544375836849213,
+            0.04145168513059616,
+            0.053076740354299545,
+            0.06515176594257355,
+            0.0785164162516594,
+            0.08838553726673126
+          ],
+          "per_horizon_ade_px": [
+            11.313798904418945,
+            19.81243896484375,
+            26.479326248168945,
+            31.726158142089844,
+            35.94891357421875,
+            39.72669219970703,
+            43.519142150878906,
+            46.159671783447266
+          ],
+          "output_change_epe_px": 24.717557907104492,
+          "final_displacement_projection_on_original_flow_px": -6.740126609802246
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "time_zero",
+        "value": 0,
+        "test": {
+          "position_mse": 0.01512582041323185,
+          "coordinate_mae_px": 10.1281099319458,
+          "ade_px": 15.997897148132324,
+          "fde_px": 23.524944305419922,
+          "velocity_epe_px_per_frame": 4.47853946685791,
+          "speed_mae_px_per_frame": 2.783804178237915,
+          "velocity_direction_cosine": 0.5806684494018555,
+          "acceleration_epe_px_per_frame2": 4.44828987121582,
+          "per_horizon_mse": [
+            0.004955523647367954,
+            0.007953738793730736,
+            0.010245883837342262,
+            0.013205437920987606,
+            0.016629787161946297,
+            0.019731417298316956,
+            0.022916994988918304,
+            0.02555314265191555
+          ],
+          "per_horizon_ade_px": [
+            6.2818169593811035,
+            9.755346298217773,
+            12.6266508102417,
+            15.516048431396484,
+            18.097185134887695,
+            20.19407844543457,
+            22.057113647460938,
+            23.524944305419922
+          ],
+          "output_change_epe_px": 1.5760655403137207,
+          "final_displacement_projection_on_original_flow_px": 31.45973777770996
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "time_zero",
+        "value": 1,
+        "test": {
+          "position_mse": 0.01588917337357998,
+          "coordinate_mae_px": 10.51458740234375,
+          "ade_px": 16.64103889465332,
+          "fde_px": 24.42469596862793,
+          "velocity_epe_px_per_frame": 4.533380508422852,
+          "speed_mae_px_per_frame": 2.9416680335998535,
+          "velocity_direction_cosine": 0.5733709931373596,
+          "acceleration_epe_px_per_frame2": 4.34293270111084,
+          "per_horizon_mse": [
+            0.0050088996067643166,
+            0.008190108463168144,
+            0.010649316012859344,
+            0.013791105709969997,
+            0.01748567819595337,
+            0.020868880674242973,
+            0.02418236806988716,
+            0.027137774974107742
+          ],
+          "per_horizon_ade_px": [
+            6.401184558868408,
+            10.244552612304688,
+            13.218876838684082,
+            16.154661178588867,
+            18.82398223876953,
+            21.032869338989258,
+            22.894596099853516,
+            24.42469596862793
+          ],
+          "output_change_epe_px": 3.9338197708129883,
+          "final_displacement_projection_on_original_flow_px": 27.56068229675293
+        }
+      },
+      {
+        "seed": 2,
+        "kind": "time_zero",
+        "value": 2,
+        "test": {
+          "position_mse": 0.02053435705602169,
+          "coordinate_mae_px": 12.411806106567383,
+          "ade_px": 19.668167114257812,
+          "fde_px": 28.809783935546875,
+          "velocity_epe_px_per_frame": 4.979630470275879,
+          "speed_mae_px_per_frame": 3.3831636905670166,
+          "velocity_direction_cosine": 0.5023180842399597,
+          "acceleration_epe_px_per_frame2": 4.3760786056518555,
+          "per_horizon_mse": [
+            0.005351063795387745,
+            0.009525931440293789,
+            0.013258974067866802,
+            0.01779032126069069,
+            0.022638799622654915,
+            0.02746230736374855,
+            0.03218405693769455,
+            0.03634696081280708
+          ],
+          "per_horizon_ade_px": [
+            7.134194850921631,
+            12.119488716125488,
+            15.884203910827637,
+            19.33656120300293,
+            22.259857177734375,
+            24.84419059753418,
+            27.020709991455078,
+            28.809783935546875
+          ],
+          "output_change_epe_px": 9.229280471801758,
+          "final_displacement_projection_on_original_flow_px": 19.063169479370117
+        }
+      }
+    ],
+    "position_mse_summary": [
+      {
+        "kind": "rotate",
+        "value": -90.0,
+        "mean": 0.035319093614816666,
+        "sample_std": 0.0008689629736064827,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": -45.0,
+        "mean": 0.021168579657872517,
+        "sample_std": 0.0005671188061485135,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": 0.0,
+        "mean": 0.014945004445811113,
+        "sample_std": 4.059146835520544e-05,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": 45.0,
+        "mean": 0.02122321290274461,
+        "sample_std": 0.00040124789731917483,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": 90.0,
+        "mean": 0.03341661641995112,
+        "sample_std": 0.0009143268551640291,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": 180.0,
+        "mean": 0.04608595743775368,
+        "sample_std": 0.001714026389769604,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": -1.0,
+        "mean": 0.04608595743775368,
+        "sample_std": 0.001714026389769604,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": -0.5,
+        "mean": 0.03563458348313967,
+        "sample_std": 0.0014558484382712906,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 0.0,
+        "mean": 0.02509627304971218,
+        "sample_std": 0.0009032920423333683,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 0.5,
+        "mean": 0.01751206877330939,
+        "sample_std": 0.0003478146190224919,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 1.0,
+        "mean": 0.014945004445811113,
+        "sample_std": 4.059146835520544e-05,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 1.5,
+        "mean": 0.01671538067360719,
+        "sample_std": 0.00035442363211319006,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 2.0,
+        "mean": 0.021388789638876915,
+        "sample_std": 0.0007160604544690615,
+        "n": 3
+      },
+      {
+        "kind": "time_zero",
+        "value": 0,
+        "mean": 0.01504616066813469,
+        "sample_std": 9.355667149366853e-05,
+        "n": 3
+      },
+      {
+        "kind": "time_zero",
+        "value": 1,
+        "mean": 0.015658431065579254,
+        "sample_std": 0.00022142981844951244,
+        "n": 3
+      },
+      {
+        "kind": "time_zero",
+        "value": 2,
+        "mean": 0.019818114737669628,
+        "sample_std": 0.0006854054409144287,
+        "n": 3
+      }
+    ],
+    "output_change_summary": [
+      {
+        "kind": "rotate",
+        "value": -90.0,
+        "mean": 20.345848719278973,
+        "sample_std": 1.069130978640127,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": -45.0,
+        "mean": 11.65956179300944,
+        "sample_std": 0.8415894094886042,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": 0.0,
+        "mean": 0.0,
+        "sample_std": 0.0,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": 45.0,
+        "mean": 11.05368709564209,
+        "sample_std": 0.7047179826342874,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": 90.0,
+        "mean": 18.695584615071613,
+        "sample_std": 1.0125581653719762,
+        "n": 3
+      },
+      {
+        "kind": "rotate",
+        "value": 180.0,
+        "mean": 24.146504084269207,
+        "sample_std": 1.1309142874719027,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": -1.0,
+        "mean": 24.146504084269207,
+        "sample_std": 1.1309142874719027,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": -0.5,
+        "mean": 19.708391825358074,
+        "sample_std": 1.207979851912703,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 0.0,
+        "mean": 13.920341809590658,
+        "sample_std": 1.1301327844199034,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 0.5,
+        "mean": 6.9964602788289385,
+        "sample_std": 0.44309108879977344,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 1.0,
+        "mean": 0.0,
+        "sample_std": 0.0,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 1.5,
+        "mean": 6.655730088551839,
+        "sample_std": 0.22790563156807794,
+        "n": 3
+      },
+      {
+        "kind": "scale",
+        "value": 2.0,
+        "mean": 12.60888671875,
+        "sample_std": 0.31788575269684116,
+        "n": 3
+      },
+      {
+        "kind": "time_zero",
+        "value": 0,
+        "mean": 1.8237873315811157,
+        "sample_std": 0.2182902876160941,
+        "n": 3
+      },
+      {
+        "kind": "time_zero",
+        "value": 1,
+        "mean": 3.9315417607625327,
+        "sample_std": 0.09025107589241771,
+        "n": 3
+      },
+      {
+        "kind": "time_zero",
+        "value": 2,
+        "mean": 8.839279174804688,
+        "sample_std": 0.8714374716390918,
+        "n": 3
+      }
+    ]
+  },
+  "object_ablation": {
+    "per_seed": [
+      {
+        "seed": 0,
+        "output_change_epe_px_matrix": [
+          [
+            15.779870030481451,
+            1.586522454730535,
+            1.5726741638052222,
+            1.4228519374088222,
+            1.3638963760580853,
+            1.1277611701043098,
+            1.298343535392515,
+            1.16170302989871,
+            0.7411684195200602,
+            1.3071724506134683
+          ],
+          [
+            1.2728141985023056,
+            13.167802817134534,
+            1.2507001833314275,
+            1.2208687447212838,
+            1.1827720023008792,
+            1.0476977065369324,
+            0.829105785220912,
+            1.0409265739973201,
+            0.8154472589492798,
+            0.6676007940414104
+          ],
+          [
+            1.146270024432442,
+            1.1447255400573315,
+            12.79878440459535,
+            1.0850495059601506,
+            1.0507198229075452,
+            0.9691892037024865,
+            0.8653225340138874,
+            0.7892021001771439,
+            0.6525465170542399,
+            0.8596318630461998
+          ],
+          [
+            0.9594684173062918,
+            0.9450759638949333,
+            0.9159630637678823,
+            11.566043458230958,
+            0.8486484721329083,
+            0.8351633470137041,
+            0.7815932579882481,
+            0.792588610981786,
+            0.6526639382044475,
+            0.7561275401013963
+          ],
+          [
+            0.717642445425874,
+            0.7840007678553629,
+            0.794612485665738,
+            0.7818111805815054,
+            10.74277070107268,
+            0.7200233438512781,
+            0.7220372327924381,
+            0.8513487172681232,
+            0.7701828797658284,
+            0.7036873279733861
+          ],
+          [
+            0.6902201271647639,
+            0.6900157297839987,
+            0.7276646798117119,
+            0.7107009788740779,
+            0.6978098620539126,
+            10.815770411229396,
+            0.7328805842504842,
+            0.719344595975654,
+            0.5912453889846802,
+            0.5044576563733689
+          ],
+          [
+            0.5147397351819415,
+            0.5921020172454499,
+            0.5955645749702566,
+            0.5303512062293391,
+            0.5696175766900193,
+            0.5849327560781376,
+            9.64554138701719,
+            0.6387300358262173,
+            0.6347455739974975,
+            0.4660218814586071
+          ],
+          [
+            0.49506399285702307,
+            0.5392186311575082,
+            0.45254811172779924,
+            0.5448045816164787,
+            0.4594371609087417,
+            0.519021052711479,
+            0.5116202659319496,
+            8.849912279705668,
+            0.4450256824493408,
+            0.5350014656148059
+          ],
+          [
+            0.38625288598331403,
+            0.43479870115856517,
+            0.42808263897895815,
+            0.43741190452760564,
+            0.4938395991667139,
+            0.4715575984880036,
+            0.4942989382081334,
+            0.4249381504470496,
+            8.55638936360677,
+            0.29715727491581695
+          ],
+          [
+            0.6043249298544491,
+            0.5999804150299186,
+            0.7047970427899556,
+            0.6154864051125266,
+            0.5818646075678807,
+            0.5320486649870872,
+            0.5797834784034791,
+            0.6166005212752546,
+            0.5014587367346527,
+            8.362654584519406
+          ]
+        ],
+        "counts": [
+          [
+            2399.0,
+            2360.0,
+            2323.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            2399.0,
+            2360.0,
+            2323.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            2391.0,
+            2352.0,
+            2323.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            2167.0,
+            2147.0,
+            2132.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1895.0,
+            1881.0,
+            1865.0,
+            1798.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1615.0,
+            1603.0,
+            1596.0,
+            1542.0,
+            1472.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1376.0,
+            1365.0,
+            1356.0,
+            1314.0,
+            1259.0,
+            1241.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1048.0,
+            1040.0,
+            1036.0,
+            1003.0,
+            961.0,
+            981.0,
+            929.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            648.0,
+            642.0,
+            640.0,
+            619.0,
+            586.0,
+            612.0,
+            583.0,
+            556.0,
+            480.0,
+            188.0
+          ],
+          [
+            272.0,
+            267.0,
+            269.0,
+            264.0,
+            255.0,
+            256.0,
+            246.0,
+            244.0,
+            218.0,
+            188.0
+          ]
+        ],
+        "diagonal_mean": 11.02855394375934,
+        "off_diagonal_mean": 0.7633654587623403,
+        "diagonal_to_off_diagonal_ratio": 14.44727923849234
+      },
+      {
+        "seed": 1,
+        "output_change_epe_px_matrix": [
+          [
+            17.914921419080866,
+            1.685633824235302,
+            1.7588349636700253,
+            1.639140660991247,
+            1.4881879691832676,
+            1.31749511551071,
+            1.7106372464087702,
+            1.302593124744504,
+            1.1434208313624064,
+            1.3665216121267765
+          ],
+          [
+            1.3568440890898552,
+            15.088993395789196,
+            1.366652266608709,
+            1.3536490325552826,
+            1.4415685115887698,
+            1.2158506204793742,
+            1.1468275941288533,
+            1.1454332573469295,
+            1.079098145167033,
+            0.8169649306763994
+          ],
+          [
+            1.2314775786804684,
+            1.2748504690572517,
+            14.760756901097718,
+            1.1968844776950245,
+            1.2173774928567844,
+            1.1592989491892385,
+            1.184225603761009,
+            1.1767181396484374,
+            1.0069347222646077,
+            1.2556530769835128
+          ],
+          [
+            0.9890077289040868,
+            1.0900167492749695,
+            0.9775590449292038,
+            13.320923871314497,
+            1.0190069106191624,
+            0.9366819779951494,
+            1.0884836452723763,
+            1.1188291327897892,
+            0.891835085550944,
+            0.8959009901006171
+          ],
+          [
+            0.8033331314932388,
+            0.8631097934526183,
+            0.854089453648626,
+            0.8684715805647768,
+            12.077441748303414,
+            0.9028901949033632,
+            1.0075881258538704,
+            1.0553488088208576,
+            1.0051807641983033,
+            1.0996509511420067
+          ],
+          [
+            0.7669267683944466,
+            0.819877086694138,
+            0.8369032398501136,
+            0.8401115011766882,
+            0.8083031281181003,
+            12.308500185117616,
+            0.8362036479956427,
+            0.9947555719419967,
+            0.7559593836466472,
+            0.7029647015510722
+          ],
+          [
+            0.6141840690790221,
+            0.6689940623747996,
+            0.6991334200608695,
+            0.6870518282305341,
+            0.7128043928441782,
+            0.7466763627807715,
+            11.142598435510399,
+            0.9299966767776844,
+            0.735649840037028,
+            0.5310176357309869
+          ],
+          [
+            0.5539581866664741,
+            0.5755750802847055,
+            0.5913391702423685,
+            0.5750066085921922,
+            0.6128319493193533,
+            0.6308995984745317,
+            0.6937502726543578,
+            9.922212112781613,
+            0.6100454727808634,
+            0.6812356355342459
+          ],
+          [
+            0.41791269808639714,
+            0.5481568630610671,
+            0.5638530641794205,
+            0.5779538131492011,
+            0.5929677852591557,
+            0.6196356193692076,
+            0.5951573746486553,
+            0.6214370453100411,
+            9.710117212931316,
+            0.42456230965066466
+          ],
+          [
+            0.5080943388097426,
+            0.5067748880564943,
+            0.51087751707623,
+            0.6060359261252664,
+            0.48488012201645797,
+            0.7481192275881767,
+            0.5904398042012037,
+            0.7813407397661053,
+            0.7487719562075553,
+            9.950966692985372
+          ]
+        ],
+        "counts": [
+          [
+            2399.0,
+            2360.0,
+            2323.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            2399.0,
+            2360.0,
+            2323.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            2391.0,
+            2352.0,
+            2323.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            2167.0,
+            2147.0,
+            2132.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1895.0,
+            1881.0,
+            1865.0,
+            1798.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1615.0,
+            1603.0,
+            1596.0,
+            1542.0,
+            1472.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1376.0,
+            1365.0,
+            1356.0,
+            1314.0,
+            1259.0,
+            1241.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1048.0,
+            1040.0,
+            1036.0,
+            1003.0,
+            961.0,
+            981.0,
+            929.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            648.0,
+            642.0,
+            640.0,
+            619.0,
+            586.0,
+            612.0,
+            583.0,
+            556.0,
+            480.0,
+            188.0
+          ],
+          [
+            272.0,
+            267.0,
+            269.0,
+            264.0,
+            255.0,
+            256.0,
+            246.0,
+            244.0,
+            218.0,
+            188.0
+          ]
+        ],
+        "diagonal_mean": 12.6197431974912,
+        "off_diagonal_mean": 0.912943163999104,
+        "diagonal_to_off_diagonal_ratio": 13.823142223017495
+      },
+      {
+        "seed": 2,
+        "output_change_epe_px_matrix": [
+          [
+            16.64093600197999,
+            1.7808280815512447,
+            1.8547846071175138,
+            1.7153819841014666,
+            1.6559037778089427,
+            1.545772720169235,
+            1.782935616925536,
+            1.4251966432083485,
+            0.9758335590362549,
+            1.853157510148718
+          ],
+          [
+            1.4588864745076073,
+            13.909597830045021,
+            1.5105673978413892,
+            1.5650191473433661,
+            1.5872969841720483,
+            1.293858873975146,
+            1.2650252959117014,
+            1.4136157013649164,
+            1.0930973291397095,
+            0.9104589908681018
+          ],
+          [
+            1.2564703136844548,
+            1.238081692027397,
+            13.221955672554348,
+            1.367910354201858,
+            1.383598153937719,
+            1.248499272943853,
+            1.3225565005239284,
+            1.0732215703919876,
+            1.039074977238973,
+            1.2582181058031447
+          ],
+          [
+            1.0424224332449454,
+            1.0907875917432028,
+            1.0482059357090248,
+            11.804250806203932,
+            1.0881267665633665,
+            1.0279080736768114,
+            1.007966422063183,
+            1.1735147165697675,
+            0.9633270422617595,
+            0.9022728331545566
+          ],
+          [
+            0.8740428592410125,
+            0.9273367379334048,
+            0.867425880738941,
+            0.9426282770243848,
+            10.905639719698629,
+            1.0236030830131781,
+            0.9580164392856669,
+            1.0275253650753997,
+            1.1912803490956625,
+            1.16211392017121
+          ],
+          [
+            0.7661024725474072,
+            0.814007812043093,
+            0.8348584856305804,
+            0.8702102047614705,
+            0.8373239558676014,
+            11.2271238892943,
+            0.9256897490781515,
+            1.0287066969760628,
+            0.827714745203654,
+            0.8146022634303316
+          ],
+          [
+            0.6170576339544251,
+            0.6279854798928285,
+            0.6358297229868121,
+            0.6671237335901826,
+            0.6553281824961837,
+            0.6473766760322761,
+            9.821649055934317,
+            0.8327761982762536,
+            0.7011919021606445,
+            0.5942034721374512
+          ],
+          [
+            0.5557723300147602,
+            0.581866088280311,
+            0.5534159980685555,
+            0.5843843743427919,
+            0.6237404989030185,
+            0.609066324496488,
+            0.7249724323449274,
+            9.501612321720566,
+            0.7303768555323283,
+            0.9377530889308199
+          ],
+          [
+            0.4318777484658324,
+            0.5290453099758825,
+            0.536608898639679,
+            0.516886546268987,
+            0.5944222167083428,
+            0.5908056146958295,
+            0.6061892566713625,
+            0.7106850644667372,
+            8.963058853149414,
+            0.4730432794449177
+          ],
+          [
+            0.6325454010682947,
+            0.5427397824405285,
+            0.6186643125399338,
+            0.5929989742510247,
+            0.5451755299287684,
+            0.715176597237587,
+            0.6680379572922621,
+            0.8304650197263623,
+            0.6277481481569622,
+            8.424739918810255
+          ]
+        ],
+        "counts": [
+          [
+            2399.0,
+            2360.0,
+            2323.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            2399.0,
+            2360.0,
+            2323.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            2391.0,
+            2352.0,
+            2323.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            2167.0,
+            2147.0,
+            2132.0,
+            2035.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1895.0,
+            1881.0,
+            1865.0,
+            1798.0,
+            1713.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1615.0,
+            1603.0,
+            1596.0,
+            1542.0,
+            1472.0,
+            1456.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1376.0,
+            1365.0,
+            1356.0,
+            1314.0,
+            1259.0,
+            1241.0,
+            1178.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            1048.0,
+            1040.0,
+            1036.0,
+            1003.0,
+            961.0,
+            981.0,
+            929.0,
+            860.0,
+            480.0,
+            188.0
+          ],
+          [
+            648.0,
+            642.0,
+            640.0,
+            619.0,
+            586.0,
+            612.0,
+            583.0,
+            556.0,
+            480.0,
+            188.0
+          ],
+          [
+            272.0,
+            267.0,
+            269.0,
+            264.0,
+            255.0,
+            256.0,
+            246.0,
+            244.0,
+            218.0,
+            188.0
+          ]
+        ],
+        "diagonal_mean": 11.442056406939077,
+        "off_diagonal_mean": 0.9617367710940974,
+        "diagonal_to_off_diagonal_ratio": 11.897284944114478
+      }
+    ]
+  }
+}
